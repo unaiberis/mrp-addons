@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<openerp>
-    <data>
+<odoo>
         <record id="wiz_review_mrp_serial_form_view" model="ir.ui.view">
             <field name="name">wiz.review.mrp.serial.form.view</field>
             <field name="model">wiz.review.mrp.serial</field>
@@ -28,5 +27,4 @@
                 </form>
             </field>
         </record>
-    </data>
-</openerp>
+</odoo>

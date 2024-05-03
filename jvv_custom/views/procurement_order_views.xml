@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-<data>
+<odoo>
     <record id="procurement_tree_view_inh_jvv" model="ir.ui.view">
         <field name="name">procurement.tree.view.inh.jvv</field>
         <field name="model">procurement.order</field>
@@ -127,5 +126,4 @@
             </filter>
         </field>
     </record>
-</data>
-</openerp>
+</odoo>

@@ -1,7 +1,7 @@
 # Copyright 2024 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
-from openerp import api, fields, models
+from odoo import api, fields, models
 
 
 class WizReviewMrpSerial(models.TransientModel):
@@ -16,7 +16,6 @@ class WizReviewMrpSerial(models.TransientModel):
         result["production_id"] = production_id
         return result
 
-    @api.multi
     def check_mrp_availability(self):
         if self.production_id:
             return self.production_id.action_assign()

@@ -1,6 +1,6 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp import _, api, exceptions, fields, models
+from odoo import _, api, exceptions, fields, models
 
 from .._common import _convert_to_local_date
 
@@ -45,7 +45,6 @@ class MrpProduction(models.Model):
         for production in self:
             production.permission_to_block_manufacture = permission
 
-    @api.multi
     def block_mrp_production(self):
         mrp_manager_group = self.env.ref("mrp.group_mrp_manager")
         if self.env.user not in mrp_manager_group.users:
@@ -54,7 +53,6 @@ class MrpProduction(models.Model):
             )
         self.write({"manufacturing_blocked": True})
 
-    @api.multi
     def unblock_mrp_production(self):
         mrp_manager_group = self.env.ref("mrp.group_mrp_manager")
         if self.env.user not in mrp_manager_group.users:
@@ -63,7 +61,6 @@ class MrpProduction(models.Model):
             )
         self.write({"manufacturing_blocked": False})
 
-    @api.multi
     def action_review_serial_numbers(self):
         if self.product_id.generate_serial_numbers == "yes":
             wiz_obj = self.env["wiz.review.mrp.serial"]
@@ -95,7 +92,6 @@ class MrpProduction(models.Model):
         else:
             self.action_assign()
 
-    @api.multi
     def action_assign(self):
         for production in self.filtered(
             lambda x: x.manufacturing_blocked
@@ -131,7 +127,6 @@ class MrpProduction(models.Model):
             return location[0]
         return super()._dest_id_default()
 
-    @api.multi
     def _compute_productions_count(self):
         p_obj = self.env["mrp.production"]
         for p in self:
@@ -142,7 +137,6 @@ class MrpProduction(models.Model):
             if p.move_prod_id and p.move_prod_id.raw_material_production_id:
                 p.productions_count = 1
 
-    @api.multi
     @api.depends(
         "parent_mrp_production_id",
         "parent_mrp_production_id.sale_line_id",
@@ -193,7 +187,6 @@ class MrpProduction(models.Model):
                     (requested_date, p.id),
                 )
 
-    @api.multi
     @api.depends("parent_mrp_production_id", "parent_mrp_production_id.commitment_date")
     def _compute_parent_commitment_date(self):
         for p in self.filtered(lambda c: c.parent_mrp_production_id):
@@ -203,7 +196,6 @@ class MrpProduction(models.Model):
             ):
                 p.parent_commitment_date = p.parent_mrp_production_id.commitment_date
 
-    @api.multi
     @api.depends(
         "product_id",
         "sale_id",
@@ -236,7 +228,6 @@ class MrpProduction(models.Model):
         ):
             p.product_code = p.move_prod_id.raw_material_production_id.product_code
 
-    @api.multi
     @api.depends(
         "product_qty",
         "routing_id",
@@ -249,7 +240,6 @@ class MrpProduction(models.Model):
             p.load_time_variable = p.product_qty * p.routing_id.load_time_variable
             p.total_line_hours = p.load_time_line + p.load_time_variable
 
-    @api.multi
     @api.depends(
         "product_qty",
         "routing_id",
@@ -266,7 +256,6 @@ class MrpProduction(models.Model):
                 p.load_time_warehouse + p.load_time_variable_warehouse
             )
 
-    @api.multi
     @api.depends("date_planned")
     def _compute_date_planned_without_hour(self):
         for p in self.filtered(lambda c: c.date_planned):
@@ -283,12 +272,10 @@ class MrpProduction(models.Model):
             from_date = _convert_to_local_date(p.date_planned, self.env.user.tz)
             p.day_of_week = str(from_date.date().weekday())
 
-    @api.multi
     def _compute_mrp_project_task_count(self):
         for p in self.filtered(lambda c: c.project_id):
             p._mrp_project_task_count = len(p.project_id.task_ids)
 
-    @api.multi
     @api.depends("purchase_subcontratacion_ids", "purchase_subcontratacion_ids.state")
     def _compute_purchase_subcontratacion_id(self):
         for production in self.filtered(lambda x: x.purchase_subcontratacion_ids):
@@ -431,7 +418,6 @@ class MrpProduction(models.Model):
         store=True,
     )
 
-    @api.multi
     def action_ready(self):
         cond = [("final_mrp_location", "=", True)]
         location = self.env["stock.location"].search(cond, limit=1)
@@ -449,7 +435,6 @@ class MrpProduction(models.Model):
             )
         return res
 
-    @api.multi
     def buttom_show_related_productions(self):
         self.ensure_one()
         p_obj = self.env["mrp.production"]
@@ -469,7 +454,6 @@ class MrpProduction(models.Model):
                 "domain": [("id", "in", productions.ids)],
             }
 
-    @api.multi
     def action_production_end(self):
         res = super().action_production_end()
         for p in self:
@@ -498,7 +482,6 @@ class MrpProduction(models.Model):
                 if lines:
                     lines.write({"location_id": production.location_src_id.id})
 
-    @api.one
     @api.depends("product_id")
     def _calc_production_attachments(self):
         self.product_attachments = None
@@ -515,7 +498,6 @@ class MrpProduction(models.Model):
             attachments += self.env["ir.attachment"].search(cond)
             self.product_attachments = [(6, 0, attachments.mapped("id"))]
 
-    @api.multi
     def bom_id_change(self, bom_id):
         res = super().bom_id_change(bom_id)
         if bom_id:
@@ -555,7 +537,6 @@ class MrpProduction(models.Model):
                     )
         return production
 
-    @api.multi
     def write(self, values, update=True, mini=True):
         if "product_id" in values and values.get("product_id", False):
             product = self.env["product.product"].browse(values.get("product_id"))
@@ -597,11 +578,9 @@ class MrpProduction(models.Model):
                             )
         return result
 
-    @api.multi
     def update_related_sale_line(self):
         return True
 
-    @api.multi
     def buttom_show_mrp_project_tasks(self):
         self.ensure_one()
         if self.project_id:
@@ -614,7 +593,6 @@ class MrpProduction(models.Model):
                 "domain": [("id", "in", self.project_id.task_ids.ids)],
             }
 
-    @api.multi
     def automatic_put_parent_production(self):
         route_id = self.env.ref("mrp.route_warehouse0_manufacture").id
         cond = [
@@ -641,7 +619,6 @@ class MrpProduction(models.Model):
                     if p:
                         p.write({"parent_mrp_production_id": production.id})
 
-    @api.multi
     def action_view_mos(self):
         self.ensure_one()
         cond = [("product_tmpl_id", "=", self.product_tmpl_id.id)]
@@ -655,7 +632,6 @@ class MrpProduction(models.Model):
             "domain": [("id", "in", productions.ids)],
         }
 
-    @api.multi
     def automatic_put_dates_to_mvtos_from_mo(self):
         cond = [("parent_mrp_production_id", "!=", False)]
         productions = self.search(cond)
@@ -698,7 +674,6 @@ class MrpProduction(models.Model):
                     (requested_date, p.id),
                 )
 
-    @api.multi
     def action_confirm(self):
         sequence_obj = self.env["ir.sequence"]
         move_obj = self.env["stock.move"]
@@ -753,7 +728,6 @@ class MrpProduction(models.Model):
 class MrpProductionWorkcenterLine(models.Model):
     _inherit = "mrp.production.workcenter.line"
 
-    @api.multi
     @api.depends("date_planned")
     def _compute_date_planned_without_hour(self):
         for p in self.filtered(lambda c: c.date_planned):

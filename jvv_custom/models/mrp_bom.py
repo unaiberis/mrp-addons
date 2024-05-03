@@ -1,6 +1,6 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp import api, fields, models
+from odoo import api, fields, models
 
 
 class MrpBom(models.Model):
@@ -15,7 +15,6 @@ class MrpBom(models.Model):
         for bom in self:
             bom.num_lines = len(bom.bom_line_ids)
 
-    @api.multi
     def automatic_numeration_ldm(self):
         boms = self.env["mrp.bom"].search([])
         for bom in boms:

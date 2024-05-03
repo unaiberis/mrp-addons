@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-<data>
+<odoo>
     <record id="res_partner_view_buttons_inh_jvv" model="ir.ui.view">
         <field name="name">res.partner.view.buttons.inh.jvv</field>
         <field name="model">res.partner</field>
@@ -53,5 +52,4 @@
         name="context"
       >{"search_default_supplier":1, "search_default_type_company": 1}</field>
     </record>
-</data>
-</openerp>
+</odoo>

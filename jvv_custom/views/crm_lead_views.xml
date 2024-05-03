@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-<data>
+<odoo>
     <record id="crm_case_form_view_leads_inh_jvv" model="ir.ui.view">
         <field name="name">crm.case.form.view.leads.inh.jvv</field>
         <field name="model">crm.lead</field>
@@ -87,5 +86,4 @@
             </p>
         </field>
     </record>
-</data>
-</openerp>
+</odoo>

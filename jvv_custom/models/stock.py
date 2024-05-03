@@ -1,7 +1,6 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp import _, api, exceptions, fields, models
-from openerp.addons import decimal_precision as dp
+from odoo import _, api, exceptions, fields, models
 
 from .._common import _convert_to_local_date
 
@@ -45,7 +44,6 @@ class StockProductionLot(models.Model):
 class StockPicking(models.Model):
     _inherit = "stock.picking"
 
-    @api.multi
     @api.depends("date_done")
     def _compute_date_done_without_hour(self):
         for picking in self:
@@ -59,7 +57,6 @@ class StockPicking(models.Model):
                     date_done_without_hour = new_date.date()
             picking.date_done_without_hour = date_done_without_hour
 
-    @api.multi
     @api.depends("date")
     def _compute_date_without_hour(self):
         for picking in self:
@@ -69,7 +66,6 @@ class StockPicking(models.Model):
                 date_without_hour = new_date.date()
             picking.date_without_hour = date_without_hour
 
-    @api.multi
     @api.depends("min_date")
     def _compute_min_date_without_hour(self):
         for picking in self:
@@ -83,7 +79,6 @@ class StockPicking(models.Model):
                     min_date_without_hour = new_date.date()
             picking.min_date_without_hour = min_date_without_hour
 
-    @api.multi
     @api.depends("purchase_subcontratacion", "purchase_subcontratacion.mrp_production")
     def _compute_recorde_serial_number(self):
         for picking in self:
@@ -97,7 +92,6 @@ class StockPicking(models.Model):
                     record_serial_number = True
             picking.recorded_serial_number = record_serial_number
 
-    @api.multi
     @api.depends(
         "mrp_production",
         "mrp_production.product_code",
@@ -375,7 +369,6 @@ class StockPicking(models.Model):
             )
             return result
 
-    @api.multi
     def do_transfer(self):
         res = super(StockPicking, self.with_context(from_alfredo=True)).do_transfer()
         for picking in self.filtered(
@@ -434,7 +427,6 @@ class StockPicking(models.Model):
                 vals["move_type"] = "one"
         return super().create(vals)
 
-    @api.multi
     def action_assign(self):
         if self.purchase_subcontratacion:
             result = super(
@@ -444,7 +436,6 @@ class StockPicking(models.Model):
             result = super().action_assign()
         return result
 
-    @api.multi
     def write(self, values):
         if "purchase_subcontratacion" in values and values.get(
             "purchase_subcontratacion", False
@@ -453,13 +444,11 @@ class StockPicking(models.Model):
         res = super().write(values)
         return res
 
-    @api.multi
     def create_all_move_packages(self):
         if "from_subcontratacion" not in self.env.context:
             return super().create_all_move_packages()
         return self.env["stock.pack.operation"]
 
-    @api.multi
     def jvv_action_cancel(self):
         wiz_obj = self.env["wiz.cancel.stock.picking"]
         wiz = wiz_obj.with_context(
@@ -521,7 +510,6 @@ class StockMove(models.Model):
         ):
             move.committed_date = move.procurement_id.sale_line_id.committed_date
 
-    @api.multi
     @api.depends(
         "picking_id",
         "picking_id.picking_type_id",
@@ -546,7 +534,6 @@ class StockMove(models.Model):
             if line and len(line) > 1:
                 move.partner_product_code = line[0].product_code
 
-    @api.multi
     @api.depends(
         "purchase_line_id",
         "purchase_line_id.order_id",
@@ -558,7 +545,6 @@ class StockMove(models.Model):
             if product:
                 move.production_product_id = product.id
 
-    @api.multi
     @api.depends(
         "product_id", "product_id.route_ids", "product_id.route_ids.assemtronic_product"
     )
@@ -627,16 +613,16 @@ class StockMove(models.Model):
     )
     qty_available_not_res = fields.Float(
         string="Qty Available Not Reserved",
-        digits=dp.get_precision("Product Unit of Measure"),
+        digits="Product Unit of Measure",
         related="product_tmpl_id.qty_available_not_res",
     )
     qty_available = fields.Float(
         string="Quantity On Hand",
-        digits=dp.get_precision("Product Unit of Measure"),
+        digits="Product Unit of Measure",
         related="product_tmpl_id.qty_available",
     )
     immediately_usable_qty = fields.Float(
-        digits=dp.get_precision("Product Unit of Measure"),
+        digits="Product Unit of Measure",
         string="No reserved",
         related="product_tmpl_id.immediately_usable_qty",
     )
@@ -665,7 +651,6 @@ class StockMove(models.Model):
                             lots_locked += quant.lot_id
             move.lot_locked_ids = [(6, 0, lots_locked.ids)]
 
-    @api.multi
     @api.depends(
         "reserved_quant_ids",
         "reserved_quant_ids.lot_id",
@@ -760,7 +745,6 @@ class StockMove(models.Model):
                 values["sale_id"] = production.sale_order.id
         return super().create(values)
 
-    @api.multi
     def write(self, values):
         production_obj = self.env["mrp.production"]
         if "purchase_line_id" in values and values.get("purchase_line_id", False):
@@ -1069,7 +1053,6 @@ class StockPackOperation(models.Model):
                     if myquant:
                         operation.location_id = myquant.location_id.id
 
-    @api.multi
     def unlink(self):
         result = True
         if "no_delete_operations" not in self.env.context:
@@ -1096,7 +1079,6 @@ class StockPackOperation(models.Model):
                 operation.date_expected = move.date_expected
         return operation
 
-    @api.multi
     def write(self, values):
         if "product_qty_in_lot2" in values and values.get("product_qty_in_lot2", False):
             values["product_qty_in_lot"] = values.get("product_qty_in_lot2")
@@ -1106,7 +1088,6 @@ class StockPackOperation(models.Model):
 class StockInventory(models.Model):
     _inherit = "stock.inventory"
 
-    @api.multi
     def action_done(self):
         result = super().action_done()
         for inventory in self:

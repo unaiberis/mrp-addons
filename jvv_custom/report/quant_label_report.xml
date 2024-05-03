@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<openerp>
-    <data>
+<odoo>
         <template
       id="quant_label_report_inh_jvv"
       inherit_id="stock_label_print.quant_label_report"
     >
-            <t t-call="report.layout" position="replace">
+            <t t-call="web.report_layout" position="replace">
                 <div
           class="page"
           style="font-size: 20px; line-height: 1.2em; font-family: ubuntu condensed; padding-top: 5px;  margin-right: -10px; margin-left: -10px; margin-bottom: -10px;"
@@ -65,5 +64,4 @@
                 </div>
             </t>
         </template>
-    </data>
-</openerp>
+</odoo>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-<data>
+<odoo>
     <record id="view_picking_type_tree_inh_jvv" model="ir.ui.view">
         <field name="name">view.picking.type.tree.inh.jvv</field>
         <field name="model">stock.picking.type</field>
@@ -25,5 +24,4 @@
             </field>
         </field>
     </record>
-</data>
-</openerp>
+</odoo>

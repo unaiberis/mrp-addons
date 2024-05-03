@@ -1,7 +1,7 @@
 # Copyright 2022 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp import api, models
-from openerp.osv import expression
+from odoo import api, models
+from odoo.osv import expression
 
 
 class ResUsers(models.Model):

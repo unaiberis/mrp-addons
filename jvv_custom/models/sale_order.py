@@ -1,7 +1,7 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 from dateutil.relativedelta import relativedelta
-from openerp import _, api, exceptions, fields, models
+from odoo import _, api, exceptions, fields, models
 
 from .._common import _convert_to_local_date
 
@@ -9,7 +9,6 @@ from .._common import _convert_to_local_date
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
-    @api.multi
     @api.depends("out_picking_ids", "out_picking_ids.date_done")
     def _compute_dates_transfer_out_pickings(self):
         for sale in self:
@@ -50,7 +49,6 @@ class SaleOrder(models.Model):
         readonly=True,
     )
 
-    @api.multi
     def action_button_confirm(self):
         production_obj = self.env["mrp.production"]
         for sale in self:
@@ -111,7 +109,6 @@ class SaleOrder(models.Model):
                     )
         return res
 
-    @api.multi
     def automatic_catch_picking_transfer_dates(self):
         cond = []
         sales = self.search(cond)
@@ -127,7 +124,6 @@ class SaleOrder(models.Model):
             except Exception:
                 continue
 
-    @api.multi
     def onchange_partner_id(self, part):
         result = super().onchange_partner_id(part)
         if not part:
@@ -167,7 +163,6 @@ class SaleOrder(models.Model):
 class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
-    @api.multi
     @api.depends(
         "order_partner_id",
         "product_id",
@@ -189,7 +184,6 @@ class SaleOrderLine(models.Model):
                 )
                 line.customer_product_code_with_deno = code
 
-    @api.multi
     @api.depends("out_picking_id", "out_picking_id.date_done")
     def _compute_out_picking_date_done(self):
         for line in self.filtered(
@@ -244,7 +238,6 @@ class SaleOrderLine(models.Model):
         copy=False,
     )
 
-    @api.multi
     def product_id_change_with_wh(
         self,
         pricelist,
@@ -390,7 +383,6 @@ class SaleOrderLine(models.Model):
         lines = self.search([])
         lines._compute_customer_product_code_with_deno()
 
-    @api.multi
     def automatic_put_out_picking_in_lines(self):
         cond = [("out_picking_id", "=", False)]
         lines = self.search(cond)
@@ -402,7 +394,6 @@ class SaleOrderLine(models.Model):
             except Exception:
                 continue
 
-    @api.multi
     def unlink(self):
         forecast_lines = self.env["procurement.sale.forecast.line2"]
         for line in self:

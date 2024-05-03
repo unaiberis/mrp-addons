@@ -1,14 +1,12 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 from __builtin__ import True
-from openerp import _, api, exceptions, fields, models
-from openerp.addons import decimal_precision as dp
+from odoo import _, api, exceptions, fields, models
 
 
 class StockQuant(models.Model):
     _inherit = 'stock.quant'
 
-    @api.multi
     @api.depends('lot_id', 'lot_id.life_date')
     def _compute_life_date(self):
         for quant in self.filtered(lambda c: c.lot_id and c.lot_id.life_date):
@@ -18,10 +16,10 @@ class StockQuant(models.Model):
 
     manual_value = fields.Float(
         string="Manual Value", store=True, compute=False,
-        digits=dp.get_precision('Product Price'))
+        digits='Product Price')
     real_value = fields.Float(
         string="Real Value", store=True, compute=False,
-        digits=dp.get_precision('Product Price'))
+        digits='Product Price')
     reserved_quant_for_especial_lot_ids = fields.Many2many(
         string='Especial lots for reserved quant', comodel_name='stock.quant',
         relation="rel_ope_operation_quant_reserved",
@@ -56,7 +54,6 @@ class StockQuant(models.Model):
             values['product_tmpl_id'] = product.product_tmpl_id.id
         return super(StockQuant, self).create(values)
 
-    @api.multi
     def write(self, values):
         if (len(self) == 1 and 'cost' in values and values.get('cost', 0) and
             'qty' in values and values.get('qty', 0)):

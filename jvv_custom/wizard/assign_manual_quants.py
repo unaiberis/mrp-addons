@@ -1,6 +1,6 @@
 # Copyright 2020 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp import api, fields, models
+from odoo import api, fields, models
 
 
 class AssignManualQuants(models.TransientModel):
@@ -20,7 +20,6 @@ class AssignManualQuants(models.TransientModel):
                 line["location_name"] = location.name
         return result
 
-    @api.multi
     def assign_quants(self):
         move = self.env["stock.move"].browse(self.env.context["active_id"])
         if move.picking_id.purchase_subcontratacion:

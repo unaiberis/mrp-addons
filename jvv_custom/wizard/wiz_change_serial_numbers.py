@@ -1,7 +1,7 @@
 # Copyright 2024 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
-from openerp import api, fields, models
+from odoo import api, fields, models
 
 
 class WizChangeSerialNumbers(models.TransientModel):
@@ -21,7 +21,6 @@ class WizChangeSerialNumbers(models.TransientModel):
             result["new_serial_numbers"] = move.serial_numbers
         return result
 
-    @api.multi
     def change_serial_numbers(self):
         self.move_id.serial_numbers = self.new_serial_numbers
         if (

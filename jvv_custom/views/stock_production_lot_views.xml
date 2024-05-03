@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-<data>
+<odoo>
     <record id="view_production_lot_tree_inh_jvv" model="ir.ui.view">
         <field name="name">view.production.lot.tree.inh.jvv</field>
         <field name="model">stock.production.lot</field>
@@ -59,5 +58,4 @@
             </field>
         </field>
     </record>
-</data>
-</openerp>
+</odoo>

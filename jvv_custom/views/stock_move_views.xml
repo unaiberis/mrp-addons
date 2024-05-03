@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-<data>
+<odoo>
         <record id="stock.act_product_stock_move_open" model="ir.actions.act_window">
             <field
         name="context"
@@ -251,7 +250,6 @@
             <field name="name">Num.Serie productos planificados</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">stock.move</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[('serial_numbers', '!=', False)]</field>
         </record>
@@ -261,5 +259,4 @@
       parent="mrp.menu_mrp_manufacturing"
       sequence="6"
     />
-</data>
-</openerp>
+</odoo>

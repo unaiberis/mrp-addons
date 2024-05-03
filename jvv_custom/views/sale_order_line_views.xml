@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-<data>
+<odoo>
     <record id="view_order_line_tree_sale_forecast2_inh_jvv_custom" model="ir.ui.view">
         <field name="name">view.order.line.tree.sale.forecast2.inh.jvv.custom</field>
         <field name="model">sale.order.line</field>
@@ -195,7 +194,6 @@
     <record model="ir.actions.act_window" id="action_sale_order_line_kpi_newmenu">
         <field name="name">Sale Order Lines (KPIs)</field>
         <field name="res_model">sale.order.line</field>
-        <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="jvv_custom.sale_order_line_kpi_jvv_tree_view" />
     </record>
@@ -208,5 +206,4 @@
     />
 
 
-</data>
-</openerp>
+</odoo>

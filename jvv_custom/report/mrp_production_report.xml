@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<openerp>
-    <data>
+<odoo>
         <template id="report_mrporder_inh_jvv_custom" inherit_id="mrp.report_mrporder">
             <xpath expr="//span[@t-field='o.date_planned']/.." position="before">
                 <div class="col-xs-3" t-if='o.purchase_subcontratacion_id'>
@@ -31,5 +30,4 @@
         />
             </span>
         </template>
-    </data>
-</openerp>
+</odoo>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<openerp>
-    <data>
+<odoo>
         <record id="update_bom_route_form_view" model="ir.ui.view">
             <field name="name">update.bom.route.form.view</field>
             <field name="model">update.bom.route</field>
@@ -39,10 +38,9 @@
       name="Update BoM Route"
       key2="client_action_multi"
       res_model="update.bom.route"
-      src_model="mrp.bom"
+      binding_model="mrp.bom"
       view_mode="form"
       target="new"
       id="action_update_bom_route"
     />
-    </data>
-</openerp>
+</odoo>

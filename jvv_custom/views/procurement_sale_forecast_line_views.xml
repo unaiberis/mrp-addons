@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-<data>
+<odoo>
     <record
       id="procurement_sale_forecast_line_tree_editable_view_inh_jvv"
       model="ir.ui.view"
@@ -90,5 +89,4 @@
             </filter>
         </field>
     </record>
-</data>
-</openerp>
+</odoo>

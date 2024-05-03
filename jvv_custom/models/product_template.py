@@ -1,6 +1,6 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp import _, api, fields, models
+from odoo import _, api, fields, models
 
 
 class ProductTemplate(models.Model):
@@ -167,7 +167,6 @@ class ProductTemplate(models.Model):
         compute="_compute_qty_lot_locked",
     )
 
-    @api.multi
     def action_open_quants_locked(self):
         quants = self.env["stock.quant"]
         if self.stock_quant_ids:
@@ -179,7 +178,6 @@ class ProductTemplate(models.Model):
         result["context"] = {"search_default_internal_loc": 1}
         return result
 
-    @api.multi
     def write(self, values):
         res = super().write(values)
         if values.get("manual_standard_cost", False):
@@ -190,7 +188,6 @@ class ProductTemplate(models.Model):
                     p.manual_standard_cost = template.manual_standard_cost
         return res
 
-    @api.multi
     def automatic_fix_product_negative_stock(self):
         wiz_obj = self.env["stock.change.product.qty"]
         cond = [("fix_negative_stock", "=", True)]

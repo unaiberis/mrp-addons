@@ -1,12 +1,11 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp import api, models
+from odoo import api, models
 
 
 class MakeProcurement(models.TransientModel):
     _inherit = "make.procurement"
 
-    @api.multi
     def make_procurement(self):
         result = super().make_procurement()
         if (

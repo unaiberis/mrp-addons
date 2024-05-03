@@ -1,6 +1,6 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp import _, api, exceptions, fields, models
+from odoo import _, api, exceptions, fields, models
 
 
 class MrpRouting(models.Model):
@@ -14,7 +14,6 @@ class MrpRouting(models.Model):
     load_time_warehouse = fields.Float(string="Load time warehouse")
     load_time_variable_warehouse = fields.Float(string="Time variable load warehouse")
 
-    @api.multi
     def unlink(self):
         for routing in self:
             cond = [("routing_id", "=", routing.id)]
@@ -33,7 +32,6 @@ class MrpRouting(models.Model):
 class MrpBom(models.Model):
     _inherit = "mrp.bom"
 
-    @api.multi
     def unlink(self):
         for bom in self:
             cond = [("bom_id", "=", bom.id)]

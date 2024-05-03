@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-<data>
+<odoo>
     <record
       id="product_template_form_view_procurement_button_inh_jvv"
       model="ir.ui.view"
@@ -28,5 +27,4 @@
 		   </button>
         </field>
     </record>
-</data>
-</openerp>
+</odoo>

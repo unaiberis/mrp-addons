@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-<data>
+<odoo>
     <record id="mrp_production_workcenter_line_tree_inh_jvv_custom" model="ir.ui.view">
         <field name="name">mrp.production.workcenter.line.tree.inh.jvv.custom</field>
         <field name="model">mrp.production.workcenter.line</field>
@@ -150,5 +149,4 @@
             </field>
         </field>
     </record>
-</data>
-</openerp>
+</odoo>

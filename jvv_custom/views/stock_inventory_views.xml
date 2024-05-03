@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-<data>
+<odoo>
         <record id="view_inventory_form_inh_jvv" model="ir.ui.view">
             <field name="name">view.inventory.form.inh.jvv</field>
             <field name="model">stock.inventory</field>
@@ -13,5 +12,4 @@
                 </button>
             </field>
         </record>
-</data>
-</openerp>
+</odoo>

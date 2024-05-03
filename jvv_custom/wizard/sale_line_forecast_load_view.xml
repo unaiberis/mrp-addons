@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-    <data>
+<odoo>
         <record model="ir.ui.view" id="sale_line_forecast_load_form_view">
             <field name="name">sale.line.forecast.load.sale.form</field>
             <field name="model">sale.line.forecast.load</field>
@@ -46,10 +45,8 @@
             <field name="name">sale.line.forecast.load</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">sale.line.forecast.load</field>
-            <field name="view_type">form</field>
             <field name="view_mode">form</field>
             <field name="target">new</field>
             <field name="view_id" ref="sale_line_forecast_load_form_view" />
         </record>
-    </data>
-</openerp>
+</odoo>

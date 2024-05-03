@@ -170,5 +170,4 @@
             <field eval="'automatic_numeration_ldm'" name="function" />
             <field eval="'(None, )'" name="args" />
         </record>
-    </data>
-</openerp>
+</odoo>

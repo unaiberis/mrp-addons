@@ -1,7 +1,6 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-import openerp.addons.decimal_precision as dp
-from openerp import _, api, exceptions, fields, models
+from odoo import _, api, exceptions, fields, models
 
 
 class ProcurementSaleForecastLine(models.Model):
@@ -49,7 +48,6 @@ class ProcurementSaleForecastLine(models.Model):
         related="procurement_id.state",
     )
 
-    @api.multi
     def request_procurement(self):
         self.ensure_one()
         res = super().request_procurement()
@@ -118,7 +116,6 @@ class ProcurementSaleForecastLine2(models.Model):
         string="In sale orders", comodel_name="sale.order", copy=False, readonly=True
     )
 
-    @api.multi
     def request_sale_order(self):
         self.ensure_one()
         if self.completed_line:
@@ -159,7 +156,6 @@ class ProcurementSaleForecastLine2(models.Model):
             "context": context,
         }
 
-    @api.multi
     def unlink(self):
         forecasts = self.env["procurement.sale.forecast"]
         sale_line_obj = self.env["sale.order.line"]

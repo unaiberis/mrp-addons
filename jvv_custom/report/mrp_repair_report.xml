@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<openerp>
-    <data>
+<odoo>
         <template
       id="report_mrp_repair_partner_lot_var_inh_jvv"
       inherit_id="mrp_repair_partner_lot_product_variant.report_mrp_repair_partner_lot_printing_inh_variant"
@@ -101,5 +100,4 @@
                 <span t-field="line.quantity_2_digits" />
             </span>
         </template>
-    </data>
-</openerp>
+</odoo>

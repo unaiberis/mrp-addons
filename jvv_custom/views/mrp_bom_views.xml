@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-<data>
+<odoo>
     <record id="mrp_bom_tree_view_inh_jvv_custom" model="ir.ui.view">
         <field name="name">mrp.bom.tree.view.inh.jvv.custom</field>
         <field name="model">mrp.bom</field>
@@ -28,5 +27,4 @@
             </xpath>
         </field>
     </record>
-</data>
-</openerp>
+</odoo>

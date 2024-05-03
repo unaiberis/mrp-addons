@@ -1,6 +1,6 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp import api, fields, models
+from odoo import api, fields, models
 
 
 class WizChangeProductCategory(models.TransientModel):
@@ -11,7 +11,6 @@ class WizChangeProductCategory(models.TransientModel):
         comodel_name="product.category", string="Nueva categoría"
     )
 
-    @api.multi
     def change_category(self):
         self.ensure_one()
         products = self.env["product.product"].browse(

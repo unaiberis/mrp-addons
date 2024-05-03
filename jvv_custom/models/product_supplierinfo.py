@@ -1,13 +1,12 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 from dateutil.relativedelta import relativedelta
-from openerp import api, fields, models
+from odoo import api, fields, models
 
 
 class ProductSupplierinfo(models.Model):
     _inherit = "product.supplierinfo"
 
-    @api.multi
     def _get_default_product_id(self):
         try:
             if "default_product_tmpl_id" in self.env.context and self.env.context.get(

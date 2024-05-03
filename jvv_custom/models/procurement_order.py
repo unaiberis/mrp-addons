@@ -1,7 +1,6 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-import openerp.addons.decimal_precision as dp
-from openerp import api, fields, models
+from odoo import api, fields, models
 from pytz import timezone, utc
 
 str2datetime = fields.Datetime.from_string
@@ -97,13 +96,13 @@ class ProcurementOrder(models.Model):
     product_standard_price = fields.Float(
         string="Precio coste",
         related="product_id.standard_price",
-        digits=dp.get_precision("Product Price"),
+        digits="Product Price",
         store=True,
         copy=False,
     )
     product_manual_standard_cost = fields.Float(
         string="Coste standard manual",
-        digits=dp.get_precision("Product Price"),
+        digits="Product Price",
         related="product_id.manual_standard_cost",
         store=True,
         copy=False,
@@ -137,7 +136,6 @@ class ProcurementOrder(models.Model):
                     values["origin"] = values.get("name")[0:pos]
         return super().create(values)
 
-    @api.multi
     def write(self, values):
         if values.get("production_id", False):
             production = self.env["mrp.production"].browse(values.get("production_id"))

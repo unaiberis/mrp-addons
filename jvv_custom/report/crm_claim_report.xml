@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<openerp>
-    <data>
+<odoo>
         <template
       id="report_crmclaim_document_inh_jvv_custom"
       inherit_id="crm_claim_report.report_crmclaim_document"
@@ -72,5 +71,4 @@
             </xpath>
 
         </template>
-    </data>
-</openerp>
+</odoo>

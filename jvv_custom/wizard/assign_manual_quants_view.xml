@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<openerp>
-    <data>
+<odoo>
         <record id="assign_manual_quants_form_view_inh_jvv_custom" model="ir.ui.view">
             <field name="name">assign.manual.quants.form.view.inh.jvv.custom</field>
             <field name="model">assign.manual.quants</field>
@@ -18,5 +17,4 @@
                 </field>
             </field>
         </record>
-    </data>
-</openerp>
+</odoo>

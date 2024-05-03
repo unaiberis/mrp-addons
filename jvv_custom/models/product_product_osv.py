@@ -2,7 +2,7 @@
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 import re
 
-from openerp.osv import expression, osv
+from odoo.osv import expression, osv
 
 
 class product_product(osv.osv):

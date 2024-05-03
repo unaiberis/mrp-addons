@@ -1,6 +1,6 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp import api, fields, models
+from odoo import api, fields, models
 
 
 class WizForecastLine2ToSaleOrder(models.TransientModel):
@@ -15,7 +15,6 @@ class WizForecastLine2ToSaleOrder(models.TransientModel):
         string="Sale Order", comodel_name="sale.order", default=_get_default_sale_order
     )
 
-    @api.multi
     def create_sale_order_line(self):
         self.ensure_one()
         sale_line_obj = self.env["sale.order.line"]

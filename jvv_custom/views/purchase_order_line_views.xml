@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-<data>
+<odoo>
     <record
       id="purchase_order_line_form_view_inh_line_notes_inh_jvv"
       model="ir.ui.view"
@@ -18,5 +17,4 @@
             </field>
         </field>
     </record>
-</data>
-</openerp>
+</odoo>

@@ -15,7 +15,7 @@
 #
 ##############################################################################
 
-from openerp import api, exceptions, fields, models
+from odoo import api, exceptions, fields, models
 
 
 class SaleLineForecastLoad(models.TransientModel):
@@ -45,7 +45,6 @@ class SaleLineForecastLoad(models.TransientModel):
     )
     product_id = fields.Many2one(comodel_name="product.product", string="Producto")
 
-    @api.multi
     def load_sales_lines(self):
         self.ensure_one()
         cond = [("product_id", "=", self.product_id.id), ("completed_line", "=", False)]

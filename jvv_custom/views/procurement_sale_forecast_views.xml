@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-<data>
+<odoo>
     <record id="procurement_sale_forecast_form_view_inh_jvv" model="ir.ui.view">
         <field name="name">.procurement.sale.forecast.form_view.view.inh.jvv</field>
         <field name="model">procurement.sale.forecast</field>
@@ -109,5 +108,4 @@
 		    </filter>
         </field>
     </record>
-</data>
-</openerp>
+</odoo>

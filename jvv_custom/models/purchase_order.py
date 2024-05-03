@@ -1,7 +1,6 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp import _, api, exceptions, fields, models
-from openerp.addons import decimal_precision as dp
+from odoo import _, api, exceptions, fields, models
 
 from .._common import _convert_to_local_date
 
@@ -9,7 +8,6 @@ from .._common import _convert_to_local_date
 class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
-    @api.multi
     @api.depends("in_picking_ids", "in_picking_ids.date_done")
     def _compute_dates_transfer_in_pickings(self):
         for p in self:
@@ -48,7 +46,6 @@ class PurchaseOrder(models.Model):
         copy=False,
     )
 
-    @api.multi
     def wkf_confirm_order(self):
         picking_obj = self.env["stock.picking"]
         for purchase in self:
@@ -134,7 +131,6 @@ class PurchaseOrder(models.Model):
                 p.in_picking_ids = [(6, 0, pickings.ids)]
         return res
 
-    @api.multi
     def automatic_catch_picking_transfer_dates(self):
         cond = []
         purchases = self.search(cond)
@@ -150,7 +146,6 @@ class PurchaseOrder(models.Model):
             except Exception:
                 continue
 
-    @api.multi
     def wkf_send_rfq(self):
         for purchase in self.filtered(lambda x: x.partner_id):
             if not purchase.partner_id.email:
@@ -163,7 +158,6 @@ class PurchaseOrder(models.Model):
                 )
         return super().wkf_send_rfq()
 
-    @api.multi
     def write(self, values):
         if "mrp_production" in values and not values.get("mrp_production"):
             for purchase in self.filtered(lambda x: x.mrp_production):
@@ -176,7 +170,6 @@ class PurchaseOrder(models.Model):
                 )
         return super().write(values)
 
-    @api.multi
     def copy(self, default=None):
         purchases = super().copy(default=default)
         for purchase in purchases:
@@ -193,7 +186,6 @@ class PurchaseOrder(models.Model):
 class PurchaseOrderLine(models.Model):
     _inherit = "purchase.order.line"
 
-    @api.multi
     @api.depends(
         "partner_id",
         "product_id",
@@ -246,7 +238,6 @@ class PurchaseOrderLine(models.Model):
         line = super().create(values)
         return line
 
-    @api.multi
     def write(self, values):
         wiz_obj = self.env["change.production.qty"]
         if (
@@ -275,7 +266,6 @@ class PurchaseOrderLine(models.Model):
         lines = self.search([])
         lines._compute_supplier_product_code()
 
-    @api.multi
     def onchange_product_id(
         self,
         pricelist_id,

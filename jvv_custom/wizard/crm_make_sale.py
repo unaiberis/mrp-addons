@@ -1,12 +1,11 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp import api, models
+from odoo import api, models
 
 
 class CrmMakeSale(models.TransientModel):
     _inherit = "crm.make.sale"
 
-    @api.multi
     def makeOrder(self):
         oport_obj = self.env["crm.lead"]
         result = super().makeOrder()

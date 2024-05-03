@@ -1,12 +1,11 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp import _, api, fields, models
+from odoo import _, api, fields, models
 
 
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    @api.multi
     def _compute_count_customer_products(self):
         for partner in self:
             templates = self.env["product.template"]
@@ -32,7 +31,6 @@ class ResPartner(models.Model):
         domain=[("nonconformity", "=", True)],
     )
 
-    @api.multi
     def button_customer_product_template(self):
         templates = self.env["product.template"]
         for line in self.customer_product_supplierinfo_ids:

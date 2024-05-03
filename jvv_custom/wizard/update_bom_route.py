@@ -1,7 +1,7 @@
 # Copyright 2019 Daniel Campos - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
-from openerp import _, api, fields, models
+from odoo import _, api, fields, models
 
 
 class UpdateBomRoute(models.TransientModel):
@@ -9,7 +9,6 @@ class UpdateBomRoute(models.TransientModel):
 
     message = fields.Char(string="Response", readonly=True)
 
-    @api.multi
     def update_bom_route(self):
         update_ids = self.env.context.get("active_ids")
         update_num = 0

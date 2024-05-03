@@ -1,7 +1,6 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp import fields, models
-from openerp.addons import decimal_precision as dp
+from odoo import fields, models
 
 
 class MrpRepairCustomerLot(models.Model):
@@ -11,7 +10,7 @@ class MrpRepairCustomerLot(models.Model):
     quantity_2_digits = fields.Float(
         string="Quantity",
         compute="_compute_quantity_2_digits",
-        digits=dp.get_precision("Discount"),
+        digits="Discount",
     )
 
     def _compute_quantity_2_digits(self):
@@ -25,7 +24,7 @@ class MrpRepairLine(models.Model):
     product_uom_qty_2_digits = fields.Float(
         string="Quantity",
         compute="_compute_product_uom_qty_2_digits",
-        digits=dp.get_precision("Discount"),
+        digits="Discount",
     )
 
     def _compute_product_uom_qty_2_digits(self):
@@ -39,7 +38,7 @@ class MrpRepairFee(models.Model):
     product_uom_qty_2_digits = fields.Float(
         string="Quantity",
         compute="_compute_product_uom_qty_2_digits",
-        digits=dp.get_precision("Discount"),
+        digits="Discount",
     )
 
     def _compute_product_uom_qty_2_digits(self):

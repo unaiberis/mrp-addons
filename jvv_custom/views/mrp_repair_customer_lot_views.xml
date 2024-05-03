@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-<data>
+<odoo>
     <record id="mrp_repair_customer_lot_view_tree_inh_jvv" model="ir.ui.view">
         <field name="name">mrp.repair.customer.lot.view.tree.jvv.custom</field>
         <field name="model">mrp.repair.customer.lot</field>
@@ -40,5 +39,4 @@
              </field>
         </field>
     </record>
-</data>
-</openerp>
+</odoo>

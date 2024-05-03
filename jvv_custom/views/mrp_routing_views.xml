@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-<data>
+<odoo>
     <record id="mrp_routing_tree_view_inh_jvv_custom" model="ir.ui.view">
         <field name="name">mrp.routing.tree.view.inh.jvv.custom</field>
         <field name="model">mrp.routing</field>
@@ -61,5 +60,4 @@
               </filter>
         </field>
     </record>
-</data>
-</openerp>
+</odoo>

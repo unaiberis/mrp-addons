@@ -1,6 +1,6 @@
 # Copyright 2020 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp import api, fields, models
+from odoo import api, fields, models
 
 
 class ProductProduct(models.Model):
@@ -56,13 +56,11 @@ class ProductProduct(models.Model):
         compute="_compute_qty_lot_locked",
     )
 
-    @api.multi
     @api.depends("mrp_production_ids")
     def _compute_count_mrp_productions(self):
         for product in self:
             product.count_mrp_productions = len(product.mrp_production_ids)
 
-    @api.multi
     def action_open_quants_locked(self):
         quants = self.env["stock.quant"]
         if self.stock_quant_ids:

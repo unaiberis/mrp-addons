@@ -1,7 +1,6 @@
 # Copyright 2020 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-import openerp.addons.decimal_precision as dp
-from openerp import _, api, fields, models
+from odoo import _, api, fields, models
 
 
 class StockTransferDetails(models.TransientModel):
@@ -52,7 +51,7 @@ class StockTransferDetailsItems(models.TransientModel):
     operation_quantity = fields.Float(
         string="Operation Quantity",
         related="packop_id.product_qty",
-        digits=dp.get_precision("Product Unit of Measure"),
+        digits="Product Unit of Measure",
     )
     operation_picking_id = fields.Many2one(
         string="Operation picking",

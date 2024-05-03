@@ -1,6 +1,6 @@
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp import _, api, exceptions, fields, models
+from odoo import _, api, exceptions, fields, models
 
 
 class AccountInvoice(models.Model):
@@ -33,7 +33,6 @@ class AccountInvoice(models.Model):
             if repair:
                 invoice.mrp_repair_id = repair.id
 
-    @api.multi
     def _compute_delivery_address_id(self):
         for invoice in self.filtered(lambda l: l.partner_id):
             partner = (
@@ -93,7 +92,6 @@ class AccountInvoice(models.Model):
         compute="_compute_delivery_address_id",
     )
 
-    @api.multi
     def invoice_validate(self):
         for invoice in self.filtered(
             lambda l: l.reference_type and l.type == "in_invoice"
@@ -116,7 +114,6 @@ class AccountInvoice(models.Model):
             invoice.move_id.line_id.write({"invoice_id": invoice.id})
         return res
 
-    @api.multi
     def invoice_pay_customer(self):
         res = super().invoice_pay_customer()
         if self.reference and self.type == "in_invoice":
