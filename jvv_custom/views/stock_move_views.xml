@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+        <record id="stock.act_product_stock_move_open" model="ir.actions.act_window">
+            <field name="context">{'search_default_future': 1,'search_default_product_id': active_id, 'default_product_id': active_id}</field>
+            <field name="name">Product pending moves</field>
+            <field name="res_model">stock.move</field>
+        </record>
+        <record id="act_general_pending_stock_move" model="ir.actions.act_window">
+            <field name="context">{'search_default_future': 1}</field>
+            <field name="name">Mvtos.Pdtes.Producto</field>
+            <field name="domain">[('product_id.product_tmpl_id','=',active_id)]</field>
+            <field name="res_model">stock.move</field>
+        </record>
+        <record id="view_move_picking_tree_inh_jvv" model="ir.ui.view">
+            <field name="name">view.move.picking.tree.inh.jvv</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_tree" />
+            <field name="arch" type="xml">
+                <field name="product_id" position="after">
+                    <field name="bar_code_status" invisible="1" />
+                    <field name="name" />
+                    <field name="notes2" />
+                    <field name="raw_material_production_id" />
+                    <field name="picking_type_id" />
+                    <field name="serial_numbers" />
+                </field>
+                <tree string="Stock Moves" position="attributes">
+                    <attribute name="colors">grey:scrapped == True and bar_code_status == 'no';green:bar_code_status == 'completed';black:bar_code_status == 'nocompleted'</attribute>
+                </tree>
+            </field>
+        </record>
+        <record id="view_move_tree_receipt_picking_inh_jvv" model="ir.ui.view">
+            <field name="name">view.move.tree.receipt.picking.inh.jvv</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock_move_extended_treeview.view_move_tree_receipt_picking_extended_jvv" />
+            <field name="arch" type="xml">
+                <field name="confirmed_date" position="after">
+                    <field name="committed_date" />
+                </field>
+                <field name="product_id" position="after">
+                    <field name="production_product_id" />
+                </field>
+            </field>
+        </record>
+        <record id="stock_move_out_tree_view_inh_jvv" model="ir.ui.view">
+            <field name="name">stock.move.out.tree.view.inh.jvv</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock_move_extended_treeview.stock_move_out_tree_view_extended" />
+            <field name="arch" type="xml">
+                <field name="confirmed_date" position="after">
+                    <field name="committed_date" />
+                </field>
+            </field>
+        </record>
+        <record id="view_move_tree_inh_jvv" model="ir.ui.view">
+            <field name="name">view.move.tree.view.inh.jvv</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_tree" />
+            <field name="arch" type="xml">
+                <field name="product_id" position="after">
+                    <field name="product_categ_id" />
+                    <field name="product_internal_reference" />
+                    <field name="product_supinfo_code" />
+                    <field name="picking_type_id" />
+                </field>
+                <field name="state" position="before">
+                    <field name="confirmed_date" widget="date"/>
+                    <field name="reconfirmed_date" widget="date" />
+                    <field name="count_reconfirmed_date" />
+                    <field name="requested_date" widget="date"/>
+                    <field name="arrival_date_material_supplier" widget="date"/>
+                    <field name="date_transfer" widget="date"/>
+                </field>
+                <field name="origin" position="before">
+                    <field name="serial_numbers" />
+                </field>
+            </field>
+        </record>
+        <record id="view_move_search_inh_jvv" model="ir.ui.view">
+            <field name="name">stock.move.out.tree.view.inh.jvv</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_search" />
+            <field name="arch" type="xml">
+                <field name="product_id" position="before">
+                    <field name="serial_numbers" />
+                </field>
+                <filter string="Today" position="after">
+                    <separator/>
+                    <filter string="With committed date" domain="[('committed_date', '=', True)]" name="with_committe_date"/>
+                    <filter string="Without committed date" domain="[('committed_date', '=', False)]" name="without_committe_date"/>
+                </filter>
+                <filter name="groupby_date" position="after">
+                    <filter string="Committed date" name="groupby_committed_date" domain="[]" context="{'group_by':'committed_date'}"/>
+                    <filter string="Tipo albarán" name="groupby_picking_type" domain="[]" context="{'group_by':'picking_type_id'}"/>
+                </filter>
+                <field name="name" position="after">
+                    <field name="product_internal_reference" />
+                    <field name="product_supinfo_code" />
+                </field>
+                <filter name="by_product" position="after">
+                    <filter string="Internal reference" name="by_product_internal_reference" icon="terp-accessories-archiver" domain="[]" context="{'group_by':'product_internal_reference'}"/>
+                    <filter string="Partner product code" name="by_partner_product_code" icon="terp-accessories-archiver" domain="[]" context="{'group_by':'product_supinfo_code'}"/>
+                </filter>
+                <field name="product_id" position="after">
+                    <field name="product_categ_id" />
+                    <field name="production_product_id" />
+                </field>
+                <filter name="by_product" position="after">
+                    <filter string="Product to produce" name="by_production_product_id" icon="terp-accessories-archiver" domain="[]"  context="{'group_by':'production_product_id'}"/>
+                </filter>
+                <filter name="ready" position="before">
+                    <filter icon="terp-camera_test" string="Manufacturing movements" name="production-moves" domain="['|',('production_id','!=',False),('raw_material_production_id','!=',False)]"/>
+                </filter>
+                <filter name="by_product" position="before">
+                    <filter string="Sale order" name="group-sale-order" icon="terp-accessories-archiver" domain="[]" context="{'group_by':'sale_id'}"/>
+                    <filter string="Production Order for Raw Materials" name="group-raw_material_production_id" icon="terp-accessories-archiver" domain="[]" context="{'group_by':'raw_material_production_id'}"/>
+                    <filter string="Production Order for Produced Products" name="group-production-id" icon="terp-accessories-archiver" domain="[]" context="{'group_by':'production_id'}"/>
+                </filter>
+                <filter name="by_product" position="after">
+                    <filter string="Cat. Interna Producto" name="product_categ_id"
+                        icon="terp-accessories-archiver" domain="[]" context="{'group_by':'product_categ_id'}"/>
+                </filter>
+            </field>
+        </record>
+        <record id="view_move_search_inh_productiontrace_inh_jvv" model="ir.ui.view">
+            <field name="name">view.move.search.inh.productiontrace.inh.jvv</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="mrp_production_traceability.view_move_search_inh_productiontrace" />
+            <field name="arch" type="xml">
+                <field name="prod_parent_lot" position="before">
+                    <field name="sale_id" />
+                    <field name="raw_material_production_id" />
+                    <field name="production_id" />
+                </field>
+                <field name="prod_parent_lot" position="after">
+                    <field name="lots_description" />
+                </field>
+            </field>
+        </record>
+        <record id="view_move_tree_inh_productiontrace_inh_jvv" model="ir.ui.view">
+            <field name="name">view.move.tree.inh.productiontrace.inh.jvv</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="mrp_production_traceability.view_move_tree_inh_productiontrace" />
+            <field name="arch" type="xml">
+                <field name="prod_parent_lot" position="after">
+                    <field name="lot_ids" />
+                </field>
+            </field>
+        </record>
+        <record id="view_move_form_inh_jvv" model="ir.ui.view">
+            <field name="name">view_move_form_inh_jvv</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_form" />
+            <field name="arch" type="xml">
+                <field name="origin" position="after">
+                    <field name="production_id" readonly="1"/>
+                </field>
+                <field name="group_id" position="after">
+                    <field name="sale_id" readonly="1"/>
+                </field>
+                <xpath expr="//field[@name='product_uos_qty']/.." position="after">
+                    <field name="serial_numbers" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="mrp_production_num_serie_product_planif_action" model="ir.actions.act_window">
+            <field name="name">Num.Serie productos planificados</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.move</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('serial_numbers', '!=', False)]</field>
+        </record>
+        <menuitem action="mrp_production_num_serie_product_planif_action" id="menu_mrp_production_num_serie_product_planif_action"
+            parent="mrp.menu_mrp_manufacturing" sequence="6"/>
+</data>
+</openerp>

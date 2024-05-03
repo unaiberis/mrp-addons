@@ -1,0 +1,12 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_mrp_routing_production_line_manager","mrp_routing_production_line","jvv_custom.model_mrp_routing_production_line","mrp.group_mrp_manager",1,1,1,1
+"access_mrp_routing_production_line_user","mrp_routing_production_line","jvv_custom.model_mrp_routing_production_line","mrp.group_mrp_user",1,0,0,0
+"access_project_template_manager","project_template","jvv_custom.model_project_template","project.group_project_manager",1,1,1,1
+"access_project_template_user","project_template","jvv_custom.model_project_template","project.group_project_user",1,0,0,0
+"access_project_template_task_manager","project_template_task","jvv_custom.model_project_template_task","project.group_project_manager",1,1,1,1
+"access_project_template_task_user","project_template_task","jvv_custom.model_project_template_task","project.group_project_user",1,0,0,0
+"mrp.access_mrp_bom_line","mrp.bom.line","mrp.model_mrp_bom_line","mrp.group_mrp_user",1,1,0,0
+"mrp.access_mrp_bom","mrp.bom","mrp.model_mrp_bom","mrp.group_mrp_user",1,1,0,0
+access_procurement_sale_forecast_line2,procurement.sale.forecast.line2.user,model_procurement_sale_forecast_line2,base.group_user,1,0,0,0
+access_procurement_sale_forecast_sale_line2_manager,procurement.sale.forecast.line2.manager,model_procurement_sale_forecast_line2,base.group_sale_manager,1,1,1,1
+access_mrp_production_historical_scheduled_date,mrp.production.historical.scheduled.date,model_mrp_production_historical_scheduled_date,mrp.group_mrp_user,1,0,1,0

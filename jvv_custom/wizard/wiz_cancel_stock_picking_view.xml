@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="wiz_cancel_stock_picking_form_view" model="ir.ui.view">
+            <field name="name">wiz.cancel.stock.picking.form.view</field>
+            <field name="model">wiz.cancel.stock.picking</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Cancel picking">
+                    <group colspan="4">
+                        <p>¿Quiere realmente cancelar el albarán?</p>
+                    </group>
+                    <footer>
+                        <button name="cancel_picking" type="object"
+                            string="Sí" class="oe_highlight" />
+                        or
+                        <button string="Cancelar" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>

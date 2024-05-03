@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="view_location_search_view_inh_jvv" model="ir.ui.view">
+        <field name="name">view.location.search.view.inh.jvv</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="stock.view_location_search" />
+        <field name="arch" type="xml">
+            <filter name="in_location" position="before">
+                <filter icon="terp-go-home" name="location_for_final_mrp"
+                    string="Location for MRP finished products"
+                    domain="[('final_mrp_location', '=', True)]" />
+            </filter>
+        </field>
+    </record>
+    <record id="view_location_tree2_inh_jvv" model="ir.ui.view">
+        <field name="name">view.location.tree2.view.inh.jvv</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="stock.view_location_tree2" />
+        <field name="arch" type="xml">
+             <field name="company_id" position="before">
+                <field name="final_mrp_location" />
+                <field name="run_mrp_scheduler" />
+             </field>
+        </field>
+    </record>
+    <record id="view_location_form_inh_jvv" model="ir.ui.view">
+        <field name="name">view.location.form.view.inh.jvv</field>
+        <field name="model">stock.location</field>
+        <field name="inherit_id" ref="stock.view_location_form" />
+        <field name="arch" type="xml">
+             <field name="company_id" position="before">
+                <field name="final_mrp_location" />
+                <field name="run_mrp_scheduler" />
+             </field>
+        </field>
+    </record>
+</data>
+</openerp>

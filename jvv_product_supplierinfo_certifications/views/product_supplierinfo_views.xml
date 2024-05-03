@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="product_supplierinfo_tree_view_inh_certification" model="ir.ui.view">
+            <field name="name">product.supplierinfo.tree.view.inh.certification</field>
+            <field name="model">product.supplierinfo</field>
+            <field name="inherit_id" ref="product.product_supplierinfo_tree_view" />
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="certification_id" string="Calificación proveedor" readonly="1"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="product_supplierinfo_form_view_inh_certification" model="ir.ui.view">
+            <field name="name">product.supplierinfo.form.view.inh.certification</field>
+            <field name="model">product.supplierinfo</field>
+            <field name="inherit_id" ref="product.product_supplierinfo_form_view" />
+            <field name="arch" type="xml">
+                <field name="sequence" position="after">
+                    <field name="certification_id" string="Calificación proveedor" readonly="1"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

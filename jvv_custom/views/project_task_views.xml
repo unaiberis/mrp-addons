@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="project_task_code_kanban_view_inh_jvv" model="ir.ui.view">
+        <field name="name">project.task.code.kanban.view.inh.jvv</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project_task_code.project_task_code_kanban_view" />
+        <field name="arch" type="xml">
+            <field name="code" position="after">
+                <field name="user_id" />
+            </field>
+        </field>
+    </record>
+    <record id="view_task_tree2_inh_jvv" model="ir.ui.view">
+        <field name="name">view.task.tree2.inh.jvv</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_tree2" />
+        <field name="arch" type="xml">
+            <field name="project_id" position="after">
+                <field name="department_id" />
+            </field>
+        </field>
+    </record>
+    <record id="view_task_form2_inh_jvv" model="ir.ui.view">
+        <field name="name">view.task.form2.inh.jvv</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2" />
+        <field name="arch" type="xml">
+            <field name="reviewer_id" position="after">
+                <field name="department_id" />
+            </field>
+        </field>
+    </record>
+    <record id="view_task_search_form_inh_jvv" model="ir.ui.view">
+        <field name="name">view.task.search.form.inh.jvv</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_search_form" />
+        <field name="arch" type="xml">
+            <field name="stage_id" position="after">
+                <field name="department_id" />
+            </field>
+            <filter name="User" position="after">
+                <filter string="Department" name="group-department" context="{'group_by':'department_id'}"/>
+            </filter>
+        </field>
+    </record>
+    <record id="project.action_view_task" model="ir.actions.act_window">
+        <field name="name">Tasks</field>
+        <field name="res_model">project.task</field>
+        <field name="view_mode">kanban,tree,form,calendar,gantt,graph</field>
+        <field name="search_view_id" ref="project.view_task_search_form"/>
+        <field name="domain">[('project_from_mrp','=',False),('stage_id.sequence','in',(1,2,3,4,5,6,7))]</field>
+    </record>
+    <record id="action_view_task_from_mrp" model="ir.actions.act_window">
+        <field name="name">Manufacturing tasks</field>
+        <field name="res_model">project.task</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form,calendar,gantt,graph</field>
+        <field name="search_view_id" ref="project.view_task_search_form"/>
+        <field name="domain">[('project_from_mrp','=',True),('stage_id.sequence','>',7)]</field>
+    </record>
+    <menuitem action="action_view_task_from_mrp" id="menu_action_view_task_from_mrp" parent="project.menu_project_management" sequence="4" />
+</data>
+</openerp>

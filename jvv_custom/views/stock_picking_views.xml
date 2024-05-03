@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="view_picking_form_inh_jvv" model="ir.ui.view">
+        <field name="name">view.picking.form.inh.jvv</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='pack_operation_ids']/tree" position="attributes">
+                <attribute name="editable">bottom</attribute>
+            </xpath>
+            <xpath expr="//field[@name='pack_operation_ids']//field[@name='location_id']" position="attributes">
+               <attribute name="domain">['|', ('id', '=', parent.location_id), ('location_id', '=', parent.location_id)]</attribute>
+            </xpath>
+            <field name="picking_type_code" position="attributes">
+               <attribute name="invisible">1</attribute>
+               <attribute name="readonly">1</attribute>
+            </field>
+            <field name="partner_id" position="after">
+                <field name="shipping_address_in_pickings" invisible="1"/>
+                <field name="purchase_subcontratacion" />
+                <field name="production_qty" readonly="1" 
+                    attrs="{'invisible': [('production_qty', '=', 0.0)]}"/>
+                <field name="sale_line_requested_date" readonly="1" 
+                    attrs="{'invisible': [('production_qty', '=', 0.0)]}"/>
+                <field name="sale_line_confirmed_date" readonly="1" 
+                    attrs="{'invisible': [('production_qty', '=', 0.0)]}"/>
+                <field name="product_code" readonly="1" string="Código producto empresa" />
+            </field>
+            <xpath expr="//field[@name='pack_operation_ids']//field[@name='product_qty']" position="replace" />
+            <xpath expr="//field[@name='pack_operation_ids']//field[@name='lot_id']" position="replace" />
+            <xpath expr="//field[@name='pack_operation_ids']//field[@name='package_id']" position="before" >
+                <field name="product_lot_from_barcode" />
+                <field name="lot_id" domain="[('product_id','=?', product_id)]" context="{'product_id': product_id}" groups="stock.group_production_lot"/>
+                <field name="product_qty_in_lot" readonly="1"/>
+                <field name="product_qty_in_lot2" invisible="1"/>
+                <field name="product_qty_available_not_res" readonly="1"/>
+                <field name="product_qty" attrs="{'required': [('product_id', '!=', False)]}"/>
+                <field name="product_qty_lot" invisible="1"/>
+                <field name="created_from_barcode" invisible="1" />
+            </xpath>
+        </field>
+    </record>
+    <record id="view_picking_form_inh_jvv2" model="ir.ui.view">
+        <field name="name">view.picking.form.inh.jvv2</field>
+        <field eval="100" name="priority"/>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form" />
+        <field name="arch" type="xml">
+            <button name="action_cancel" position="attributes">
+                <attribute name="name">jvv_action_cancel</attribute>
+            </button>
+        </field>
+    </record>
+    <record id="picking_in_form_pack_inh_jvv" model="ir.ui.view">
+        <field name="name">picking.in.form.pack.inh.jvv</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="crm_claim_links.picking_in_form_pack" />
+        <field name="arch" type="xml">
+            <field name="claim" position="after">
+                <field name="recorded_serial_number" />
+            </field>
+        </field>
+    </record>
+    <record id="vpicktree_inh_jvv" model="ir.ui.view">
+        <field name="name">vpicktree.inh.jvv</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.vpicktree" />
+        <field name="arch" type="xml">
+            <field name="min_date" position="after">
+                <field name="min_date_without_hour" invisible="1"/>
+                <field name="date_done" />
+            </field>
+            <field name="origin" position="after">
+                <field name="purchase_subcontratacion" />
+                <field name="production_qty" />
+                <field name="sale_line_requested_date" />
+                <field name="sale_line_confirmed_date" />
+                <field name="product_code" />
+            </field>
+        </field>
+    </record>
+    <record id="view_picking_internal_search_inh_jvv" model="ir.ui.view">
+        <field name="name">view.picking.internal.search.inh.jvv</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search" />
+        <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="claim"/>
+                </field>
+            <field name="picking_type_id" position="after">
+                <field name="purchase_subcontratacion" />
+            </field>
+            <field name="product_id" position="after">
+                <field name="date_done_without_hour" />
+                <field name="date_without_hour" />
+                <field name="min_date_without_hour" />
+                <field name="product_code" />
+            </field>
+            <filter string="Picking Type" position="after">
+               <filter string="Código producto empresa" domain="[]" context="{'group_by':'product_code'}"/>
+               <filter string="Recorded serial number" domain="[]" context="{'group_by':'recorded_serial_number'}"/>
+            </filter>
+            <filter string="Expected Date" position="after">
+                <filter string="Transfer date" icon="terp-go-month" domain="[]" context="{'group_by':'date_done_without_hour:day'}"/>
+                <filter string="Fecha creación" icon="terp-go-month" domain="[]" context="{'group_by':'date_without_hour:day'}"/>
+            </filter>
+            <filter string="Expected Date" position="attributes">
+                <attribute name="context">{'group_by':'min_date_without_hour:day'}</attribute>
+            </filter>
+            <filter name="backorder" position="after">
+                    <separator/>
+                    <filter name="with-recorded-serial-number" string="With recorded serial number" domain="[('recorded_serial_number','=', True)]"/>
+                    <filter name="without-recorded-serial-number" string="Without recorded serial number" domain="[('recorded_serial_number','=', False)]"/>
+            </filter>
+        </field>
+    </record>
+</data>
+</openerp>

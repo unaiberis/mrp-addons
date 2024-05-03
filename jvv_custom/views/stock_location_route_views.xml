@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="stock_location_route_form_view_inh_jvv" model="ir.ui.view">
+        <field name="name">stock.location.route.form.view.inh.jvv</field>
+        <field name="model">stock.location.route</field>
+        <field name="inherit_id" ref="stock.stock_location_route_form_view" />
+        <field name="arch" type="xml">
+            <field name="active" position="after">
+                <field name="assemtronic_product" />
+            </field>
+        </field>
+    </record>
+    <record id="stock_location_route_tree_inh_jvv" model="ir.ui.view">
+        <field name="name">stock.location.route.tree.inh.jvv</field>
+        <field name="model">stock.location.route</field>
+        <field name="inherit_id" ref="stock.stock_location_route_tree" />
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="assemtronic_product" />
+            </field>
+        </field>
+    </record>
+    <record id="stock_location_route_search_view" model="ir.ui.view">
+        <field name="name">stock.location.route.search.view</field>
+        <field name="model">stock.location.route</field>
+        <field name="arch" type="xml">
+                <search string="Search route">
+                    <field name="name" />
+                    <separator/>
+                    <filter string="Assemtronic product" name="assemtronic-product-domain" domain="[('assemtronic_product','=',True)]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Assemtronic product" domain="[]" context="{'group_by':'assemtronic_product'}"/>
+                    </group>
+               </search>
+        </field>
+    </record>
+</data>
+</openerp>

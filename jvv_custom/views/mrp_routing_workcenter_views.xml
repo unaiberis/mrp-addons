@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="mrp_routing_workcenter_tree_view_inh_jvv_custom" model="ir.ui.view">
+        <field name="name">mrp.routing.workcenter.tree.view.inh.jvv.custom</field>
+        <field name="model">mrp.routing.workcenter</field>
+        <field name="inherit_id" ref="mrp.mrp_routing_workcenter_tree_view" />
+        <field name="arch" type="xml">
+             <field name="hour_nbr" position="attributes">
+                <attribute name="widget">float_time</attribute>
+             </field>
+        </field>
+    </record>
+</data>
+</openerp>

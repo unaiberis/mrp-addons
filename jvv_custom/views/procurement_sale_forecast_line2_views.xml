@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="procurement_sale_forecast_line2_form_view">
+            <field name="name">procurement.sale.forecast.line2.form</field>
+            <field name="model">procurement.sale.forecast.line2</field>
+            <field name="priority" eval="50"/>
+            <field name="arch" type="xml">
+                <form string="Forecast Line to sales orders">
+                    <sheet>
+                        <group>
+                            <group>
+                                <button string="Forecast Line To Sale Order"
+                                    name="request_sale_order"
+                                    type="object" icon="gtk-execute"/>
+                            </group>
+                            <group/>
+                        </group>
+                        <group>
+                            <group >
+                                <field name="forecast_id" required="1"
+                                        attrs="{'readonly':[('completed_line', '=', True)]}"/>
+                                <field name="date" />
+                                <field name="product_id"
+                                        attrs="{'readonly':[('completed_line', '=', True)]}"/>
+                                <field name="product_category_id" />
+                                <field name="qty" sum="Total Qty"
+                                        attrs="{'readonly':['|',('remaining_qty', '&gt;', 0),('completed_line', '=', True)]}"/>
+                            </group>
+                            <group >
+                                <field name="requested_qty" sum="Total Requested Qty"
+                                        attrs="{'readonly':[('completed_line', '=', True)]}"/>
+                                <field name="remaining_qty" readonly="1" sum="Total Remaining Qty"/>
+                                <field name="sale_order_ids" string="In sale orders" widget="many2many_tags"/>
+                                <field name="completed_line" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="procurement_sale_forecast_line2_tree_view">
+            <field name="name">procurement.sale.forecast.line2.tree</field>
+            <field name="model">procurement.sale.forecast.line2</field>
+            <field name="arch" type="xml">
+                <tree string="Sale Forecast Lines to sales orders" >
+                    <field name="forecast_id" />
+                    <field name="date" />
+                    <field name="product_id" />
+                    <field name="product_category_id" />
+                    <field name="qty" sum="Total Qty" />
+                    <field name="requested_qty" sum="Total Requested Qty"/>
+                    <field name="remaining_qty" sum="Total Remaining Qty"/>
+                    <field name="sale_order_ids" string="In sale orders" widget="many2many_tags"/>
+                    <field name="completed_line" />
+                    <button string="Forecast To Sale Order"
+                        name="request_sale_order"
+                        type="object" icon="gtk-execute"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="procurement_sale_forecast_line2_search_view">
+            <field name="name">procurement.sale.forecast.line2.search</field>
+            <field name="model">procurement.sale.forecast.line2</field>
+            <field name="arch" type="xml">
+                <search string="Forecast Line To Sales Search">
+                    <field name="forecast_id" />
+                    <field name="date" />
+                    <field name="product_id" />
+                    <field name="product_category_id" />
+                    <separator/>
+                    <filter string="Completed lines" name="completed-lines" domain="[('completed_line','=',True)]"/>
+                    <filter string="No completed lines" name="no-completed-lines" domain="[('completed_line','=',False)]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Forecast" context="{'group_by':'forecast_id'}" />
+                        <filter string="Product" context="{'group_by':'product_id'}" />
+                        <filter string="Product category" context="{'group_by':'product_category_id'}" />
+                        <filter string="Completed line" context="{'group_by':'completed_line'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_view_stock_sale_forecast_line2" model="ir.actions.act_window">
+            <field name="name">Sales Forecast Lines to sale orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">procurement.sale.forecast.line2</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="tock_sale_forecast_lines2_option_view" name="Forecast Lines to sales orders"
+            parent="procurement_sale_forecast.menu_stock_sale_forecast"
+            action="action_view_stock_sale_forecast_line2"
+            groups="base.group_user"/>
+</data>
+</openerp>
+

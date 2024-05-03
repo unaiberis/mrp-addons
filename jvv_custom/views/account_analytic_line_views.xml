@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="view_account_analytic_line_form_inh_jvv" model="ir.ui.view">
+        <field name="name">view.account.analytic.line.form.inh.jvv</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="account.view_account_analytic_line_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='unit_amount']/.." position="after">
+            	<field name="partner_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_analytic_line_filter_inh_jvv" model="ir.ui.view">
+        <field name="name">view.account.analytic.line.filter.inh.jvv</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="account.view_account_analytic_line_filter" />
+        <field name="arch" type="xml">
+            <field name="user_id" position="after">
+				<separator />
+				<field name="partner_id" />
+			</field>
+			<filter string="User" position="after">
+				<filter string="Cliente/Proveedor" context="{'group_by':'partner_id'}"/>
+		    </filter>
+        </field>
+    </record>
+
+</data>
+</openerp>

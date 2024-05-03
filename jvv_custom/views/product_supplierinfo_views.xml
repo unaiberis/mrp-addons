@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="product_supplierinfo_search_view_inh_jvv" model="ir.ui.view">
+        <field name="name">product.supplierinfo.search.view.inh.jvv</field>
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product_supplierinfo_for_customer.product_supplierinfo_search_view" />
+        <field name="arch" type="xml">
+            <filter string="Supplier" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </filter>
+        </field>
+    </record>
+    <record id="product_supplierinfo_form_view_view_inh_jvv" model="ir.ui.view">
+        <field name="name">product.supplierinfo.form.view.inh.jvv</field>
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_form_view" />
+        <field name="arch" type="xml">
+            <field name="sequence" position="after">
+                <field name="date_validity" />
+                <field name="expiration_date" />
+                <field name="offer_number" />
+                <field name="product_tmpl_id" />
+                <field name="prefix_code" readonly="1"/>
+                <field name="property_product_pricelist"
+                    attrs="{'invisible': [('type', '!=', 'customer')]}"/>
+                <field name="property_product_pricelist_purchase"
+                    attrs="{'invisible': [('type', '!=', 'supplier')]}"/>
+            </field>
+        </field>
+    </record>
+    <record id="product_supplierinfo_tree_view_view_inh_jvv" model="ir.ui.view">
+        <field name="name">product.supplierinfo.tree.view.inh.jvv</field>
+        <field name="model">product.supplierinfo</field>
+        <field name="inherit_id" ref="product.product_supplierinfo_tree_view" />
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="sequence" widget="handle" />
+                <field name="my_sequence" readonly="1"/>
+            </field>
+            <field name="name" position="after">
+                <field name="date_validity" />
+                <field name="expiration_date" />
+                <field name="offer_number" />
+                <field name="product_tmpl_id" />
+                <field name="prefix_code" />
+                <field name="product_name" />
+                <field name="product_code" />
+                <field name="property_product_pricelist" />
+                <field name="property_product_pricelist_purchase" />
+            </field>
+        </field>
+    </record>
+        <record model="ir.ui.view" id="product_supplierinfo_supplier_search_view">
+            <field name="name">product.supplierinfo.supplier.search.view</field>
+            <field name="model">product.supplierinfo</field>
+            <field name="arch" type="xml">
+                <search string="Supplierinfo search">
+                    <field name="name" string="Empresa"/>
+                    <field name="product_tmpl_id" />
+                    <field name="product_name" />
+                    <field name="product_code" />
+                    <field name="prefix_code" />
+                    <field name="date_validity" />
+                    <field name="expiration_date" />
+                    <field name="offer_number" />
+                    <filter string="Supplier" domain="[('type','=','supplier')]"
+                            name="is_supplier_filter" />
+                    <group expand="0" string="Group By">
+                        <filter string="Partner" icon="terp-partner"
+                                domain="[]" context="{'group_by':'name'}" />
+                        <filter string="Product Template" domain="[]"
+                                context="{'group_by':'product_tmpl_id'}" />
+                        <separator />
+                        <filter string="Type" domain="[]"
+                                context="{'group_by':'type'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+        <!-- VISTA ACTION -->
+        <record id="product_supplierinfo_supplier_action" model="ir.actions.act_window">
+            <field name="name">Information about a product (supplier)</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.supplierinfo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="product_supplierinfo_supplier_search_view" />
+            <field name="view_id" ref="product_supplierinfo_for_customer.product_supplierinfo_extended_tree_view"/>
+            <field name="context">{
+                    'search_default_is_supplier_filter': 1,
+                    'default_type': 'supplier',
+                    'supplierinfo_type': 'supplier',
+                }
+            </field>
+            <field name="help">Click to define a new product.supplierinfo.</field>
+        </record>
+        <menuitem id="product_supplierinfo_purchase_menu" name="Information about a product (supplier)"
+                  action="product_supplierinfo_supplier_action" 
+                  parent="purchase.menu_procurement_management_product" sequence="30"/>
+</data>
+</openerp>

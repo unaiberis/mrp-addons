@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="report_stock_traceability_operation_search_inh_jvv_custom" model="ir.ui.view">
+        <field name="name">report.stock.traceability.operation.search.inh.jvv.custom</field>
+        <field name="model">report.stock.traceability_operation</field>
+        <field name="inherit_id" ref="stock_traceability_operation.report_stock_traceability_operation_search" />
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="inventory_description" />
+            </field>
+            <filter name="groupby_move_id" position="after">
+                <filter string="Inventory description" name="groupby_inventory_description" icon="terp-accessories-archiver" domain="[]"  context="{'group_by':'inventory_description'}"/>
+            </filter>
+        </field>
+    </record>
+    <record id="report_stock_traceability_operation_tree_inh_jvv_custom" model="ir.ui.view">
+        <field name="name">report.stock.traceability.operation.tree.inh.jvv.custom</field>
+        <field name="model">report.stock.traceability_operation</field>
+        <field name="inherit_id" ref="stock_traceability_operation.report_stock_traceability_operation_tree" />
+        <field name="arch" type="xml">
+            <field name="picking_id" position="after">
+                <field name="inventory_description" />
+            </field>
+        </field>
+    </record>
+</data>
+</openerp>

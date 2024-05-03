@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_mrp_repair_partner_lot_var_inh_jvv" inherit_id="mrp_repair_partner_lot_product_variant.report_mrp_repair_partner_lot_printing_inh_variant">
+            <xpath expr="//th[3]" position="replace" />
+            <xpath expr="//td[3]" position="replace" />
+            <xpath expr="//th[2]" position="replace" />
+            <xpath expr="//td[2]" position="replace" />
+            <div class="row mt32 mb32" position="replace">
+              <br/>
+              <br/>
+              <table >
+                  <thead>
+                      <tr>
+                          <th class="text-left">Repair date</th>
+                          <th class="text-left"><spam>&amp;nbsp;&amp;nbsp;</spam></th>
+                          <th class="text-left"><spam>&amp;nbsp;&amp;nbsp;</spam></th>
+                          <th class="text-left"><spam>&amp;nbsp;&amp;nbsp;</spam></th>
+                          <th class="text-left">Responsible</th>
+                          <th class="text-left"><spam>&amp;nbsp;&amp;nbsp;</spam></th>
+                          <th class="text-left"><spam>&amp;nbsp;&amp;nbsp;</spam></th>
+                          <th class="text-left"><spam>&amp;nbsp;&amp;nbsp;</spam></th>
+                          <th class="text-left">Claim</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td class="text-left">
+                              <p t-if="o.date_repair">
+                                 <span t-field="o.date_repair" t-field-options='{"widget": "date"}'/>
+                               </p>
+                          </td>
+                          <td class="text-left"><spam>&amp;nbsp;&amp;nbsp;</spam></td>
+                          <td class="text-left"><spam>&amp;nbsp;&amp;nbsp;</spam></td>
+                          <td class="text-left"><spam>&amp;nbsp;&amp;nbsp;</spam></td>
+                          <td class="text-left">
+                              <p t-if="o.user_id.name">
+                                 <span t-field="o.user_id.name" />
+                               </p>
+                          </td>
+                          <td class="text-left"><spam>&amp;nbsp;&amp;nbsp;</spam></td>
+                          <td class="text-left"><spam>&amp;nbsp;&amp;nbsp;</spam></td>
+                          <td class="text-left"><spam>&amp;nbsp;&amp;nbsp;</spam></td>
+                          <td class="text-left">
+                              <p t-if="o.claim">
+                                 <span t-field="o.claim" />
+                               </p>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+              <br/>
+              <br/>
+            </div>
+        </template>
+        
+        <template id="report_mrp_repair_partner_lot_inh_jvv" inherit_id="mrp_repair_partner_lot.report_mrp_repair_partner_lot_printing">
+            <xpath expr="//th[3]" position="after" >
+            	<th>Serial Number</th>
+            </xpath>
+            <xpath expr="//td[3]" position="after" >
+                <td>
+                    <p t-if="line.serial_number">
+                       <span t-field="line.serial_number" />
+                     </p>
+                </td>
+            </xpath>
+        </template>        
+        
+        <template id="report_mrprepairorder_inh_jvv" inherit_id="mrp_repair.report_mrprepairorder">
+            <div t-if="o.product_id.name" position="after">
+               <div t-if="o.claim" class="col-xs-3">
+                   <strong>Claim:</strong>
+                   <p t-field="o.claim"/>
+               </div>
+            </div>
+            <span t-field="line.product_uom_qty" position="replace">
+                <span t-field="line.product_uom_qty_2_digits"/>
+            </span>
+            <span t-field="fees.product_uom_qty" position="replace">
+                <span t-field="fees.product_uom_qty_2_digits"/>
+            </span>
+        </template>
+        <template id="report_mrp_repair_partner_lot_printing_inh_jvv" inherit_id="mrp_repair_partner_lot.report_mrp_repair_partner_lot_printing">
+            <span t-field="line.quantity" position="replace">
+                <span t-field="line.quantity_2_digits"/>
+            </span>
+        </template>
+    </data>
+</openerp>

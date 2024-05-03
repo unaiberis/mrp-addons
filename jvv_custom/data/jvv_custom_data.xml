@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record forcecreate="True" id="ir_cron_scheduler_ubic_assemtronic_action" model="ir.cron">
+            <field name="name">Run mrp scheduler ASSEMTRONIC</field>
+            <field eval="False" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field eval="'procurement.order'" name="model"/>
+            <field eval="'run_scheduler_assemtronic'" name="function"/>
+        </record>
+        <record id="move_num_serie_sequence" model="ir.sequence">
+            <field name="name">Num. serie en mvtos de stock</field>
+            <field name="prefix">NS-</field>
+            <field name="padding">6</field>
+        </record>
+         <record forcecreate="True" id="ir_cron_cod_cli_in_sale_line_action" model="ir.cron">
+            <field name="name">Cargar codigo producto cliente en líneas de venta</field>
+            <field eval="False" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field eval="'sale.order.line'" name="model"/>
+            <field eval="'run_load_customer_product_code'" name="function"/>
+         </record>
+         <record forcecreate="True" id="ir_cron_cod_prov_in_purchase_line_action" model="ir.cron">
+            <field name="name">Cargar codigo producto proveedor en líneas de compra</field>
+            <field eval="False" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field eval="'purchase.order.line'" name="model"/>
+            <field eval="'run_load_supplier_product_code'" name="function"/>
+        </record>
+        <record forcecreate="True" id="ir_cron_fix_product_negative_stock" model="ir.cron">
+            <field name="name">Fix negative stock in products</field>
+            <field eval="False" name="active" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field eval="'product.template'" name="model" />
+            <field eval="'automatic_fix_product_negative_stock'" name="function" />
+            <field eval="'(None, )'" name="args" />
+        </record>
+        <record forcecreate="True" id="ir_cron_put_out_picking_in_sale_line" model="ir.cron">
+            <field name="name">Put out picking in sale order_lines</field>
+            <field eval="False" name="active" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">12</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field eval="'sale.order.line'" name="model" />
+            <field eval="'automatic_put_out_picking_in_lines'" name="function" />
+            <field eval="'(None, )'" name="args" />
+        </record>
+        <record forcecreate="True" id="ir_cron_put_picking_transfer_dates_in_sales" model="ir.cron">
+            <field name="name">Put out picking transfer dates in sale orders</field>
+            <field eval="False" name="active" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">12</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field eval="'sale.order'" name="model" />
+            <field eval="'automatic_catch_picking_transfer_dates'" name="function" />
+            <field eval="'(None, )'" name="args" />
+        </record>
+        <record forcecreate="True" id="ir_cron_put_picking_transfer_dates_in_purchases" model="ir.cron">
+            <field name="name">Put in picking transfer dates in purchase orders</field>
+            <field eval="False" name="active" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">12</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field eval="'purchase.order'" name="model" />
+            <field eval="'automatic_catch_picking_transfer_dates'" name="function" />
+            <field eval="'(None, )'" name="args" />
+        </record>
+        <record forcecreate="True" id="ir_cron_put_parent_production_in_production" model="ir.cron">
+            <field name="name">Poner produccion padre en producciones</field>
+            <field eval="False" name="active" />
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">12</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field eval="'mrp.production'" name="model" />
+            <field eval="'automatic_put_parent_production'" name="function" />
+            <field eval="'(None, )'" name="args" />
+        </record>
+        <record forcecreate="True" id="ir_cron_date_in_move_from_mo_action" model="ir.cron">
+            <field name="name">Poner a mvtos desde MOs fechas solicitada y confirmada</field>
+            <field eval="False" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">12</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field eval="'mrp.production'" name="model"/>
+            <field eval="'automatic_put_dates_to_mvtos_from_mo'" name="function"/>
+            <field eval="'(None, )'" name="args" />
+        </record>
+        <record forcecreate="True" id="ir_cron_consumido_en_ldm_action" model="ir.cron">
+            <field name="name">Poner CONSUMIDO EN en LdMs</field>
+            <field eval="False" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">12</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field eval="'mrp.bom.line'" name="model"/>
+            <field eval="'automatic_put_consumido_en_in_bom_lines'" name="function"/>
+            <field eval="'(None, )'" name="args" />
+        </record>
+        <record forcecreate="True" id="ir_cron_numeration_ldm" model="ir.cron">
+            <field name="name">Numerar las LdMs</field>
+            <field eval="False" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">12</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field eval="False" name="doall"/>
+            <field eval="'mrp.bom'" name="model"/>
+            <field eval="'automatic_numeration_ldm'" name="function"/>
+            <field eval="'(None, )'" name="args" />
+        </record>
+    </data>
+</openerp>

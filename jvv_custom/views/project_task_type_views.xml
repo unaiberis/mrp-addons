@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="task_type_tree_inh_jvv" model="ir.ui.view">
+        <field name="name">task.type.tree.inh.jvv</field>
+        <field name="model">project.task.type</field>
+        <field name="inherit_id" ref="project.task_type_tree" />
+        <field name="arch" type="xml">
+            <field name="fold" position="after">
+                <field name="active" />
+            </field>
+        </field>
+    </record>
+    <record id="task_type_edit_inh_jvv" model="ir.ui.view">
+        <field name="name">task.type.edit.inh.jvv</field>
+        <field name="model">project.task.type</field>
+        <field name="inherit_id" ref="project.task_type_edit" />
+        <field name="arch" type="xml">
+            <field name="sequence" position="after">
+                <field name="active" />
+            </field>
+        </field>
+    </record>
+</data>
+</openerp>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="sale_order_confirmed_date_form_view_inh_jvv_custom" model="ir.ui.view">
+        <field name="name">sale.order.confirmed.date.form.view.inh.jvv.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="confirmed_order_line_dates.sale_order_confirmed_date_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/form//field[@name='confirmed_date']" position="after">
+                <field name="from_forecast_id" />
+                <field name="date_planned" />
+                <field name="reconfirmed_date" />
+                <field name="count_reconfirmed_date" readonly="1"/>
+                <field name="date_transfer" readonly="1"/>
+                <field name="committed_date" />
+                <field name="customer_product_code" />
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree//field[@name='confirmed_date']" position="after">
+                <field name="days_of_delay" />
+                <field name="from_forecast_id" />
+                <field name="date_planned" />
+                <field name="reconfirmed_date" />
+                <field name="count_reconfirmed_date" readonl="1"/>
+                <field name="date_transfer" readonly="1"/>
+                <field name="committed_date" />
+                <field name="customer_product_code" />
+            </xpath>
+        </field>
+    </record>
+    <record id="view_order_form_inh_jvv_custom" model="ir.ui.view">
+        <field name="name">view.order.form.inh.jvv.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form" />
+        <field name="arch" type="xml">
+            <field name="project_id" position="after">
+                <field name="opportunity_id" />
+                <field name="offer_number" />
+            </field>
+            <field name="user_id" position="before">
+                <field name="create_uid" string="User" />
+            </field>
+            <button name="invoice_cancel" position="after">
+                <button name="%(action_sale_line_forecast_load_view)d"
+                	string="Cargar línea prevision"
+                	type="action" groups="base.group_sale_manager"/>
+            </button>
+            <field name="partner_id" position="attributes">
+				<attribute name="domain">[('customer','=',True),('is_company','=',True)]</attribute>
+	        </field>
+        </field>
+    </record>
+    <record id="sot_view_order_form_inh_jvv_custom" model="ir.ui.view">
+        <field name="name">sot.view.order.form.inh.jvv.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_order_type.sot_view_order_form" />
+        <field name="arch" type="xml">
+            <field name="type_id" position="after">
+                <field name="mrp_project_id" />
+                <field name="procurement_sale_forecast_ids" widget="many2many_tags"/>
+            </field>
+        </field>
+    </record>
+    <record id="view_order_tree_inh_jvv_custom" model="ir.ui.view">
+        <field name="name">view.order.tree.inh.jvv.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree" />
+        <field name="arch" type="xml">
+            <field name="date_order" position="before">
+                <field name="procurement_sale_forecast_ids" />
+            </field>
+            <field name="user_id" position="after">
+                <field name="opportunity_id" />
+                <field name="offer_number" />
+                <field name="pricelist_id" />
+            </field>
+            <field name="partner_id" position="after">
+                <field name="dates_transfer_out_pickings" />
+            </field>
+            <field name="user_id" position="before">
+                <field name="create_uid" string="User" />
+            </field>
+        </field>
+    </record>
+    <record id="view_quotation_tree_inh_jvv_custom" model="ir.ui.view">
+        <field name="name">view.quotation.tree.inh.jvv.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree" />
+        <field name="arch" type="xml">
+            <field name="date_order" position="before">
+                <field name="procurement_sale_forecast_ids" />
+            </field>
+            <field name="user_id" position="after">
+                <field name="opportunity_id" />
+                <field name="offer_number" />
+                <field name="pricelist_id" />
+            </field>
+            <field name="user_id" position="before">
+                <field name="create_uid" string="User" />
+            </field>
+        </field>
+    </record>
+    <record id="view_sales_order_filter_inh_jvv_custom" model="ir.ui.view">
+        <field name="name">view.sales.order.filter.inh.jvv.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter" />
+        <field name="arch" type="xml">
+            <field name="section_id" position="after">
+                <field name="opportunity_id" />
+                <field name="offer_number" />
+                <field name="mrp_project_id" />
+                <field name="pricelist_id" />
+            </field>
+            <field name="user_id" position="before">
+                <field name="create_uid" string="User" />
+            </field>
+            <filter string="Salesperson" position="before">
+                <filter string="Opportunity" domain="[]" context="{'group_by':'opportunity_id'}"/>
+                <filter string="Offer number" domain="[]" context="{'group_by':'offer_number'}"/>
+                <filter string="Pricelist" domain="[]" context="{'group_by':'pricelist_id'}"/>
+            </filter>
+            <filter string="Salesperson" position="before">
+                <filter string="User" domain="[]" context="{'group_by':'create_uid'}"/>
+            </filter>
+        </field>
+    </record>
+    <record id="sale_order_form_view_inh_line_notes_inh_jvv_custom" model="ir.ui.view">
+        <field name="name">sale.order.form.view.inh.line.notes.inh.jvv.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="object_line_notes.sale_order_form_view_inh_line_notes" />
+        <field name="arch" type="xml">
+            <xpath expr="//tree[@string='Sales Order Lines']//field[@name='notes']" position="after">
+                <field name="notes2" />
+            </xpath>
+            <xpath expr="//form[@string='Sales Order Lines']//field[@name='notes']" position="after">
+                <label for="notes2"/>
+                <field name="notes2"/>
+            </xpath>
+        </field>
+    </record>
+</data>
+</openerp>

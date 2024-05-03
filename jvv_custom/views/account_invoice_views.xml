@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="invoice_supplier_form_inh_jvv" model="ir.ui.view">
+        <field name="name">invoice.supplier.form.inh.jvv</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form" />
+        <field name="arch" type="xml">
+            <field name="partner_id" position="attributes">
+                <attribute name="domain">[('supplier','=',True),('parent_id','=',False)]</attribute>
+            </field>
+            <page string="Payments" position="after">
+                <page string="Purchase orders">
+                    <field name="purchase_order_ids" />
+                </page>
+            </page>
+        </field>
+    </record>
+    <record id="invoice_form_inh_jvv" model="ir.ui.view">
+        <field name="name">invoice.form.inh.jvv</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form" />
+        <field name="arch" type="xml">
+            <page string="Payments" position="after">
+                <page string="Sale orders">
+                    <field name="sale_order_ids" />
+                </page>
+            </page>
+            <xpath expr="//page[@string='Other Info']/group//group[2]/field[@name='name']" position="after">
+                <field name="mrp_repair_id" readonly="1" />
+                <field name="crm_claim_id" readonly="1" />
+            </xpath>
+            <xpath expr="//tree[@string='Invoice Lines']/field[@name='name']" position="after">
+                <field name="serial_numbers" readonly="1" />
+            </xpath>
+        </field>
+    </record>
+    <record id="view_account_invoice_filter_inh_jvv" model="ir.ui.view">
+        <field name="name">view.account.invoice.filter.inh.jvv</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter" />
+        <field name="arch" type="xml">
+            <field name="period_id" position="after">
+                <field name="crm_claim_id" />
+            </field>
+        </field>
+    </record>
+    <record id="invoice_tree_inh_jvv" model="ir.ui.view">
+        <field name="name">invoice.tree.inh.jvv</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree" />
+        <field name="arch" type="xml">
+            <field name="origin" position="after">
+                <field name="crm_claim_id" />
+            </field>
+        </field>
+    </record>
+</data>
+</openerp>

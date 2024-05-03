@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="product_form_view_procurement_button_inh_jvv" model="ir.ui.view">
+        <field name="name">product.form.view.procurement.button.inh.jvv</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="stock.product_form_view_procurement_button" />
+        <field name="arch" type="xml">
+             <button string="Moves" position="attributes">
+                <attribute name="string">Mvtos.Pdtes.Variante</attribute>
+             </button>
+             <button icon="fa-building-o" position="after">
+	               <button class="oe_stat_button"
+	                       name="action_open_quants_locked"
+	                       icon="fa-building-o"
+	                       type="object"  attrs="{'invisible':[('type', '=', 'service')]}" groups="stock.group_locations">
+		               	<div>
+							<field string="Bloqueado" name="qty_locked"  widget="statinfo"/>
+					    </div>
+	               </button>
+			 </button>
+             
+             
+        </field>
+    </record>
+    <record id="product_template_form_view_reservation_button_inh_jvv" model="ir.ui.view">
+        <field name="name">product.template.form.view.reservation.button.inh.jvv</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock_reserve.product_template_form_view_reservation_button" />
+        <field name="arch" type="xml">
+             <button name="action_view_reservations" position="after">
+                <button class="oe_inline oe_stat_button" string="Mvtos.Pdtes.Producto"
+                    name="%(act_general_pending_stock_move)d" type="action"
+                    attrs="{'invisible':[('type', '=', 'service')]}"
+                    groups="stock.group_stock_user" icon="fa-arrows-v"/>
+             </button>
+        </field>
+    </record>
+    <record id="product_warning_form_view_inh_jvv" model="ir.ui.view">
+        <field name="name">product.warning.form.view.inh.jvv</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="warning.product_warning_form_view" />
+        <field name="arch" type="xml">
+             <page string="Warnings" position="after">
+                 <page string="Histórico">
+                     <group colspan="4">
+                         <field name="template_notes" colspan="4" nolabel="1"/>
+                     </group>
+                 </page>
+                 <page string="Sale forecasts to sale_orders">
+                     <separator string="Sale forecast" colspan="4"/>
+                     <field name="forecast_ids" colspan="4" nolabel="1" />
+                     <separator string="Sale forecast lines" colspan="4"/>
+                     <field name="procurement_sale_forecast_line_ids" colspan="4" nolabel="1" />
+                 </page>
+                 <page string="Sale forecasts from sale_orders">
+                     <separator string="Sale forecast" colspan="4"/>
+                     <field name="forecast2_ids" colspan="4" nolabel="1" />
+                     <separator string="Sale forecast lines" colspan="4"/>
+                     <field name="procurement_sale_forecast_line2_ids" colspan="4" nolabel="1" />
+                 </page>
+             </page>
+        </field>
+    </record>
+    <record id="product_template_only_form_view_inh_jvv" model="ir.ui.view">
+        <field name="name">product.template.only.form.view.inh.jvv</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view" />
+        <field name="arch" type="xml">
+             <field name="default_code" position="after">
+                <field name="generate_serial_numbers" />
+                <field name="serial_numbers_sequence_id"
+                    attrs="{'invisible': [('generate_serial_numbers','=','no')]}"/>
+             </field>
+        </field>
+    </record>
+
+    <record id="product_template_tree_view_inh_jvv" model="ir.ui.view">
+        <field name="name">product.template.tree.view.inh.jvv</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view" />
+        <field name="arch" type="xml">
+             <field name="type" position="after">
+                <field name="robot" />
+                <field name="bom_version" />
+                <field name="product_manager" />
+                <field name="generate_serial_numbers" />
+                <field name="serial_numbers_sequence_id" />
+             </field>
+        </field>
+    </record>
+
+    <record id="product_template_search_view_inh_jvv" model="ir.ui.view">
+        <field name="name">product.template.search.view.inh.jvv</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view" />
+        <field name="arch" type="xml">
+             <filter name="consumable" position="after">
+                <filter string="Generate serial numbers" name="generateserialnumbers" icon="terp-accessories-archiver" domain="[('generate_serial_numbers','=','yes')]"/>
+                <filter string="NO generate serial numbers" name="nogenerateserialnumbers" icon="terp-accessories-archiver" domain="[('generate_serial_numbers','=','no')]"/>
+             </filter>
+             <filter string="Type" position="after">
+                <filter string="Generate serial numbers" icon="terp-stock_symbol-selection" domain="[]" context="{'group_by' : 'generate_serial_numbers'}"/>
+                <filter string="Product manager" icon="terp-stock_symbol-selection" domain="[]" context="{'group_by' : 'product_manager'}"/>
+             </filter>
+             <field name="pricelist_id" position="after">
+                <field name="product_manager" />
+             </field>
+        </field>
+    </record>
+    <record id="product_normal_form_view_inh_jvv" model="ir.ui.view">
+        <field name="name">product.normal.form.view.inh.jvv</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="arch" type="xml">
+             <field name="default_code" position="after">
+                <field name="generate_serial_numbers" />
+                <field name="serial_numbers_sequence_id"
+                    attrs="{'invisible': [('generate_serial_numbers','=','no')]}"/>
+             </field>
+        </field>
+    </record>
+    <record id="product_product_tree_view_inh_jvv" model="ir.ui.view">
+        <field name="name">product.product.tree.view.inh.jvv</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_tree_view" />
+        <field name="arch" type="xml">
+             <field name="lst_price" position="before">
+                <field name="generate_serial_numbers" />
+                <field name="serial_numbers_sequence_id" />
+             </field>
+        </field>
+    </record>
+    <record id="form_view_stencil_product_inh_jvv" model="ir.ui.view">
+        <field name="name">form.view.stencil.product.inh.jvv</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock_move_stencil_products.form_view_stencil_product" />
+        <field name="arch" type="xml">
+             <field name="is_stencil" position="after">
+                <field name="project_template_id" />
+                <field name="bom_version" />
+             </field>
+        </field>
+    </record>
+    <record id="view_template_property_form_inh_jvv" model="ir.ui.view">
+        <field name="name">view.template.property.form.inh.jvv</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock.view_template_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='virtual_available']" position="after">
+                <field name='fix_negative_stock'/>
+            </xpath>
+        </field>
+    </record>
+    <record id="product_template_form_view_inh_jvv" model="ir.ui.view">
+        <field name="name">product.template.form.view.inh.jvv</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <field name="standard_price" position="after">
+                <field name="last_date_cost" />
+            </field>
+        </field>
+    </record>
+    <record id="product_template_form_view2_inh_jvv" model="ir.ui.view">
+        <field name="name">product.template.form2.view.inh.jvv</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="mrp_production_estimated_cost.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <field name="manual_standard_cost" position="after">
+                <field name="last_date_manual_cost" />
+            </field>
+        </field>
+    </record>
+
+    <record id="product_last_mrp_info_form_view_inh_jvv" model="ir.ui.view">
+        <field name="name">product.last.mrp.info.form.view.inh.jvv</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product_last_mrp_info.product_last_mrp_info_form_view" />
+        <field name="arch" type="xml">
+             <field name="last_mrp_cost" position="after">
+                <field name="last_ldm_total_cost" />
+             </field>
+        </field>
+    </record>
+</data>
+</openerp>

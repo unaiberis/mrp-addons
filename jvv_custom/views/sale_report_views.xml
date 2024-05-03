@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="view_order_product_search_inh_jvv_custom" model="ir.ui.view">
+        <field name="name">view.order.product.search.inh.jvv.custom</field>
+        <field name="model">sale.report</field>
+        <field name="inherit_id" ref="sale.view_order_product_search" />
+        <field name="arch" type="xml">
+            <field name="product_id" position="after">
+                <field name="customer_product_code" />
+            </field>
+            <filter name="User" position="after">
+                <filter string="Customer product code" name="customer-product-code" context="{'group_by':'customer_product_code'}"/>
+            </filter>
+        </field>
+    </record>
+</data>
+</openerp>

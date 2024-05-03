@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_picking_inh_jvv" inherit_id="stock.report_picking">
+			<tr t-as="move" position="attributes">
+				<attribute name="t-foreach">o.move_lines.filtered(lambda x: x.state != 'cancel')</attribute>
+		    </tr>		
+            <table t-if="not o.pack_operation_ids" position="before">
+                <t t-if="o.recorded_serial_number == True">
+                    <strong>PRODUCT WITH SERIAL NUMBER</strong>
+                <br/>
+                <br/>
+                </t>
+            </table>
+            <xpath expr="//table[1]" position="before">
+                <spam t-if="o.claim">
+                    <strong>Reclamación: </strong>
+                    <span t-field="o.claim" />
+                    <br/>
+                    <br/>
+                    <br/>
+                </spam>
+            </xpath>
+        </template>
+
+        <template id="report_picking_document_inh_jvv" inherit_id="jvv_reports.report_picking_document_gdpr_inh_jvv">
+            <p t-if="o.note" position="after">
+                <p t-if="o.mrp_production and o.purchase_subcontratacion and o.mrp_production_notes">
+                    <strong>Notas fabricación: </strong>
+                    <br/>
+                    <span t-field="o.mrp_production_notes"/>
+                </p>
+            </p>
+        </template>
+    </data>
+</openerp>
