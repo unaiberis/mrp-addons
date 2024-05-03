@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-    <data>
+<odoo>
         <record id="view_partner_form_inh_certification" model="ir.ui.view">
             <field name="name">view.partner.form.inh.certification</field>
             <field name="model">res.partner</field>
@@ -39,5 +38,4 @@
                 </field>
             </field>
         </record>
-    </data>
-</openerp>
+</odoo>

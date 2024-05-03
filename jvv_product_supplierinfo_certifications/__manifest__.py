@@ -3,7 +3,7 @@
 {
     "name": "Jvv Product Supplierinfo Certifications",
     "summary": "Customization Module",
-    "version": "8.0.2.0.0",
+    "version": "16.0.1.0.0",
     "category": "Custom Module",
     "license": "AGPL-3",
     "author": "AvanzOSC",

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<openerp>
-    <data>
+<odoo>
         <record id="product_supplierinfo_certification_tree_view" model="ir.ui.view">
             <field name="name">product.supplierinfo.certification.tree.view</field>
             <field name="model">product.supplierinfo.certification</field>
@@ -17,7 +16,6 @@
     >
             <field name="name">Certifications in product supplies</field>
             <field name="res_model">product.supplierinfo.certification</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree</field>
         </record>
 
@@ -28,5 +26,4 @@
       sequence="80"
       groups="base.group_erp_manager"
     />
-    </data>
-</openerp>
+</odoo>
