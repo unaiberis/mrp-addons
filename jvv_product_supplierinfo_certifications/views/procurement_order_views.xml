@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="procurement_form_view_inh_certification" model="ir.ui.view">
+            <field name="name">procurement.form.view.inh.certification</field>
+            <field name="model">procurement.order</field>
+            <field name="inherit_id" ref="stock.view_procurement_form_stock_inherit" />
+            <field name="arch" type="xml">
+                <field name="route_ids" position="after">
+                    <field name="certification_id" string="Calificación proveedor"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_procurement_filter_inh_certification" model="ir.ui.view">
+            <field name="name">view.procurement.filter.inh.certification</field>
+            <field name="model">procurement.order</field>
+            <field name="inherit_id" ref="procurement.view_procurement_filter" />
+            <field name="arch" type="xml">
+                <field name="state" position="after">
+                    <field name="certification_id" string="Calificación proveedor"/>
+                </field>
+                <filter string="Status" position="after">
+					 <filter string="Calificación proveedor"
+					 		icon="terp-stock_effects-object-colorize"
+					 		domain="[]" context="{'group_by':'certification_id'}"/>
+			    </filter>
+            </field>
+        </record>
+
+        <record id="procurement_tree_view_inh_certification" model="ir.ui.view">
+            <field name="name">procurement.tree.view.inh.certification</field>
+            <field name="model">procurement.order</field>
+            <field name="inherit_id" ref="procurement.procurement_tree_view" />
+            <field name="arch" type="xml">
+                <field name="state" position="before">
+                    <field name="certification_id"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>

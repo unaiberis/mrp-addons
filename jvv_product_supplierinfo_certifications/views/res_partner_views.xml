@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_partner_form_inh_certification" model="ir.ui.view">
+            <field name="name">view.partner.form.inh.certification</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <field name="website" position="after">
+                    <field name="certification_id"
+                    	attrs="{'invisible': [('supplier', '=', False)]}"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_res_partner_filter_inh_certification" model="ir.ui.view">
+            <field name="name">view.res.partner.filter.inh.certification</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter" />
+            <field name="arch" type="xml">
+                <field name="parent_id" position="after">
+                    <field name="certification_id" />
+                </field>
+                <filter string="Country" position="after">
+					<filter string="Calificación proveedor" context="{'group_by': 'certification_id'}"/>
+				</filter>
+            </field>
+        </record>
+
+        <record id="view_partner_tree_inh_certification" model="ir.ui.view">
+            <field name="name">view.partner.tree.inh.certification</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree" />
+            <field name="arch" type="xml">
+                <field name="display_name" position="after">
+                    <field name="certification_id"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
