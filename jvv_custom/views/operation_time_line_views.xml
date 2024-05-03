@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="operation_time_lines_form_view_inh_jvv" model="ir.ui.view">
+        <field name="name">operation.time.lines.form.view.inh.jvv</field>
+        <field name="model">operation.time.line</field>
+        <field name="inherit_id" ref="mrp_operations_time_control.operation_time_lines_form_view" />
+        <field name="arch" type="xml">
+            <field name="user" position="attributes">
+                <attribute name="readonly">0</attribute>
+            </field>
+        </field>
+    </record>
+</data>
+</openerp>

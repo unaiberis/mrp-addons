@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="procurement_sale_forecast_form_view_inh_jvv" model="ir.ui.view">
+        <field name="name">.procurement.sale.forecast.form_view.view.inh.jvv</field>
+        <field name="model">procurement.sale.forecast</field>
+        <field name="inherit_id" ref="procurement_sale_forecast.procurement_sale_forecast_form_view" />
+        <field name="arch" type="xml">
+			<button string="Load Sales" position="after">
+				<field name="state" 
+					widget="statusbar" statusbar_visible="draft,sent,progress,done" />
+			</button>
+            <field name="warehouse_id" position="after">
+                <field name="sale_order_ids" readonly="1"
+                    string="Forecast lines in sale orders" widget="many2many_tags"/>
+            </field>
+            <group string="Lines" position="replace" />
+            <xpath expr="//group[1]" position="after">
+            <notebook colspan="4" col="4">
+                <page string="Lines">
+                    <field name="forecast_lines" colspan="4" nolabel="1"/>
+                </page>
+                <page string="Lines to sales orders">
+                    <field name="forecast_lines2_ids" colspan="4" nolabel="1" >
+                        <tree string="Sale Forecast Lines to sales orders" editable="bottom">
+                            <field name="forecast_id" invisible="1"/>
+                            <field name="date" />
+                            <field name="product_id" attrs="{'readonly':[('completed_line', '=', True)]}"/>
+                            <field name="product_category_id" />
+                            <field name="qty" attrs="{'readonly':['|',('remaining_qty', '&gt;', 0),('completed_line', '=', True)]}" sum="Total Qty" />
+                            <field name="requested_qty" attrs="{'readonly':[('completed_line', '=', True)]}" sum="Total Requested Qty"/>
+                            <field name="remaining_qty" readonly="1" sum="Total Remaining Qty"/>
+                            <field name="sale_order_ids" string="In sale orders" widget="many2many_tags"/>
+                            <field name="completed_line" />
+                            <button string="Forecast To Sale Order"
+                                name="request_sale_order"
+                                type="object" icon="gtk-execute"/>
+                        </tree>
+                    </field>
+                </page>
+            </notebook>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="procurement_sale_forecast_tree_view_inh_jvv" model="ir.ui.view">
+        <field name="name">.procurement.sale.forecast.tree.view.view.inh.jvv</field>
+        <field name="model">procurement.sale.forecast</field>
+        <field name="inherit_id" ref="procurement_sale_forecast.procurement_sale_forecast_tree_view" />
+        <field name="arch" type="xml">
+            <field name="warehouse_id" position="after">
+                <field name="sale_order_ids"
+                    string="Forecast lines in sale orders" widget="many2many_tags"/>
+                <field name="state" />
+            </field>
+        </field>
+    </record>
+
+    <record id="procurement_sale_forecast_search_view_inh_jvv" model="ir.ui.view">
+        <field name="name">procurement.sale.forecast.search.view.inh.jvv</field>
+        <field name="model">procurement.sale.forecast</field>
+        <field name="inherit_id" ref="procurement_sale_forecast.procurement_sale_forecast_search_view" />
+        <field name="arch" type="xml">
+            <field name="date_to" position="after">
+                <field name="state" />
+            </field>
+            <filter string="Partner" position="after">
+                <filter string="State" domain="[]"
+                    context="{'group_by':'state'}" />
+		    </filter>
+        </field>
+    </record>
+</data>
+</openerp>

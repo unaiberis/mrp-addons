@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="view_production_lot_tree_inh_jvv" model="ir.ui.view">
+        <field name="name">view.production.lot.tree.inh.jvv</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_tree" />
+        <field name="arch" type="xml">
+            <field name="create_date" position="after">
+                <field name="qty" />
+            </field>
+            <field name="ref" position="after">
+                <field name="manufacturer_id" />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_production_lot_form_inh_jvv" model="ir.ui.view">
+        <field name="name">view.production.lot.form.inh.jvv</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='main_group']//field[@name='product_id']" position="after">
+                <field name="qty" />
+            </xpath>
+            <field name="ref" position="after">
+                <field name="manufacturer_id" />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_production_lot_form_inh_jvv" model="ir.ui.view">
+        <field name="name">view.production.lot.form.inh.jvv</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='main_group']//field[@name='product_id']" position="after">
+                <field name="qty" />
+            </xpath>
+            <field name="ref" position="after">
+                <field name="manufacturer_id" />
+            </field>
+        </field>
+    </record>
+
+    <record id="search_product_lot_filter_inh_jvv" model="ir.ui.view">
+        <field name="name">search.product.lot.filter.inh.jvv</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.search_product_lot_filter" />
+        <field name="arch" type="xml">
+            <field name="product_id" position="after">
+                <field name="manufacturer_id" />
+            </field>
+        </field>
+    </record>
+</data>
+</openerp>

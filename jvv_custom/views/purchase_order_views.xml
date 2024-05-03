@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="purchase_order_form_view_inh_jvv" model="ir.ui.view">
+        <field name="name">purchase.order.form.view.inh.jvv</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
+        <field name="arch" type="xml">
+            <field name="picking_type_id" position="after">
+                <field name="mail_send" />
+                <field name="mrp_production" readonly="1" />
+                <field name="mrp_production_product_id" readonly="1" />
+            </field>
+            <field name="partner_id" position="attributes">
+                <attribute name="domain">[('supplier','=',True),('is_company','=',True)]</attribute>
+            </field>
+            <xpath expr="//field[@name='order_line']/tree" position="attributes">
+                    <attribute name="editable">bottom</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/tree/field[@name='product_qty']" position="before">
+                <field name="virtual_available" />
+            </xpath>
+        </field>
+    </record>
+    <record id="purchase_order_tree_view_inh_jvv" model="ir.ui.view">
+        <field name="name">purchase.order.tree.view.inh.jvv</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_tree" />
+        <field name="arch" type="xml">
+            <field name="origin" position="before">
+                <field name="mail_send" />
+                <field name="mrp_production" readonly="1" />
+                <field name="mrp_production_product_id" readonly="1" />
+            </field>
+            <field name="origin" position="after">
+                <field name="pricelist_id" />
+            </field>
+           <field name="partner_id" position="after">
+                <field name="dates_transfer_in_pickings" />
+           </field>
+        </field>
+    </record>
+    <record id="view_request_for_quotation_filter_inh_jvv" model="ir.ui.view">
+        <field name="name">view.request.for.quotation.filter.inh.jvv</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.view_request_for_quotation_filter" />
+        <field name="arch" type="xml">
+             <filter name="not_invoiced" position="before">
+                <filter name="mail_send" string="Email enviado" domain="[('mail_send','=', 'si')]" />
+                <filter name="mail_no_send" string="Email no enviado" domain="[('mail_send','=', 'no')]" />
+             </filter>
+             <field name="product_id" position="after">
+                <field name="pricelist_id" />
+                <field name="mrp_production" readonly="1" />
+                <field name="mrp_production_product_id" readonly="1" />
+             </field>
+             <filter string="Supplier" position="after">
+                 <filter string="Pricelist" icon="terp-partner" domain="[]" context="{'group_by':'pricelist_id'}"/>
+             </filter>
+        </field>
+    </record>
+    <record id="view_purchase_order_filter_inh_jvv" model="ir.ui.view">
+        <field name="name">view.purchase.order.filter.inh.jvv</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.view_purchase_order_filter" />
+        <field name="arch" type="xml">
+             <filter name="not_invoiced" position="before">
+                <filter name="mail_send" string="Email enviado" domain="[('mail_send','=', 'si')]" />
+                <filter name="mail_no_send" string="Email no enviado" domain="[('mail_send','=', 'no')]" />
+             </filter>
+             <field name="product_id" position="after">
+                <field name="pricelist_id" />
+                <field name="mrp_production" readonly="1" />
+                <field name="mrp_production_product_id" readonly="1" />
+             </field>
+             <filter string="Supplier" position="after">
+                 <filter string="Pricelist" icon="terp-partner" domain="[]" context="{'group_by':'pricelist_id'}"/>
+                 <filter string="Manufacturing order" icon="terp-partner" domain="[]" context="{'group_by':'mrp_production'}"/>
+                 <filter string="Product to produce" icon="terp-partner" domain="[]" context="{'group_by':'mrp_production_product_id'}"/>
+             </filter>
+        </field>
+    </record>
+    <record id="purchase_order_form_view_inh_line_notes_inh_jvv" model="ir.ui.view">
+        <field name="name">purchase.order.form.view.inh.line.notes.inh.jvv</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="object_line_notes.purchase_order_form_view_inh_line_notes" />
+        <field name="arch" type="xml">
+            <field name="notes" position="after">
+                <field name="notes2" />
+            </field>
+        </field>
+    </record>
+</data>
+</openerp>

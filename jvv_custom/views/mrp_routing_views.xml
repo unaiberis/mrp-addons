@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="mrp_routing_tree_view_inh_jvv_custom" model="ir.ui.view">
+        <field name="name">mrp.routing.tree.view.inh.jvv.custom</field>
+        <field name="model">mrp.routing</field>
+        <field name="inherit_id" ref="mrp.mrp_routing_tree_view" />
+        <field name="arch" type="xml">
+             <field name="location_id" position="after">
+                <field name="production_line_id" />
+                <field name="load_time_line" sum="Total time" widget="float_time" />
+                <field name="load_time_variable" sum="Total time variable" widget="float_time" />
+                <field name="load_time_warehouse" sum="Total time warehouse" widget="float_time" />
+                <field name="load_time_variable_warehouse" sum="Total time variable warehouse" widget="float_time" />
+             </field>
+        </field>
+    </record>
+    <record id="mrp_routing_form_view_inh_jvv_custom" model="ir.ui.view">
+        <field name="name">mrp.routing.form.view.inh.jvv.custom</field>
+        <field name="model">mrp.routing</field>
+        <field name="inherit_id" ref="mrp.mrp_routing_form_view" />
+        <field name="arch" type="xml">
+             <field name="code" position="after">
+                <field name="production_line_id" />
+             </field>
+             <field name="active" position="after">
+                <field name="load_time_line" widget="float_time" />
+                <field name="load_time_variable" widget="float_time" />
+                <field name="load_time_warehouse" widget="float_time" />
+                <field name="load_time_variable_warehouse" widget="float_time" />
+             </field>
+        </field>
+    </record>
+    <record id="mrp_routing_search_view_inh_jvv_custom" model="ir.ui.view">
+        <field name="name">mrp.routing.search.view.inh.jvv.custom</field>
+        <field name="model">mrp.routing</field>
+        <field name="inherit_id" ref="mrp.mrp_routing_search_view" />
+        <field name="arch" type="xml">
+              <field name="company_id" position="after">
+                  <field name="production_line_id" />
+              </field>
+              <filter string="Production Location" position="after">
+                  <filter string="Production line" icon="terp-accessories-archiver" domain="[]" context="{'group_by':'production_line_id'}"/>
+              </filter>
+        </field>
+    </record>
+</data>
+</openerp>

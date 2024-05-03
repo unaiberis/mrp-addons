@@ -1,0 +1,2773 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* jvv_custom
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-01 08:31+0000\n"
+"PO-Revision-Date: 2022-12-01 08:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jvv_custom
+#: field:res.users,inspections_count:0
+msgid "# Inspection"
+msgstr "# Inspection"
+
+#. module: jvv_custom
+#: field:mrp.production,mo_count:0
+msgid "# Manufacturing Orders"
+msgstr "# Manufacturing Orders"
+
+#. module: jvv_custom
+#: view:website:mrp_repair_partner_lot.report_mrp_repair_partner_lot_printing
+msgid "&nbsp;&nbsp;"
+msgstr "&nbsp;&nbsp;"
+
+#. module: jvv_custom
+#: view:website:stock_label_print.quant_label_report
+msgid "&nbsp;&nbsp;&nbsp;&nbsp;"
+msgstr "&nbsp;&nbsp;&nbsp;&nbsp;"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/purchase_order.py:239
+#: code:addons/jvv_custom/models/sale_order.py:243
+#, python-format
+msgid ", product with expired rate."
+msgstr ", product with expired rate."
+
+#. module: jvv_custom
+#: view:website:stock_label_print.quant_label_report
+msgid "ALERT DATE:"
+msgstr "ALERT DATE:"
+
+
+#. module: jvv_custom
+#: view:update.bom.route:jvv_custom.update_bom_done_view
+#: view:update.bom.route:jvv_custom.update_bom_route_form_view
+msgid "Accept"
+msgstr "Accept"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_account_move
+msgid "Account Entry"
+msgstr "Account Entry"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_account_voucher
+msgid "Accounting Voucher"
+msgstr "Accounting Voucher"
+
+
+#. module: jvv_custom
+#: field:project.task.type,active:0
+msgid "Active"
+msgstr "Active"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/stock.py:861
+#, python-format
+msgid "Amount has been exceeded, maximum quantity: %s"
+msgstr "Amount has been exceeded, maximum quantity: %s"
+
+#. module: jvv_custom
+#: field:crm.claim,amount_to_return:0
+msgid "Amount to return"
+msgstr "Amount to return"
+
+#. module: jvv_custom
+#: view:website:crm_claim_report.report_crmclaim_document
+msgid "Amount to return:"
+msgstr "Amount to return:"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_wiz_change_product_category
+msgid "Asistente para cambiar categoria a productos"
+msgstr "Asistente para cambiar categoria a productos"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_wiz_cancel_stock_picking
+msgid "Asistente para cancelar albaranes"
+msgstr "Asistente para cancelar albaranes"
+
+#. module: jvv_custom
+#: view:res.partner:jvv_custom.res_partner_view_buttons_inh_jvv
+msgid "Asociated products"
+msgstr "Asociated products"
+
+#. module: jvv_custom
+#: view:stock.location.route:jvv_custom.stock_location_route_search_view
+#: field:stock.location.route,assemtronic_product:0
+#: field:stock.move,assemtronic_product:0
+msgid "Assemtronic product"
+msgstr "Assemtronic product"
+
+#. module: jvv_custom
+#: help:product.supplierinfo,my_sequence:0
+msgid "Assigns the priority to the list of product supplier."
+msgstr "Assigns the priority to the list of product supplier."
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:255
+#: code:addons/jvv_custom/models/mrp_production.py:678
+#: selection:mrp.production,date_planned_month:0
+#: selection:mrp.production.workcenter.line,date_planned_month:0
+#, python-format
+msgid "August"
+msgstr "August"
+
+#. module: jvv_custom
+#: view:procurement.order:jvv_custom.view_procurement_filter_inh_jvv
+msgid "Año plafinicado"
+msgstr "Año plafinicado"
+
+#. module: jvv_custom
+#: field:procurement.order,date_planned_year:0
+msgid "Año planificacion"
+msgstr "Año planificacion"
+
+#. module: jvv_custom
+#: view:procurement.order:jvv_custom.view_procurement_filter_inh_jvv
+msgid "Año planificación"
+msgstr "Año planificación"
+
+#. module: jvv_custom
+#: field:stock.move,bins_description:0
+msgid "BINs"
+msgstr "BINs"
+
+#. module: jvv_custom
+#: field:res.users,my_bank:0
+msgid "Bank"
+msgstr "Bank"
+
+#. module: jvv_custom
+#: field:stock.pack.operation,product_lot_from_barcode:0
+msgid "Barcode reader"
+msgstr "Barcode reader"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_mrp_bom
+msgid "Bill of Material"
+msgstr "Bill of Material"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+msgid "Bloqueada"
+msgstr "Bloqueada"
+
+#. module: jvv_custom
+#: model:ir.actions.server,name:jvv_custom.action_block_mrp_production
+msgid "Bloquear"
+msgstr "Bloquear"
+
+#. module: jvv_custom
+#: field:mrp.production,version:0
+#: field:product.product,bom_version:0
+#: field:product.template,bom_version:0
+msgid "BoM Version"
+msgstr "BoM Version"
+
+#. module: jvv_custom
+#: field:mrp.production.workcenter.line,boot_time:0
+msgid "Boot time"
+msgstr "Boot time"
+
+#. module: jvv_custom
+#: view:website:stock_label_print.quant_label_report
+msgid "CREATION DATE:"
+msgstr "CREATION DATE:"
+
+#. module: jvv_custom
+#: view:website:crm_claim_report.report_crmclaim_document
+msgid "CRM claim tag:"
+msgstr "CRM claim tag:"
+
+#. module: jvv_custom
+#: view:wiz.change.product.category:jvv_custom.wiz_change_product_category_form_view
+msgid "Cambiar categoría"
+msgstr "Cambiar categoría"
+
+#. module: jvv_custom
+#: model:ir.actions.act_window,name:jvv_custom.action_wiz_change_product_category
+msgid "Cambiar categoría a produtos"
+msgstr "Cambiar categoría a produtos"
+
+#. module: jvv_custom
+#: view:update.bom.route:jvv_custom.update_bom_route_form_view
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: jvv_custom
+#: view:wiz.cancel.stock.picking:jvv_custom.wiz_cancel_stock_picking_form_view
+msgid "Cancel picking"
+msgstr "Cancel picking"
+
+#. module: jvv_custom
+#: view:wiz.cancel.stock.picking:jvv_custom.wiz_cancel_stock_picking_form_view
+#: view:wiz.change.product.category:jvv_custom.wiz_change_product_category_form_view
+#: view:wiz.create.procurement.forecast.line:jvv_custom.wiz_create_procurement_forecast_line_form_view
+#: view:wiz.forecast.line2.to.sale.order:jvv_custom.wiz_forecast_line2_to_sale_order_form_view
+msgid "Cancelar"
+msgstr "Cancelar"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/wizard/stock_transfer_details.py:69
+#, python-format
+msgid "Cannot exceed quantity defined in operation by barcode reader."
+msgstr "Cannot exceed quantity defined in operation by barcode reader."
+
+#. module: jvv_custom
+#: field:stock.picking,production_qty:0
+msgid "Cantidad OF: "
+msgstr "Cantidad OF: "
+
+#. module: jvv_custom
+#: view:stock.move:jvv_custom.view_move_search_inh_jvv
+msgid "Cat. Interna Producto"
+msgstr "Cat. Interna Producto"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+#: field:mrp.production,product_categ_id:0
+msgid "Categoría producto"
+msgstr "Categoría producto"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_change_production_qty
+msgid "Change Quantity of Products"
+msgstr "Change Quantity of Products"
+
+#. module: jvv_custom
+#: field:account.invoice,crm_claim_id:0
+#: model:ir.model,name:jvv_custom.model_crm_claim
+#: view:website:mrp_repair_partner_lot.report_mrp_repair_partner_lot_printing
+msgid "Claim"
+msgstr "Claim"
+
+#. module: jvv_custom
+#: view:website:mrp_repair.report_mrprepairorder
+msgid "Claim:"
+msgstr "Claim:"
+
+#. module: jvv_custom
+#: model:ir.actions.act_window,help:jvv_custom.product_supplierinfo_supplier_action
+msgid "Click to define a new product.supplierinfo."
+msgstr "Click to define a new product.supplierinfo."
+
+#. module: jvv_custom
+#: field:mrp.production,parent_commitment_date:0
+msgid "Commitment Date"
+msgstr "Commitment Date"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+#: field:mrp.production,sale_line_committed_date:0
+#: field:purchase.order.line,committed_date:0
+#: view:sale.order.line:jvv_custom.view_sales_order_line_filter_inh_jvv_custom
+#: field:sale.order.line,committed_date:0
+#: view:stock.move:jvv_custom.view_move_search_inh_jvv
+#: field:stock.move,committed_date:0
+msgid "Committed date"
+msgstr "Committed date"
+
+#. module: jvv_custom
+#: field:res.users,out_inv_comm_algorithm:0
+msgid "Communication Algorithm"
+msgstr "Communication Algorithm"
+
+#. module: jvv_custom
+#: field:res.users,out_inv_comm_type:0
+msgid "Communication Type"
+msgstr "Communication Type"
+
+#. module: jvv_custom
+#: selection:stock.move,bar_code_status:0
+msgid "Completed"
+msgstr "Completed"
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_search_view
+#: field:procurement.sale.forecast.line2,completed_line:0
+msgid "Completed line"
+msgstr "Completed line"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/procurement_sale_forecast_line.py:97
+#, python-format
+msgid "Completed line."
+msgstr "Completed line."
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_search_view
+msgid "Completed lines"
+msgstr "Completed lines"
+
+#. module: jvv_custom
+#: field:purchase.order.line,confirmed_date_without_hour:0
+msgid "Confirmed date"
+msgstr "Confirmed date"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_form_view2_inh_inh_jvv_custom
+msgid "Consumed Products"
+msgstr "Consumed Products"
+
+#. module: jvv_custom
+#: field:res.users,contact_person_id:0
+msgid "Contact Person"
+msgstr "Contact Person"
+
+#. module: jvv_custom
+#: field:res.users,contact_phone:0
+msgid "Contact Phone"
+msgstr "Contact Phone"
+
+#. module: jvv_custom
+#: field:product.template,template_cost_price_history_ids:0
+msgid "Cost price history"
+msgstr "Cost price history"
+
+#. module: jvv_custom
+#: model:ir.actions.act_window,name:jvv_custom.action_wiz_create_procurement_forecast_line
+#: view:wiz.create.procurement.forecast.line:jvv_custom.wiz_create_procurement_forecast_line_form_view
+msgid "Create procurements"
+msgstr "Create procurements"
+
+#. module: jvv_custom
+#: view:wiz.forecast.line2.to.sale.order:jvv_custom.wiz_forecast_line2_to_sale_order_form_view
+msgid "Create sale order line"
+msgstr "Create sale order line"
+
+#. module: jvv_custom
+#: field:mrp.routing.production.line,create_uid:0
+#: field:procurement.sale.forecast.line2,create_uid:0
+#: field:project.template,create_uid:0
+#: field:project.template.task,create_uid:0
+#: field:update.bom.route,create_uid:0
+#: field:wiz.cancel.stock.picking,create_uid:0
+#: field:wiz.change.product.category,create_uid:0
+#: field:wiz.create.procurement.forecast.line,create_uid:0
+#: field:wiz.forecast.line2.to.sale.order,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: jvv_custom
+#: field:stock.pack.operation,created_from_barcode:0
+msgid "Created from barcorde readeer"
+msgstr "Created from barcorde readeer"
+
+#. module: jvv_custom
+#: view:sale.order.line:jvv_custom.view_sales_order_line_filter_sale_forecast2_inh_jvv_custom
+#: field:sale.order.line,from_forecast_id:0
+msgid "Created from sale forecast"
+msgstr "Created from sale forecast"
+
+#. module: jvv_custom
+#: field:sale.order.line,from_forecast_line2_id:0
+msgid "Created from sale forecast line"
+msgstr "Created from sale forecast line"
+
+#. module: jvv_custom
+#: field:mrp.routing.production.line,create_date:0
+#: field:procurement.sale.forecast.line2,create_date:0
+#: field:project.template,create_date:0
+#: field:project.template.task,create_date:0
+#: field:update.bom.route,create_date:0
+#: field:wiz.cancel.stock.picking,create_date:0
+#: field:wiz.change.product.category,create_date:0
+#: field:wiz.create.procurement.forecast.line,create_date:0
+#: field:wiz.forecast.line2.to.sale.order,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: jvv_custom
+#: view:website:crm_claim_report.report_crmclaim_document
+msgid "Creation date:"
+msgstr "Creation date:"
+
+#. module: jvv_custom
+#: field:purchase.order.line,currency_id:0
+#: field:sale.order.line,currency_id:0
+msgid "Currency"
+msgstr "Currency"
+
+#. module: jvv_custom
+#: field:res.users,current_year_billing:0
+msgid "Current year billing"
+msgstr "Current year billing"
+
+#. module: jvv_custom
+#: view:sale.order.line:jvv_custom.view_sale_order_line_search_view_inh_jvv_custom
+msgid "Customer"
+msgstr "Customer"
+
+#. module: jvv_custom
+#: model:ir.actions.act_window,name:jvv_custom.action_account_invoice_line_customer
+#: model:ir.ui.menu,name:jvv_custom.menu_action_account_invoice_line_customer
+msgid "Customer invoices lines"
+msgstr "Customer invoices lines"
+
+#. module: jvv_custom
+#: field:sale.order.line,customer_product_code:0
+#: field:sale.order.line,customer_product_code_with_deno:0
+#: view:sale.report:jvv_custom.view_order_product_search_inh_jvv_custom
+#: field:sale.report,customer_product_code:0
+msgid "Customer product code"
+msgstr "Customer product code"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/res_partner.py:31
+#: field:res.partner,count_customer_products:0
+#: field:res.partner,customer_product_supplierinfo_ids:0
+#: field:res.users,count_customer_products:0
+#: field:res.users,customer_product_supplierinfo_ids:0
+#, python-format
+msgid "Customer products"
+msgstr "Customer products"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+#: field:mrp.production,product_code:0
+#: view:stock.picking:jvv_custom.view_picking_form_inh_jvv
+#: view:stock.picking:jvv_custom.view_picking_internal_search_inh_jvv
+#: field:stock.picking,product_code:0
+msgid "Código producto empresa"
+msgstr "Código producto empresa"
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast.line:jvv_custom.procurement_sale_forecast_line_search_view_inh_jvv
+#: field:procurement.sale.forecast.line,product_code:0
+msgid "Código producto para empresa"
+msgstr "Código producto para empresa"
+
+#. module: jvv_custom
+#: view:website:mrp.report_mrporder
+msgid "Date"
+msgstr "Date"
+
+#. module: jvv_custom
+#: field:mrp.production,date_planned_without_hour:0
+msgid "Date planned"
+msgstr "Date planned"
+
+#. module: jvv_custom
+#: field:product.supplierinfo,date_validity:0
+msgid "Date validity"
+msgstr "Date validity"
+
+#. module: jvv_custom
+#: view:website:crm_claim_report.report_crmclaim_document
+msgid "Date:"
+msgstr "Date:"
+
+#. module: jvv_custom
+#: field:mrp.production,day_of_week:0
+#: field:mrp.production.workcenter.line,day:0
+msgid "Day of the week"
+msgstr "Day of the week"
+
+#. module: jvv_custom
+#: view:website:crm_claim_report.report_crmclaim_document
+msgid "Deadline:"
+msgstr "Deadline:"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:257
+#: code:addons/jvv_custom/models/mrp_production.py:680
+#: selection:mrp.production,date_planned_month:0
+#: selection:mrp.production.workcenter.line,date_planned_month:0
+#, python-format
+msgid "December"
+msgstr "December"
+
+#. module: jvv_custom
+#: field:account.invoice,delivery_address_id:0
+msgid "Delivery address"
+msgstr "Delivery address"
+
+#. module: jvv_custom
+#: view:project.task:jvv_custom.view_task_search_form_inh_jvv
+#: field:project.task,department_id:0
+msgid "Department"
+msgstr "Department"
+
+#. module: jvv_custom
+#: model:ir.actions.server,name:jvv_custom.action_unblock_mrp_production
+msgid "Desbloquear"
+msgstr "Desbloquear"
+
+#. module: jvv_custom
+#: field:mrp.routing.production.line,name:0
+#: field:project.template,name:0
+#: field:project.template.task,name:0
+msgid "Description"
+msgstr "Description"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_report_stock_traceability_operation
+msgid "Detailed traceability"
+msgstr "Detailed traceability"
+
+#. module: jvv_custom
+#: field:purchase.order.line,diff_days_date_transfer:0
+msgid "Diff. Days with date transfer"
+msgstr "Diff. Days with date transfer"
+
+#. module: jvv_custom
+#: field:mrp.routing.production.line,display_name:0
+#: field:procurement.sale.forecast.line2,display_name:0
+#: field:project.template,display_name:0
+#: field:project.template.task,display_name:0
+#: field:update.bom.route,display_name:0
+#: field:wiz.cancel.stock.picking,display_name:0
+#: field:wiz.change.product.category,display_name:0
+#: field:wiz.create.procurement.forecast.line,display_name:0
+#: field:wiz.forecast.line2.to.sale.order,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: jvv_custom
+#: field:mrp.production,purchase_subcontratacion_id:0
+msgid "Doc. sub."
+msgstr "Doc. sub."
+
+#. module: jvv_custom
+#: field:stock.picking,purchase_subcontratacion:0
+msgid "Doc.Sub."
+msgstr "Doc.Sub."
+
+#. module: jvv_custom
+#: view:website:mrp.report_mrporder
+msgid "Doc.Sub.:"
+msgstr "Doc.Sub.:"
+
+#. module: jvv_custom
+#: view:procurement.order:jvv_custom.view_procurement_filter_inh_jvv
+msgid "Día planificación"
+msgstr "Día planificación"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search_view_inh_jvv_custom
+#: view:mrp.production.workcenter.line:jvv_custom.mrp_production_workcenter_line_search_view_inh_jvv_custom
+msgid "Día semana planificado"
+msgstr "Día semana planificado"
+
+#. module: jvv_custom
+#: view:website:stock_label_print.quant_label_report
+msgid "EXPIRATION DATE:"
+msgstr "EXPIRATION DATE:"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Email composition wizard"
+
+#. module: jvv_custom
+#: view:purchase.order:jvv_custom.view_purchase_order_filter_inh_jvv
+#: view:purchase.order:jvv_custom.view_request_for_quotation_filter_inh_jvv
+#: field:purchase.order,mail_send:0
+msgid "Email enviado"
+msgstr "Email enviado"
+
+#. module: jvv_custom
+#: view:purchase.order:jvv_custom.view_purchase_order_filter_inh_jvv
+#: view:purchase.order:jvv_custom.view_request_for_quotation_filter_inh_jvv
+msgid "Email no enviado"
+msgstr "Email no enviado"
+
+#. module: jvv_custom
+#: view:product.supplierinfo:jvv_custom.product_supplierinfo_supplier_search_view
+msgid "Empresa"
+msgstr "Empresa"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/product_template.py:83
+#, python-format
+msgid "End of Lifecycle"
+msgstr "End of Lifecycle"
+
+
+#. module: jvv_custom
+#: field:stock.quant,free_quant_for_especial_lot_ids:0
+msgid "Especial lots for free quant"
+msgstr "Especial lots for free quant"
+
+#. module: jvv_custom
+#: field:stock.quant,reserved_quant_for_especial_lot_ids:0
+msgid "Especial lots for reserved quant"
+msgstr "Especial lots for reserved quant"
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast.line:jvv_custom.procurement_sale_forecast_line_search_view_inh_jvv
+#: field:procurement.sale.forecast.line,procurement_state:0
+msgid "Estado abastecimiento"
+msgstr "Estado abastecimiento"
+
+#. module: jvv_custom
+#: view:stock.picking:jvv_custom.view_picking_internal_search_inh_jvv
+msgid "Expected Date"
+msgstr "Expected Date"
+
+#. module: jvv_custom
+#: field:product.supplierinfo,expiration_date:0
+msgid "Expiration date"
+msgstr "Expiration date"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_form_view_inh_inh_jvv_custom
+msgid "Fabricaciones"
+msgstr "Fabricaciones"
+
+#. module: jvv_custom
+#: field:mrp.production,manufacturing_blocked:0
+msgid "Fabricación bloqueada"
+msgstr "Fabricación bloqueada"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/product_template.py:85
+#, python-format
+msgid "Favourite"
+msgstr "Favourite"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:252
+#: code:addons/jvv_custom/models/mrp_production.py:675
+#: selection:mrp.production,date_planned_month:0
+#: selection:mrp.production.workcenter.line,date_planned_month:0
+#, python-format
+msgid "February"
+msgstr "February"
+
+#. module: jvv_custom
+#: field:stock.picking,sale_line_confirmed_date:0
+msgid "Fec.Confirm.línea venta"
+msgstr "Fec.Confirm.línea venta"
+
+#. module: jvv_custom
+#: field:mrp.production,sale_line_confirmed_date:0
+msgid "Fec.Confirmada línea venta"
+msgstr "Fec.Confirmada línea venta"
+
+#. module: jvv_custom
+#: field:mrp.production,manual_confirmed_date:0
+msgid "Fec.Confirmada manual"
+msgstr "Fec.Confirmada manual"
+
+#. module: jvv_custom
+#: field:mrp.production,sale_line_requested_date:0
+#: field:stock.picking,sale_line_requested_date:0
+msgid "Fec.Solicitud línea venta"
+msgstr "Fec.Solicitud línea venta"
+
+#. module: jvv_custom
+#: field:mrp.production,manual_requested_date:0
+msgid "Fec.Solicitud manual"
+msgstr "Fec.Solicitud manual"
+
+#. module: jvv_custom
+#: field:procurement.sale.forecast.line2,date:0
+msgid "Fecha"
+msgstr "Fecha"
+
+#. module: jvv_custom
+#: view:stock.picking:jvv_custom.view_picking_internal_search_inh_jvv
+#: field:stock.picking,date_without_hour:0
+msgid "Fecha creación"
+msgstr "Fecha creación"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+#: view:procurement.order:jvv_custom.view_procurement_filter_inh_jvv
+msgid "Fecha planificada"
+msgstr "Fecha planificada"
+
+#. module: jvv_custom
+#: field:procurement.order,date_planned_without_hour:0
+msgid "Fecha planificada sin hora"
+msgstr "Fecha planificada sin hora"
+
+#. module: jvv_custom
+#: field:stock.pack.operation,date_expected:0
+#: field:stock.picking,min_date_without_hour:0
+#: field:stock.transfer_details_items,date_expected:0
+msgid "Fecha prevista"
+msgstr "Fecha prevista"
+
+#. module: jvv_custom
+#: field:product.template,fix_negative_stock:0
+msgid "Fix negative stock"
+msgstr "Fix negative stock"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/stock.py:291
+#, python-format
+msgid "For the product %s, are needed one amount of %s, and in operations have been introduced %s."
+msgstr "For the product %s, are needed one amount of %s, and in operations have been introduced %s."
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast.line:jvv_custom.procurement_sale_forecast_line_search_view_inh_jvv
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_search_view
+#: field:procurement.sale.forecast.line2,forecast_id:0
+#: view:sale.order.line:jvv_custom.view_sales_order_line_filter_sale_forecast2_inh_jvv_custom
+msgid "Forecast"
+msgstr "Forecast"
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_form_view
+msgid "Forecast Line To Sale Order"
+msgstr "Forecast Line To Sale Order"
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_search_view
+msgid "Forecast Line To Sales Search"
+msgstr "Forecast Line To Sales Search"
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_form_view
+msgid "Forecast Line to sales orders"
+msgstr "Forecast Line to sales orders"
+
+#. module: jvv_custom
+#: field:procurement.sale.forecast,forecast_lines2_ids:0
+msgid "Forecast Lines to sale orders"
+msgstr "Forecast Lines to sale orders"
+
+#. module: jvv_custom
+#: model:ir.ui.menu,name:jvv_custom.tock_sale_forecast_lines2_option_view
+msgid "Forecast Lines to sales orders"
+msgstr "Forecast Lines to sales orders"
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast:jvv_custom.procurement_sale_forecast_form_view_inh_jvv
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_tree_view
+msgid "Forecast To Sale Order"
+msgstr "Forecast To Sale Order"
+
+#. module: jvv_custom
+#: view:wiz.forecast.line2.to.sale.order:jvv_custom.wiz_forecast_line2_to_sale_order_form_view
+msgid "Forecast line to sale order"
+msgstr "Forecast line to sale order"
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast:jvv_custom.procurement_sale_forecast_form_view_inh_jvv
+#: view:procurement.sale.forecast:jvv_custom.procurement_sale_forecast_tree_view_inh_jvv
+#: field:procurement.sale.forecast,sale_order_ids:0
+msgid "Forecast lines in sale orders"
+msgstr "Forecast lines in sale orders"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/procurement_sale_forecast_line.py:119
+#, python-format
+msgid "Forecast lines to sale order"
+msgstr "Forecast lines to sale order"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_wiz_forecast_line2_to_sale_order
+msgid "Forecast to sale order"
+msgstr "Forecast to sale order"
+
+#. module: jvv_custom
+#: field:stock.pack.operation,free_quant_for_especial_lot_ids:0
+msgid "Free quant para lote especial"
+msgstr "Free quant para lote especial"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:302
+#: code:addons/jvv_custom/models/mrp_production.py:658
+#: selection:mrp.production,day_of_week:0
+#: selection:mrp.production.workcenter.line,day:0
+#, python-format
+msgid "Friday"
+msgstr "Friday"
+
+#. module: jvv_custom
+#: view:product.template:jvv_custom.product_template_search_view_inh_jvv
+#: field:product.template,generate_serial_numbers:0
+msgid "Generate serial numbers"
+msgstr "Generate serial numbers"
+
+#. module: jvv_custom
+#: view:account.invoice.line:jvv_custom.view_account_invoice_line_filter
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_search_view
+#: view:product.supplierinfo:jvv_custom.product_supplierinfo_supplier_search_view
+#: view:stock.location.route:jvv_custom.stock_location_route_search_view
+msgid "Group By"
+msgstr "Group By"
+
+#. module: jvv_custom
+#: view:product.template:jvv_custom.product_warning_form_view_inh_jvv
+msgid "Histórico"
+msgstr "Histórico"
+
+#. module: jvv_custom
+#: field:mrp.routing.production.line,id:0
+#: field:procurement.sale.forecast.line2,id:0
+#: field:project.template,id:0
+#: field:project.template.task,id:0
+#: field:update.bom.route,id:0
+#: field:wiz.cancel.stock.picking,id:0
+#: field:wiz.change.product.category,id:0
+#: field:wiz.create.procurement.forecast.line,id:0
+#: field:wiz.forecast.line2.to.sale.order,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: jvv_custom
+#: field:stock.production.lot,manufacturer_id:0
+#: field:stock.transfer.split.multi,manufacturer_id:0
+#: field:stock.transfer_details_items,manufacturer_id:0
+msgid "ID Manufacturer"
+msgstr "ID Manufacturer"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/product_template.py:81
+#, python-format
+msgid "In Development"
+msgstr "In Development"
+
+#. module: jvv_custom
+#: field:purchase.order,in_picking_ids:0
+msgid "In pickings"
+msgstr "In pickings"
+
+#. module: jvv_custom
+#: field:purchase.order,dates_transfer_in_pickings:0
+msgid "In pickings dates transfer"
+msgstr "In pickings dates transfer"
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast:jvv_custom.procurement_sale_forecast_form_view_inh_jvv
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_form_view
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_tree_view
+#: field:procurement.sale.forecast.line2,sale_order_ids:0
+msgid "In sale orders"
+msgstr "In sale orders"
+
+#. module: jvv_custom
+#: model:ir.actions.act_window,name:jvv_custom.product_supplierinfo_supplier_action
+#: model:ir.ui.menu,name:jvv_custom.product_supplierinfo_purchase_menu
+msgid "Information about a product (supplier)"
+msgstr "Information about a product (supplier)"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_product_supplierinfo
+msgid "Information about a product supplier"
+msgstr "Information about a product supplier"
+
+#. module: jvv_custom
+#: view:stock.move:jvv_custom.view_move_search_inh_jvv
+#: field:stock.move,product_internal_reference:0
+msgid "Internal reference"
+msgstr "Internal reference"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_stock_inventory
+msgid "Inventory"
+msgstr "Inventory"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_stock_location
+msgid "Inventory Locations"
+msgstr "Inventory Locations"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_stock_location_route
+msgid "Inventory Routes"
+msgstr "Inventory Routes"
+
+#. module: jvv_custom
+#: view:report.stock.traceability_operation:jvv_custom.report_stock_traceability_operation_search_inh_jvv_custom
+#: field:report.stock.traceability_operation,inventory_description:0
+#: field:stock.move,inventory_description:0
+msgid "Inventory description"
+msgstr "Inventory description"
+
+#. module: jvv_custom
+#: view:account.invoice.line:jvv_custom.view_account_invoice_line_filter
+#: model:ir.model,name:jvv_custom.model_account_invoice
+msgid "Invoice"
+msgstr "Invoice"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Invoice Line"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_account_invoice_refund
+msgid "Invoice Refund"
+msgstr "Invoice Refund"
+
+#. module: jvv_custom
+#: view:account.invoice.line:jvv_custom.view_account_invoice_line_filter
+#: field:account.invoice.line,invoice_number:0
+msgid "Invoice number"
+msgstr "Invoice number"
+
+#. module: jvv_custom
+#: field:res.users,invoice_year_info:0
+msgid "Invoice year_info"
+msgstr "Invoice year_info"
+
+#. module: jvv_custom
+#: field:stock.picking.type,subcontract_operation:0
+msgid "It is subcontract operation"
+msgstr "It is subcontract operation"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:252
+#: code:addons/jvv_custom/models/mrp_production.py:675
+#: selection:mrp.production,date_planned_month:0
+#: selection:mrp.production.workcenter.line,date_planned_month:0
+#, python-format
+msgid "January"
+msgstr "January"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_account_move_line
+msgid "Journal Items"
+msgstr "Journal Items"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:254
+#: code:addons/jvv_custom/models/mrp_production.py:677
+#: selection:mrp.production,date_planned_month:0
+#: selection:mrp.production.workcenter.line,date_planned_month:0
+#, python-format
+msgid "July"
+msgstr "July"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:254
+#: code:addons/jvv_custom/models/mrp_production.py:677
+#: selection:mrp.production,date_planned_month:0
+#: selection:mrp.production.workcenter.line,date_planned_month:0
+#, python-format
+msgid "June"
+msgstr "June"
+
+#. module: jvv_custom
+#: field:mrp.routing.production.line,__last_update:0
+#: field:procurement.sale.forecast.line2,__last_update:0
+#: field:project.template,__last_update:0
+#: field:project.template.task,__last_update:0
+#: field:update.bom.route,__last_update:0
+#: field:wiz.cancel.stock.picking,__last_update:0
+#: field:wiz.change.product.category,__last_update:0
+#: field:wiz.create.procurement.forecast.line,__last_update:0
+#: field:wiz.forecast.line2.to.sale.order,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: jvv_custom
+#: field:mrp.routing.production.line,write_uid:0
+#: field:procurement.sale.forecast.line2,write_uid:0
+#: field:project.template,write_uid:0
+#: field:project.template.task,write_uid:0
+#: field:update.bom.route,write_uid:0
+#: field:wiz.cancel.stock.picking,write_uid:0
+#: field:wiz.change.product.category,write_uid:0
+#: field:wiz.create.procurement.forecast.line,write_uid:0
+#: field:wiz.forecast.line2.to.sale.order,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: jvv_custom
+#: field:mrp.routing.production.line,write_date:0
+#: field:procurement.sale.forecast.line2,write_date:0
+#: field:project.template,write_date:0
+#: field:project.template.task,write_date:0
+#: field:update.bom.route,write_date:0
+#: field:wiz.cancel.stock.picking,write_date:0
+#: field:wiz.change.product.category,write_date:0
+#: field:wiz.create.procurement.forecast.line,write_date:0
+#: field:wiz.forecast.line2.to.sale.order,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: jvv_custom
+#: field:product.template,last_date_cost:0
+msgid "Last date cost price"
+msgstr "Last date cost price"
+
+#. module: jvv_custom
+#: field:product.template,last_date_manual_cost:0
+msgid "Last date manual cost price"
+msgstr "Last date manual cost price"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Lead/Opportunity"
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast:jvv_custom.procurement_sale_forecast_form_view_inh_jvv
+msgid "Lines"
+msgstr "Lines"
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast:jvv_custom.procurement_sale_forecast_form_view_inh_jvv
+msgid "Lines to sales orders"
+msgstr "Lines to sales orders"
+
+#. module: jvv_custom
+#: field:res.users,linkedin_id:0
+msgid "LinkedIn ID"
+msgstr "LinkedIn ID"
+
+#. module: jvv_custom
+#: field:res.users,linkedin_public_url:0
+#: field:res.users,linkedin_url:0
+msgid "LinkedIn url"
+msgstr "LinkedIn url"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/product_template.py:86
+#, python-format
+msgid "Little used"
+msgstr "Little used"
+
+#. module: jvv_custom
+#: field:mrp.production,load_time_line:0
+#: field:mrp.routing,load_time_line:0
+msgid "Load time line"
+msgstr "Load time line"
+
+#. module: jvv_custom
+#: field:mrp.production,load_time_warehouse:0
+#: field:mrp.routing,load_time_warehouse:0
+msgid "Load time warehouse"
+msgstr "Load time warehouse"
+
+#. module: jvv_custom
+#: field:assign.manual.quants.lines,location_name:0
+#: view:procurement.order:jvv_custom.view_procurement_filter_inh_jvv
+msgid "Location"
+msgstr "Location"
+
+#. module: jvv_custom
+#: view:stock.location:jvv_custom.view_location_search_view_inh_jvv
+#: field:stock.location,final_mrp_location:0
+msgid "Location for MRP finished products"
+msgstr "Location for MRP finished products"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/stock.py:698
+#, python-format
+msgid "Lot not exist."
+msgstr "Lot not exist."
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_stock_production_lot
+msgid "Lot/Serial"
+msgstr "Lot/Serial"
+
+#. module: jvv_custom
+#: field:stock.pack.operation,especial_lot:0
+msgid "Lote especial"
+msgstr "Lote especial"
+
+#. module: jvv_custom
+#: field:stock.move,lots_description:0
+msgid "Lots"
+msgstr "Lots"
+
+#. module: jvv_custom
+#: view:website:stock_label_print.quant_label_report
+msgid "MANUFACTURE DATE:"
+msgstr "MANUFACTURE DATE:"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+#: field:mrp.production,mo_skewback_date:0
+msgid "MO Skewback date"
+msgstr "MO Skewback date"
+
+#. module: jvv_custom
+#: field:product.product,mrp_bom_ids:0
+#: field:product.template,mrp_bom_ids:0
+msgid "MRP BoMs"
+msgstr "MRP BoMs"
+
+#. module: jvv_custom
+#: field:product.product,mrp_production_ids:0
+msgid "MRP Productions"
+msgstr "MRP Productions"
+
+#. module: jvv_custom
+#: field:mrp.production,count_mrp_productions:0
+#: field:product.product,count_mrp_productions:0
+msgid "MRP Productions counter"
+msgstr "MRP Productions counter"
+
+#. module: jvv_custom
+#: field:stock.picking,mrp_production_notes:0
+msgid "MRP production notes"
+msgstr "MRP production notes"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_mrp_repair_customer_lot
+msgid "MRP repair customer lot"
+msgstr "MRP repair customer lot"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_make_procurement
+msgid "Make Procurements"
+msgstr "Make Procurements"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_crm_make_sale
+msgid "Make sales"
+msgstr "Make sales"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_mrp_production
+#: field:mrp.production,mrp_production_warn:0
+msgid "Manufacturing Order"
+msgstr "Manufacturing Order"
+
+#. module: jvv_custom
+#: view:stock.move:jvv_custom.view_move_search_inh_jvv
+msgid "Manufacturing movements"
+msgstr "Manufacturing movements"
+
+#. module: jvv_custom
+#: view:purchase.order:jvv_custom.view_purchase_order_filter_inh_jvv
+msgid "Manufacturing order"
+msgstr "Manufacturing order"
+
+#. module: jvv_custom
+#: field:res.users,mrp_production_follower:0
+msgid "Manufacturing orders follower"
+msgstr "Manufacturing orders follower"
+
+#. module: jvv_custom
+#: field:sale.order,mrp_project_id:0
+msgid "Manufacturing project"
+msgstr "Manufacturing project"
+
+#. module: jvv_custom
+#: model:ir.actions.act_window,name:jvv_custom.action_view_task_from_mrp
+#: model:ir.ui.menu,name:jvv_custom.menu_action_view_task_from_mrp
+msgid "Manufacturing tasks"
+msgstr "Manufacturing tasks"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:253
+#: code:addons/jvv_custom/models/mrp_production.py:676
+#: selection:mrp.production,date_planned_month:0
+#: selection:mrp.production.workcenter.line,date_planned_month:0
+#, python-format
+msgid "March"
+msgstr "March"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:254
+#: code:addons/jvv_custom/models/mrp_production.py:677
+#: selection:mrp.production,date_planned_month:0
+#: selection:mrp.production.workcenter.line,date_planned_month:0
+#, python-format
+msgid "May"
+msgstr "May"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/wizard/update_bom_route.py:36
+#: model:ir.model,name:jvv_custom.model_mail_message
+#, python-format
+msgid "Message"
+msgstr "Message"
+
+#. module: jvv_custom
+#: field:mrp.production,mrp_production_warn_msg:0
+msgid "Message for Manufacturing Order"
+msgstr "Message for Manufacturing Order"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:298
+#: code:addons/jvv_custom/models/mrp_production.py:654
+#: selection:mrp.production,day_of_week:0
+#: selection:mrp.production.workcenter.line,day:0
+#, python-format
+msgid "Monday"
+msgstr "Monday"
+
+#. module: jvv_custom
+#: view:product.product:jvv_custom.product_form_view_procurement_button_inh_jvv
+msgid "Moves"
+msgstr "Moves"
+
+#. module: jvv_custom
+#: model:ir.actions.act_window,name:jvv_custom.act_general_pending_stock_move
+#: view:product.template:jvv_custom.product_template_form_view_reservation_button_inh_jvv
+msgid "Mvtos.Pdtes.Producto"
+msgstr "Mvtos.Pdtes.Producto"
+
+#. module: jvv_custom
+#: view:product.product:jvv_custom.product_form_view_procurement_button_inh_jvv
+msgid "Mvtos.Pdtes.Variante"
+msgstr "Mvtos.Pdtes.Variante"
+
+#. module: jvv_custom
+#: view:sale.order.line:jvv_custom.view_sales_order_line_filter_inh_jvv_custom
+msgid "My Sales Order Lines"
+msgstr "My Sales Order Lines"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+msgid "NO Bloqueada"
+msgstr "NO Bloqueada"
+
+#. module: jvv_custom
+#: view:product.template:jvv_custom.product_template_search_view_inh_jvv
+msgid "NO generate serial numbers"
+msgstr "NO generate serial numbers"
+
+#. module: jvv_custom
+#: selection:product.template,generate_serial_numbers:0
+#: selection:purchase.order,mail_send:0
+msgid "No"
+msgstr "No"
+
+#. module: jvv_custom
+#: selection:stock.move,bar_code_status:0
+msgid "No completed"
+msgstr "No completed"
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_search_view
+msgid "No completed lines"
+msgstr "No completed lines"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/stock.py:514
+#: selection:stock.move,bar_code_status:0
+#, python-format
+msgid "No control"
+msgstr "No control"
+
+#. module: jvv_custom
+#: field:stock.move,immediately_usable_qty:0
+msgid "No reserved"
+msgstr "No reserved"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/stock.py:171
+#, python-format
+msgid "No se ha encontrado el movimiento para el producto: %s"
+msgstr "No se ha encontrado el movimiento para el producto: %s"
+
+#. module: jvv_custom
+#: view:website:crm_claim_report.report_crmclaim_document
+msgid "Nonconformity decision:"
+msgstr "Nonconformity decision:"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/product_template.py:82
+#, python-format
+msgid "Normal"
+msgstr "Normal"
+
+#. module: jvv_custom
+#: view:website:stock.report_picking
+msgid "Notas fabricación:"
+msgstr "Notas fabricación:"
+
+#. module: jvv_custom
+#: field:product.template,template_notes:0
+msgid "Notas plantilla"
+msgstr "Notas plantilla"
+
+#. module: jvv_custom
+#: view:sale.order.line:jvv_custom.view_order_line_form2_inh_jvv_custom
+msgid "Notes"
+msgstr "Notes"
+
+#. module: jvv_custom
+#: view:purchase.order.line:jvv_custom.purchase_order_line_form_view_inh_line_notes_inh_jvv
+#: field:purchase.order.line,notes2:0
+#: view:sale.order.line:jvv_custom.view_order_line_form2_inh_jvv_custom
+#: field:sale.order.line,notes2:0
+msgid "Notes 2"
+msgstr "Notes 2"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:256
+#: code:addons/jvv_custom/models/mrp_production.py:679
+#: selection:mrp.production,date_planned_month:0
+#: selection:mrp.production.workcenter.line,date_planned_month:0
+#, python-format
+msgid "November"
+msgstr "November"
+
+#. module: jvv_custom
+#: field:wiz.change.product.category,category_id:0
+msgid "Nueva categoría"
+msgstr "Nueva categoría"
+
+#. module: jvv_custom
+#: field:mrp.bom,num_lines:0
+msgid "Num. Líneas"
+msgstr "Num. Líneas"
+
+#. module: jvv_custom
+#: model:ir.actions.act_window,name:jvv_custom.mrp_production_num_serie_product_planif_action
+#: model:ir.ui.menu,name:jvv_custom.menu_mrp_production_num_serie_product_planif_action
+msgid "Num.Serie productos planificados"
+msgstr "Num.Serie productos planificados"
+
+#. module: jvv_custom
+#: field:mrp.bom.line,my_counter:0
+msgid "Numeración"
+msgstr "Numeración"
+
+#. module: jvv_custom
+#: view:website:mrp.report_mrporder
+msgid "Observations"
+msgstr "Observations"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/product_template.py:84
+#, python-format
+msgid "Obsolete"
+msgstr "Obsolete"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:256
+#: code:addons/jvv_custom/models/mrp_production.py:679
+#: selection:mrp.production,date_planned_month:0
+#: selection:mrp.production.workcenter.line,date_planned_month:0
+#, python-format
+msgid "October"
+msgstr "October"
+
+#. module: jvv_custom
+#: field:crm.lead,offer_number:0
+#: field:product.supplierinfo,offer_number:0
+#: view:sale.order:jvv_custom.view_sales_order_filter_inh_jvv_custom
+#: field:sale.order,offer_number:0
+msgid "Offer number"
+msgstr "Offer number"
+
+#. module: jvv_custom
+#: field:stock.transfer_details_items,operation_quantity:0
+msgid "Operation Quantity"
+msgstr "Operation Quantity"
+
+#. module: jvv_custom
+#: field:stock.transfer_details_items,operation_picking_id:0
+msgid "Operation picking"
+msgstr "Operation picking"
+
+#. module: jvv_custom
+#: view:website:mrp.report_mrporder
+msgid "Operator"
+msgstr "Operator"
+
+#. module: jvv_custom
+#: view:sale.order:jvv_custom.view_sales_order_filter_inh_jvv_custom
+#: field:sale.order,opportunity_id:0
+msgid "Opportunity"
+msgstr "Opportunity"
+
+#. module: jvv_custom
+#: field:sale.order.line,client_order_ref:0
+msgid "Order reference"
+msgstr "Order reference"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+msgid "Origen"
+msgstr "Origen"
+
+#. module: jvv_custom
+#: view:mrp.production.workcenter.line:jvv_custom.mrp_production_workcenter_line_search_view_inh_jvv_custom
+#: field:mrp.production.workcenter.line,origin:0
+msgid "Origen producción"
+msgstr "Origen producción"
+
+#. module: jvv_custom
+#: field:sale.order.line,out_picking_id:0
+msgid "Out picking"
+msgstr "Out picking"
+
+#. module: jvv_custom
+#: field:sale.order,out_picking_ids:0
+msgid "Out pickings"
+msgstr "Out pickings"
+
+#. module: jvv_custom
+#: field:sale.order,dates_transfer_out_pickings:0
+msgid "Out pickings dates transfer"
+msgstr "Out pickings dates transfer"
+
+#. module: jvv_custom
+#: view:website:stock.report_picking
+msgid "PRODUCT WITH SERIAL NUMBER"
+msgstr "PRODUCT WITH SERIAL NUMBER"
+
+#. module: jvv_custom
+#: view:website:stock_label_print.quant_label_report
+msgid "PRODUCT:"
+msgstr "PRODUCT:"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_stock_pack_operation
+msgid "Packing Operation"
+msgstr "Packing Operation"
+
+#. module: jvv_custom
+#: field:res.users,paid_current_year:0
+msgid "Paid current year"
+msgstr "Paid current year"
+
+#. module: jvv_custom
+#: field:mrp.production,parent_mrp_production_id:0
+msgid "Parent production"
+msgstr "Parent production"
+
+#. module: jvv_custom
+#: view:account.invoice.line:jvv_custom.view_account_invoice_line_filter
+#: model:ir.model,name:jvv_custom.model_res_partner
+#: view:product.supplierinfo:jvv_custom.product_supplierinfo_supplier_search_view
+msgid "Partner"
+msgstr "Partner"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/purchase_order.py:124
+#, python-format
+msgid "Partner %s with no recognizable email."
+msgstr "Partner %s with no recognizable email."
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/purchase_order.py:121
+#, python-format
+msgid "Partner %s without email."
+msgstr "Partner %s without email."
+
+#. module: jvv_custom
+#: view:stock.move:jvv_custom.view_move_search_inh_jvv
+#: field:stock.move,partner_product_code:0
+msgid "Partner product code"
+msgstr "Partner product code"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/account.py:86
+#, python-format
+msgid "Payment Reference used in Supplier Invoice Number: %s"
+msgstr "Payment Reference used in Supplier Invoice Number: %s"
+
+#. module: jvv_custom
+#: field:res.users,payment_pending_current_year:0
+msgid "Payment pending current year"
+msgstr "Payment pending current year"
+
+#. module: jvv_custom
+#: view:account.invoice:jvv_custom.invoice_form_inh_jvv
+#: view:account.invoice:jvv_custom.invoice_supplier_form_inh_jvv
+msgid "Payments"
+msgstr "Payments"
+
+#. module: jvv_custom
+#: field:mrp.production,purchase_subcontratacion_ids:0
+msgid "Pedidos de compra subcontratacion"
+msgstr "Pedidos de compra subcontratacion"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_tree_view_inh_jvv_custom
+msgid "Pending quantity to produce"
+msgstr "Pending quantity to produce"
+
+#. module: jvv_custom
+#: field:mrp.production,permission_to_block_manufacture:0
+msgid "Permiso para bloquear fabricación"
+msgstr "Permiso para bloquear fabricación"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_stock_picking
+msgid "Picking List"
+msgstr "Picking List"
+
+#. module: jvv_custom
+#: view:stock.picking:jvv_custom.view_picking_internal_search_inh_jvv
+msgid "Picking Type"
+msgstr "Picking Type"
+
+#. module: jvv_custom
+#: field:purchase.order.line,date_transfer:0
+#: field:purchase.order.line,date_transfer_without_hour:0
+msgid "Picking date transfer"
+msgstr "Picking date transfer"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_stock_transfer_details
+msgid "Picking wizard"
+msgstr "Picking wizard"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_stock_transfer_details_items
+msgid "Picking wizard items"
+msgstr "Picking wizard items"
+
+#. module: jvv_custom
+#: field:mrp.production,date_planned_month:0
+#: field:mrp.production.workcenter.line,date_planned_month:0
+msgid "Planned month"
+msgstr "Planned month"
+
+#. module: jvv_custom
+#: field:mrp.production,date_planned_week:0
+#: field:mrp.production.workcenter.line,date_planned_week:0
+msgid "Planned week"
+msgstr "Planned week"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+#: field:mrp.production,date_planned_year:0
+#: field:mrp.production.workcenter.line,date_planned_year:0
+msgid "Planned year"
+msgstr "Planned year"
+
+#. module: jvv_custom
+#: view:wiz.change.product.category:jvv_custom.wiz_change_product_category_form_view
+msgid "Presences information"
+msgstr "Presences information"
+
+#. module: jvv_custom
+#: field:crm.claim,price:0
+msgid "Price"
+msgstr "Price"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/purchase_order.py:242
+#: code:addons/jvv_custom/models/sale_order.py:246
+#, python-format
+msgid "Price Error!"
+msgstr "Price Error!"
+
+#. module: jvv_custom
+#: view:website:crm_claim_report.report_crmclaim_document
+msgid "Price:"
+msgstr "Price:"
+
+#. module: jvv_custom
+#: view:purchase.order:jvv_custom.view_purchase_order_filter_inh_jvv
+#: view:purchase.order:jvv_custom.view_request_for_quotation_filter_inh_jvv
+#: view:sale.order:jvv_custom.view_sales_order_filter_inh_jvv_custom
+#: field:sale.order.line,pricelist_id:0
+msgid "Pricelist"
+msgstr "Pricelist"
+
+#. module: jvv_custom
+#: help:sale.order.line,pricelist_id:0
+msgid "Pricelist for current sales order."
+msgstr "Pricelist for current sales order."
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_procurement_order
+msgid "Procurement"
+msgstr "Procurement"
+
+#. module: jvv_custom
+#: field:mrp.production,productions_count:0
+msgid "Producciones relacionadas"
+msgstr "Producciones relacionadas"
+
+#. module: jvv_custom
+#: view:account.invoice.line:jvv_custom.view_account_invoice_line_filter
+#: model:ir.model,name:jvv_custom.model_product_product
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+#: view:procurement.order:jvv_custom.view_procurement_filter_inh_jvv
+#: view:procurement.sale.forecast.line:jvv_custom.procurement_sale_forecast_line_search_view_inh_jvv
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_search_view
+#: field:procurement.sale.forecast.line2,product_id:0
+msgid "Product"
+msgstr "Product"
+
+#. module: jvv_custom
+#: field:procurement.sale.forecast.line2,product_category_id:0
+msgid "Product Category"
+msgstr "Product Category"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_mrp_product_produce
+msgid "Product Produce"
+msgstr "Product Produce"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_product_template
+#: view:product.supplierinfo:jvv_custom.product_supplierinfo_supplier_search_view
+msgid "Product Template"
+msgstr "Product Template"
+
+#. module: jvv_custom
+#: field:mrp.production,product_attachments_jvv:0
+#: field:mrp.production.workcenter.line,workcenter_attachments_jvv:0
+msgid "Product attachments"
+msgstr "Product attachments"
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_search_view
+msgid "Product category"
+msgstr "Product category"
+
+#. module: jvv_custom
+#: view:procurement.order:jvv_custom.view_procurement_filter_inh_jvv
+#: field:procurement.order,product_categ_id:0
+msgid "Product internal category"
+msgstr "Product internal category"
+
+#. module: jvv_custom
+#: view:product.template:jvv_custom.product_template_search_view_inh_jvv
+msgid "Product manager"
+msgstr "Product manager"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/stock.py:687
+#, python-format
+msgid "Product not found"
+msgstr "Product not found"
+
+#. module: jvv_custom
+#: field:procurement.sale.forecast.line,product_tmpl_id:0
+#: field:procurement.sale.forecast.line2,product_tmpl_id:0
+msgid "Product template"
+msgstr "Product template"
+
+#. module: jvv_custom
+#: view:purchase.order:jvv_custom.view_purchase_order_filter_inh_jvv
+#: field:purchase.order,mrp_production_product_id:0
+#: view:stock.move:jvv_custom.view_move_search_inh_jvv
+#: field:stock.move,production_product_id:0
+msgid "Product to produce"
+msgstr "Product to produce"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_tree_view_inh_jvv_custom
+msgid "Product variant"
+msgstr "Product variant"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/purchase_order.py:243
+#: code:addons/jvv_custom/models/sale_order.py:247
+#, python-format
+msgid "Product with expired rate."
+msgstr "Product with expired rate."
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/stock.py:717
+#, python-format
+msgid "Product without lot not found in picking"
+msgstr "Product without lot not found in picking"
+
+#. module: jvv_custom
+#: view:mrp.production.workcenter.line:jvv_custom.mrp_production_workcenter_line_search_view_inh_jvv_custom
+msgid "Production"
+msgstr "Production"
+
+#. module: jvv_custom
+#: view:mrp.routing:jvv_custom.mrp_routing_search_view_inh_jvv_custom
+msgid "Production Location"
+msgstr "Production Location"
+
+#. module: jvv_custom
+#: view:stock.move:jvv_custom.view_move_search_inh_jvv
+msgid "Production Order for Produced Products"
+msgstr "Production Order for Produced Products"
+
+#. module: jvv_custom
+#: view:stock.move:jvv_custom.view_move_search_inh_jvv
+msgid "Production Order for Raw Materials"
+msgstr "Production Order for Raw Materials"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_mrp_routing_production_line
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+#: field:mrp.production,production_line_id:0
+#: view:mrp.routing:jvv_custom.mrp_routing_search_view_inh_jvv_custom
+#: field:mrp.routing,production_line_id:0
+#: view:mrp.routing.production.line:jvv_custom.mrp_routing_production_line_form_view
+msgid "Production line"
+msgstr "Production line"
+
+#. module: jvv_custom
+#: model:ir.actions.act_window,name:jvv_custom.action_mrp_routing_production_line_view
+#: model:ir.ui.menu,name:jvv_custom.mrp_routing_production_line_option_view
+#: view:mrp.routing.production.line:jvv_custom.mrp_routing_production_line_tree_view
+msgid "Production lines"
+msgstr "Production lines"
+
+#. module: jvv_custom
+#: field:project.task,project_from_mrp:0
+msgid "Project from mrp"
+msgstr "Project from mrp"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_project_template
+#: field:product.template,project_template_id:0
+#: view:project.template:jvv_custom.project_template_form_view
+#: field:project.template.task,template_id:0
+msgid "Project template"
+msgstr "Project template"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_project_template_task
+msgid "Project template task"
+msgstr "Project template task"
+
+#. module: jvv_custom
+#: model:ir.actions.act_window,name:jvv_custom.action_project_template_view
+#: model:ir.ui.menu,name:jvv_custom.project_teplate_option_view
+#: view:project.template:jvv_custom.project_template_tree_view
+msgid "Project templates"
+msgstr "Project templates"
+
+#. module: jvv_custom
+#: view:project.project:jvv_custom.project_project_calendar
+msgid "Projects"
+msgstr "Projects"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_purchase_order
+msgid "Purchase Order"
+msgstr "Purchase Order"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Purchase Order Line"
+
+#. module: jvv_custom
+#: view:account.invoice:jvv_custom.invoice_supplier_form_inh_jvv
+#: field:account.invoice,purchase_order_ids:0
+msgid "Purchase orders"
+msgstr "Purchase orders"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_purchase_report
+msgid "Purchases Orders"
+msgstr "Purchases Orders"
+
+#. module: jvv_custom
+#: field:stock.move,qty_available_not_res:0
+msgid "Qty Available Not Reserved"
+msgstr "Qty Available Not Reserved"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/stock.py:765
+#, python-format
+msgid "Quant not found for introduced product/lot."
+msgstr "Quant not found for introduced product/lot."
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/stock.py:762
+#, python-format
+msgid "Quant not fount for introduce product."
+msgstr "Quant not fount for introduce product."
+
+#. module: jvv_custom
+#: field:mrp.repair.customer.lot,quantity_2_digits:0
+#: field:mrp.repair.fee,product_uom_qty_2_digits:0
+#: field:mrp.repair.line,product_uom_qty_2_digits:0
+#: field:procurement.sale.forecast.line2,qty:0
+#: field:stock.pack.operation,product_qty_lot:0
+#: field:stock.production.lot,qty:0
+msgid "Quantity"
+msgstr "Quantity"
+
+#. module: jvv_custom
+#: field:stock.move,qty_available:0
+msgid "Quantity On Hand"
+msgstr "Quantity On Hand"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/wizard/stock_transfer_details.py:68
+#, python-format
+msgid "Quantity error"
+msgstr "Quantity error"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_tree_view_inh_jvv_custom
+msgid "Quantity produced"
+msgstr "Quantity produced"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_stock_quant
+msgid "Quants"
+msgstr "Quants"
+
+#. module: jvv_custom
+#: field:stock.move,bar_code_status:0
+msgid "Reader bar code status"
+msgstr "Reader bar code status"
+
+#. module: jvv_custom
+#: view:website:stock.report_picking
+msgid "Reclamación:"
+msgstr "Reclamación:"
+
+#. module: jvv_custom
+#: view:stock.picking:jvv_custom.view_picking_internal_search_inh_jvv
+#: field:stock.picking,recorded_serial_number:0
+msgid "Recorded serial number"
+msgstr "Recorded serial number"
+
+#. module: jvv_custom
+#: field:product.supplierinfo,prefix_code:0
+msgid "Ref. interna producto"
+msgstr "Ref. interna producto"
+
+#. module: jvv_custom
+#: help:mrp.production.workcenter.line,origin:0
+msgid "Reference of the document that generated this production order request."
+msgstr "Reference of the document that generated this production order request."
+
+#. module: jvv_custom
+#: help:stock.move,product_internal_reference:0
+msgid "Reference of the variant"
+msgstr "Reference of the variant"
+
+#. module: jvv_custom
+#: view:website:crm_claim_report.report_crmclaim_document
+msgid "Related repairs"
+msgstr "Related repairs"
+
+#. module: jvv_custom
+#: view:website:crm_claim_report.report_crmclaim_document
+msgid "Related stock pickings"
+msgstr "Related stock pickings"
+
+#. module: jvv_custom
+#: field:procurement.sale.forecast.line2,remaining_qty:0
+msgid "Remaining Quantity"
+msgstr "Remaining Quantity"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_mrp_repair_fee
+msgid "Repair Fees Line"
+msgstr "Repair Fees Line"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_mrp_repair_line
+msgid "Repair Line"
+msgstr "Repair Line"
+
+#. module: jvv_custom
+#: view:website:mrp_repair_partner_lot.report_mrp_repair_partner_lot_printing
+msgid "Repair date"
+msgstr "Repair date"
+
+#. module: jvv_custom
+#: field:account.invoice,mrp_repair_id:0
+msgid "Repair order"
+msgstr "Repair order"
+
+#. module: jvv_custom
+#: field:stock.picking,shipping_address_in_pickings:0
+#: field:stock.picking.type,shipping_address_in_pickings:0
+msgid "Request shipping address in pickings"
+msgstr "Request shipping address in pickings"
+
+#. module: jvv_custom
+#: field:procurement.sale.forecast.line2,requested_qty:0
+msgid "Requested Quantity"
+msgstr "Requested Quantity"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/procurement_sale_forecast_line.py:105
+#, python-format
+msgid "Requested quantity greater than Remaining quantity."
+msgstr "Requested quantity greater than Remaining quantity."
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/procurement_sale_forecast_line.py:102
+#, python-format
+msgid "Requested quantity greater than quantity."
+msgstr "Requested quantity greater than quantity."
+
+#. module: jvv_custom
+#: field:stock.pack.operation,reserved_quant_for_especial_lot_ids:0
+msgid "Reserved quant para lote especial"
+msgstr "Reserved quant para lote especial"
+
+#. module: jvv_custom
+#: view:website:crm_claim_report.report_crmclaim_document
+msgid "Resolution actions:"
+msgstr "Resolution actions:"
+
+#. module: jvv_custom
+#: field:update.bom.route,message:0
+msgid "Response"
+msgstr "Response"
+
+#. module: jvv_custom
+#: view:website:mrp_repair_partner_lot.report_mrp_repair_partner_lot_printing
+msgid "Responsible"
+msgstr "Responsible"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_mrp_routing
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+msgid "Routing"
+msgstr "Routing"
+
+#. module: jvv_custom
+#: view:procurement.order:jvv_custom.view_procurement_filter_inh_jvv
+msgid "Rule"
+msgstr "Rule"
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast:jvv_custom.procurement_sale_forecast_form_view_inh_jvv
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_tree_view
+msgid "Sale Forecast Lines to sales orders"
+msgstr "Sale Forecast Lines to sales orders"
+
+#. module: jvv_custom
+#: field:wiz.forecast.line2.to.sale.order,sale_order_id:0
+msgid "Sale Order"
+msgstr "Sale Order"
+
+#. module: jvv_custom
+#: field:res.users,sale_type:0
+msgid "Sale Order Type"
+msgstr "Sale Order Type"
+
+#. module: jvv_custom
+#: view:product.template:jvv_custom.product_warning_form_view_inh_jvv
+msgid "Sale forecast"
+msgstr "Sale forecast"
+
+#. module: jvv_custom
+#: view:product.template:jvv_custom.product_warning_form_view_inh_jvv
+msgid "Sale forecast lines"
+msgstr "Sale forecast lines"
+
+#. module: jvv_custom
+#: field:product.product,forecast_ids:0
+#: field:product.template,forecast_ids:0
+msgid "Sale forecasts from sale orders"
+msgstr "Sale forecasts from sale orders"
+
+#. module: jvv_custom
+#: view:product.template:jvv_custom.product_warning_form_view_inh_jvv
+msgid "Sale forecasts from sale_orders"
+msgstr "Sale forecasts from sale_orders"
+
+#. module: jvv_custom
+#: field:product.product,procurement_sale_forecast_line_ids:0
+#: field:product.template,procurement_sale_forecast_line_ids:0
+msgid "Sale forecasts lines from sale orders"
+msgstr "Sale forecasts lines from sale orders"
+
+#. module: jvv_custom
+#: field:product.product,procurement_sale_forecast_line2_ids:0
+#: field:product.template,procurement_sale_forecast_line2_ids:0
+msgid "Sale forecasts lines to sale orders"
+msgstr "Sale forecasts lines to sale orders"
+
+#. module: jvv_custom
+#: field:product.product,forecast2_ids:0
+#: field:product.template,forecast2_ids:0
+msgid "Sale forecasts to sale orders"
+msgstr "Sale forecasts to sale orders"
+
+#. module: jvv_custom
+#: view:product.template:jvv_custom.product_warning_form_view_inh_jvv
+msgid "Sale forecasts to sale_orders"
+msgstr "Sale forecasts to sale_orders"
+
+#. module: jvv_custom
+#: view:stock.move:jvv_custom.view_move_search_inh_jvv
+#: field:stock.move,sale_id:0
+msgid "Sale order"
+msgstr "Sale order"
+
+#. module: jvv_custom
+#: view:account.invoice:jvv_custom.invoice_form_inh_jvv
+#: field:account.invoice,sale_order_ids:0
+msgid "Sale orders"
+msgstr "Sale orders"
+
+#. module: jvv_custom
+#: model:ir.actions.act_window,name:jvv_custom.action_view_stock_sale_forecast_line2
+msgid "Sales Forecast Lines to sale orders"
+msgstr "Sales Forecast Lines to sale orders"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_sale_order
+msgid "Sales Order"
+msgstr "Sales Order"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Sales Order Line"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_sale_report
+msgid "Sales Orders Statistics"
+msgstr "Sales Orders Statistics"
+
+#. module: jvv_custom
+#: view:website:crm_claim_report.report_crmclaim_document
+msgid "Sales team:"
+msgstr "Sales team:"
+
+#. module: jvv_custom
+#: view:sale.order:jvv_custom.view_sales_order_filter_inh_jvv_custom
+msgid "Salesperson"
+msgstr "Salesperson"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:303
+#: code:addons/jvv_custom/models/mrp_production.py:659
+#: selection:mrp.production,day_of_week:0
+#: selection:mrp.production.workcenter.line,day:0
+#, python-format
+msgid "Saturday"
+msgstr "Saturday"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+#: view:mrp.production.workcenter.line:jvv_custom.mrp_production_workcenter_line_search_view_inh_jvv_custom
+#: view:procurement.order:jvv_custom.view_procurement_filter_inh_jvv
+msgid "Scheduled Month"
+msgstr "Scheduled Month"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+msgid "Scheduled Week"
+msgstr "Scheduled Week"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+msgid "Scheduled current month"
+msgstr "Scheduled current month"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+msgid "Scheduled current week"
+msgstr "Scheduled current week"
+
+#. module: jvv_custom
+#: view:mrp.production.workcenter.line:jvv_custom.mrp_production_workcenter_line_search_view_inh_jvv_custom
+#: field:mrp.production.workcenter.line,date_planned_without_hour:0
+msgid "Scheduled date"
+msgstr "Scheduled date"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+msgid "Scheduled next month"
+msgstr "Scheduled next month"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+msgid "Scheduled next week"
+msgstr "Scheduled next week"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+#: view:mrp.production.workcenter.line:jvv_custom.mrp_production_workcenter_line_search_view_inh_jvv_custom
+msgid "Scheduled session day of the week"
+msgstr "Scheduled session day of the week"
+
+#. module: jvv_custom
+#: view:mrp.production.workcenter.line:jvv_custom.mrp_production_workcenter_line_search_view_inh_jvv_custom
+msgid "Scheduled week"
+msgstr "Scheduled week"
+
+#. module: jvv_custom
+#: view:mrp.production.workcenter.line:jvv_custom.mrp_production_workcenter_line_search_view_inh_jvv_custom
+msgid "Scheduled year"
+msgstr "Scheduled year"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/stock.py:175
+#, python-format
+msgid "Se ha encontrado mas de un movimiento para el producto: %s"
+msgstr "Se ha encontrado mas de un movimiento para el producto: %s"
+
+#. module: jvv_custom
+#: view:account.invoice.line:jvv_custom.view_account_invoice_line_filter
+msgid "Search invoice line"
+msgstr "Search invoice line"
+
+#. module: jvv_custom
+#: view:mrp.routing.production.line:jvv_custom.mrp_routing_production_line_search_view
+msgid "Search production line"
+msgstr "Search production line"
+
+#. module: jvv_custom
+#: view:project.template:jvv_custom.project_template_search_view
+msgid "Search project template"
+msgstr "Search project template"
+
+#. module: jvv_custom
+#: view:stock.location.route:jvv_custom.stock_location_route_search_view
+msgid "Search route"
+msgstr "Search route"
+
+#. module: jvv_custom
+#: help:res.users,out_inv_comm_algorithm:0
+msgid "Select Algorithm to generate the Structured Communication on Outgoing Invoices."
+msgstr "Select Algorithm to generate the Structured Communication on Outgoing Invoices."
+
+#. module: jvv_custom
+#: help:res.users,out_inv_comm_type:0
+msgid "Select Default Communication Type for Outgoing Invoices."
+msgstr "Select Default Communication Type for Outgoing Invoices."
+
+#. module: jvv_custom
+#: help:procurement.order,product_categ_id:0
+#: help:procurement.sale.forecast.line2,product_category_id:0
+msgid "Select category for the current product"
+msgstr "Select category for the current product"
+
+#. module: jvv_custom
+#: help:mrp.production,mrp_production_warn:0
+msgid "Selecting the \"Warning\" option will notify user with the message, Selecting \"Blocking Message\" will throw an exception with the message and block the flow. The Message has to be written in the next field."
+msgstr "Selecting the \"Warning\" option will notify user with the message, Selecting \"Blocking Message\" will throw an exception with the message and block the flow. The Message has to be written in the next field."
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:255
+#: code:addons/jvv_custom/models/mrp_production.py:678
+#: selection:mrp.production,date_planned_month:0
+#: selection:mrp.production.workcenter.line,date_planned_month:0
+#, python-format
+msgid "September"
+msgstr "September"
+
+#. module: jvv_custom
+#: field:product.supplierinfo,my_sequence:0
+msgid "Sequence"
+msgstr "Sequence"
+
+#. module: jvv_custom
+#: field:mrp.repair.customer.lot,serial_number:0
+msgid "Serial number"
+msgstr "Serial number"
+
+#. module: jvv_custom
+#: field:account.invoice.line,serial_numbers:0
+#: field:stock.move,serial_numbers:0
+msgid "Serial numbers"
+msgstr "Serial numbers"
+
+#. module: jvv_custom
+#: field:product.template,serial_numbers_sequence_id:0
+msgid "Serial numbers sequence"
+msgstr "Serial numbers sequence"
+
+#. module: jvv_custom
+#: field:res.users,agency_id:0
+msgid "Shipping method"
+msgstr "Shipping method"
+
+#. module: jvv_custom
+#: selection:purchase.order,mail_send:0
+msgid "Si"
+msgstr "Si"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+#: view:procurement.order:jvv_custom.view_procurement_filter_inh_jvv
+#: view:sale.order.line:jvv_custom.view_sales_order_line_filter_inh_jvv_custom
+msgid "Status"
+msgstr "Status"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_stock_move
+msgid "Stock Move"
+msgstr "Stock Move"
+
+#. module: jvv_custom
+#: view:stock.move:jvv_custom.view_move_picking_tree_inh_jvv
+msgid "Stock Moves"
+msgstr "Stock Moves"
+
+#. module: jvv_custom
+#: help:stock.move,immediately_usable_qty:0
+msgid "Stock for this Product that can be safely proposed for sale to Customers.\n"
+"The definition of this value can be configured to suit your needs"
+msgstr "Stock for this Product that can be safely proposed for sale to Customers.\n"
+"The definition of this value can be configured to suit your needs"
+
+#. module: jvv_custom
+#: field:mrp.production.workcenter.line,stopping_time:0
+msgid "Stopping time"
+msgstr "Stopping time"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:304
+#: code:addons/jvv_custom/models/mrp_production.py:660
+#: selection:mrp.production,day_of_week:0
+#: selection:mrp.production.workcenter.line,day:0
+#, python-format
+msgid "Sunday"
+msgstr "Sunday"
+
+#. module: jvv_custom
+#: view:product.supplierinfo:jvv_custom.product_supplierinfo_search_view_inh_jvv
+#: view:product.supplierinfo:jvv_custom.product_supplierinfo_supplier_search_view
+#: view:purchase.order:jvv_custom.view_purchase_order_filter_inh_jvv
+#: view:purchase.order:jvv_custom.view_request_for_quotation_filter_inh_jvv
+msgid "Supplier"
+msgstr "Supplier"
+
+#. module: jvv_custom
+#: model:ir.actions.act_window,name:jvv_custom.action_account_invoice_line_supplier
+#: model:ir.ui.menu,name:jvv_custom.menu_action_account_invoice_line_supplier
+msgid "Supplier invoices lines"
+msgstr "Supplier invoices lines"
+
+#. module: jvv_custom
+#: field:purchase.order.line,supplier_product_code:0
+#: view:purchase.report:jvv_custom.view_purchase_order_search_inh_jvv_custom
+#: field:purchase.report,supplier_product_code:0
+msgid "Supplier product code"
+msgstr "Supplier product code"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+#: field:mrp.production,supplier_customer_material:0
+msgid "Supplier/Customer material"
+msgstr "Supplier/Customer material"
+
+#. module: jvv_custom
+#: view:product.supplierinfo:jvv_custom.product_supplierinfo_supplier_search_view
+msgid "Supplierinfo search"
+msgstr "Supplierinfo search"
+
+#. module: jvv_custom
+#: view:wiz.cancel.stock.picking:jvv_custom.wiz_cancel_stock_picking_form_view
+msgid "Sí"
+msgstr "Sí"
+
+#. module: jvv_custom
+#: field:product.supplierinfo,property_product_pricelist_purchase:0
+msgid "Tarifa compra"
+msgstr "Tarifa compra"
+
+#. module: jvv_custom
+#: field:product.supplierinfo,property_product_pricelist:0
+msgid "Tarifa venta"
+msgstr "Tarifa venta"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_project_task
+msgid "Task"
+msgstr "Task"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_project_task_type
+msgid "Task Stage"
+msgstr "Task Stage"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_form_view_inh_inh_jvv_custom
+#: view:project.template:jvv_custom.project_template_form_view
+#: field:project.template,task_ids:0
+msgid "Tasks"
+msgstr "Tasks"
+
+#. module: jvv_custom
+#: field:mrp.production,mrp_project_task_count:0
+msgid "Tasks numb."
+msgstr "Tasks numb."
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_stock_picking_type
+msgid "The picking type determines the picking view"
+msgstr "The picking type determines the picking view"
+
+#. module: jvv_custom
+#: help:stock.transfer_details_items,operation_picking_id:0
+msgid "The stock operation where the packing has been made"
+msgstr "The stock operation where the packing has been made"
+
+#. module: jvv_custom
+#: help:product.supplierinfo,prefix_code:0
+msgid "This is the code of the product modelIf Automatic Reference is checked, this field is used as a prefix for the product variant reference.\n"
+"In case that there is only one variant this code is the same as the code of the uniq variant"
+msgstr "This is the code of the product modelIf Automatic Reference is checked, this field is used as a prefix for the product variant reference.\n"
+"In case that there is only one variant this code is the same as the code of the uniq variant"
+
+#. module: jvv_custom
+#: help:product.supplierinfo,property_product_pricelist_purchase:0
+msgid "This pricelist will be used, instead of the default one, for purchases from the current partner"
+msgstr "This pricelist will be used, instead of the default one, for purchases from the current partner"
+
+#. module: jvv_custom
+#: help:product.supplierinfo,property_product_pricelist:0
+msgid "This pricelist will be used, instead of the default one, for sales to the current partner"
+msgstr "This pricelist will be used, instead of the default one, for sales to the current partner"
+
+#. module: jvv_custom
+#: help:res.users,linkedin_public_url:0
+msgid "This url is set automatically when you join the partner with a LinkedIn account."
+msgstr "This url is set automatically when you join the partner with a LinkedIn account."
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:301
+#: code:addons/jvv_custom/models/mrp_production.py:657
+#: selection:mrp.production,day_of_week:0
+#: selection:mrp.production.workcenter.line,day:0
+#, python-format
+msgid "Thursday"
+msgstr "Thursday"
+
+#. module: jvv_custom
+#: field:mrp.production,load_time_variable:0
+#: field:mrp.routing,load_time_variable:0
+msgid "Time to load variable"
+msgstr "Time to load variable"
+
+#. module: jvv_custom
+#: field:mrp.production,load_time_variable_warehouse:0
+#: field:mrp.routing,load_time_variable_warehouse:0
+msgid "Time variable load warehouse"
+msgstr "Time variable load warehouse"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_form_view2_inh_inh_jvv_custom
+msgid "Times"
+msgstr "Times"
+
+#. module: jvv_custom
+#: view:stock.move:jvv_custom.view_move_search_inh_jvv
+msgid "Tipo albarán"
+msgstr "Tipo albarán"
+
+#. module: jvv_custom
+#: view:stock.move:jvv_custom.view_move_search_inh_jvv
+msgid "Today"
+msgstr "Today"
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast:jvv_custom.procurement_sale_forecast_form_view_inh_jvv
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_form_view
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_tree_view
+msgid "Total Qty"
+msgstr "Total Qty"
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast:jvv_custom.procurement_sale_forecast_form_view_inh_jvv
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_form_view
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_tree_view
+msgid "Total Remaining Qty"
+msgstr "Total Remaining Qty"
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast:jvv_custom.procurement_sale_forecast_form_view_inh_jvv
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_form_view
+#: view:procurement.sale.forecast.line2:jvv_custom.procurement_sale_forecast_line2_tree_view
+msgid "Total Requested Qty"
+msgstr "Total Requested Qty"
+
+#. module: jvv_custom
+#: field:mrp.production,total_line_hours:0
+msgid "Total line hours"
+msgstr "Total line hours"
+
+#. module: jvv_custom
+#: field:mrp.production.workcenter.line,total_phase_time:0
+msgid "Total phase time"
+msgstr "Total phase time"
+
+#. module: jvv_custom
+#: field:stock.pack.operation,product_qty_available_not_res:0
+msgid "Total quantity NOT RESERVED in product"
+msgstr "Total quantity NOT RESERVED in product"
+
+#. module: jvv_custom
+#: field:stock.pack.operation,product_qty_in_lot:0
+#: field:stock.pack.operation,product_qty_in_lot2:0
+msgid "Total quantity in lot NOT RESERVED"
+msgstr "Total quantity in lot NOT RESERVED"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_tree_view_inh_jvv_custom
+#: view:mrp.routing:jvv_custom.mrp_routing_tree_view_inh_jvv_custom
+msgid "Total time"
+msgstr "Total time"
+
+#. module: jvv_custom
+#: view:mrp.routing:jvv_custom.mrp_routing_tree_view_inh_jvv_custom
+msgid "Total time variable"
+msgstr "Total time variable"
+
+#. module: jvv_custom
+#: view:mrp.routing:jvv_custom.mrp_routing_tree_view_inh_jvv_custom
+msgid "Total time variable warehouse"
+msgstr "Total time variable warehouse"
+
+#. module: jvv_custom
+#: view:mrp.routing:jvv_custom.mrp_routing_tree_view_inh_jvv_custom
+msgid "Total time warehouse"
+msgstr "Total time warehouse"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_tree_view_inh_jvv_custom
+msgid "Total time2"
+msgstr "Total time2"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_tree_view_inh_jvv_custom
+msgid "Total time3"
+msgstr "Total time3"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_tree_view_inh_jvv_custom
+msgid "Total time4"
+msgstr "Total time4"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_tree_view_inh_jvv_custom
+msgid "Total time5"
+msgstr "Total time5"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_tree_view_inh_jvv_custom
+msgid "Total time6"
+msgstr "Total time6"
+
+#. module: jvv_custom
+#: field:mrp.production,total_warehouse_time:0
+msgid "Total warehouse time"
+msgstr "Total warehouse time"
+
+#. module: jvv_custom
+#: view:stock.picking:jvv_custom.view_picking_internal_search_inh_jvv
+#: field:stock.picking,date_done_without_hour:0
+msgid "Transfer date"
+msgstr "Transfer date"
+
+#. module: jvv_custom
+#: view:sale.order.line:jvv_custom.view_sale_order_line_search_view_inh_jvv_custom
+#: field:sale.order.line,out_picking_date_done:0
+msgid "Transfer date out picking"
+msgstr "Transfer date out picking"
+
+#. module: jvv_custom
+#: field:res.users,transport_id:0
+msgid "Transport"
+msgstr "Transport"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:299
+#: code:addons/jvv_custom/models/mrp_production.py:655
+#: selection:mrp.production,day_of_week:0
+#: selection:mrp.production.workcenter.line,day:0
+#, python-format
+msgid "Tuesday"
+msgstr "Tuesday"
+
+#. module: jvv_custom
+#: field:account.invoice.line,type:0
+#: view:product.supplierinfo:jvv_custom.product_supplierinfo_supplier_search_view
+#: view:product.template:jvv_custom.product_template_search_view_inh_jvv
+msgid "Type"
+msgstr "Type"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/product_template.py:87
+#, python-format
+msgid "Unutilized"
+msgstr "Unutilized"
+
+#. module: jvv_custom
+#: model:ir.actions.act_window,name:jvv_custom.action_update_bom_route
+#: view:update.bom.route:jvv_custom.update_bom_done_view
+#: view:update.bom.route:jvv_custom.update_bom_route_form_view
+msgid "Update BoM Route"
+msgstr "Update BoM Route"
+
+#. module: jvv_custom
+#: view:update.bom.route:jvv_custom.update_bom_route_form_view
+msgid "Update BoM route for select BoMs?"
+msgstr "Update BoM route for select BoMs?"
+
+#. module: jvv_custom
+#: field:stock.location,run_mrp_scheduler:0
+msgid "Usar en planificador MRP"
+msgstr "Usar en planificador MRP"
+
+#. module: jvv_custom
+#: view:mrp.production.workcenter.line:jvv_custom.mrp_production_workcenter_line_search_view_inh_jvv_custom
+#: field:mrp.production.workcenter.line,user_id:0
+#: view:sale.order:jvv_custom.view_order_form_inh_jvv_custom
+#: view:sale.order:jvv_custom.view_order_tree_inh_jvv_custom
+#: view:sale.order:jvv_custom.view_quotation_tree_inh_jvv_custom
+#: view:sale.order:jvv_custom.view_sales_order_filter_inh_jvv_custom
+msgid "User"
+msgstr "User"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_res_users
+msgid "Users"
+msgstr "Users"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_form_view2_inh_inh_jvv_custom
+msgid "Warning !!!!!"
+msgstr "Warning !!!!!"
+
+#. module: jvv_custom
+#: view:product.template:jvv_custom.product_warning_form_view_inh_jvv
+msgid "Warnings"
+msgstr "Warnings"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:300
+#: code:addons/jvv_custom/models/mrp_production.py:656
+#: selection:mrp.production,day_of_week:0
+#: selection:mrp.production.workcenter.line,day:0
+#, python-format
+msgid "Wednesday"
+msgstr "Wednesday"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+#: view:sale.order.line:jvv_custom.view_sales_order_line_filter_inh_jvv_custom
+#: view:stock.move:jvv_custom.view_move_search_inh_jvv
+msgid "With committed date"
+msgstr "With committed date"
+
+#. module: jvv_custom
+#: field:res.users,with_invoice_pending_info:0
+msgid "With invoice pending info"
+msgstr "With invoice pending info"
+
+#. module: jvv_custom
+#: field:sale.order,procurement_sale_forecast_ids:0
+msgid "With lines created from sale forecast"
+msgstr "With lines created from sale forecast"
+
+#. module: jvv_custom
+#: view:stock.picking:jvv_custom.view_picking_internal_search_inh_jvv
+msgid "With recorded serial number"
+msgstr "With recorded serial number"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+msgid "With supplier/Customer material"
+msgstr "With supplier/Customer material"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+#: view:sale.order.line:jvv_custom.view_sales_order_line_filter_inh_jvv_custom
+#: view:stock.move:jvv_custom.view_move_search_inh_jvv
+msgid "Without committed date"
+msgstr "Without committed date"
+
+#. module: jvv_custom
+#: view:stock.picking:jvv_custom.view_picking_internal_search_inh_jvv
+msgid "Without recorded serial number"
+msgstr "Without recorded serial number"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_search2_view_inh_jvv_custom
+msgid "Without supplier/Customer material"
+msgstr "Without supplier/Customer material"
+
+#. module: jvv_custom
+#: view:mrp.production.workcenter.line:jvv_custom.mrp_production_workcenter_line_search_view_inh_jvv_custom
+msgid "Work Center"
+msgstr "Work Center"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_mrp_routing_workcenter
+msgid "Work Center Usage"
+msgstr "Work Center Usage"
+
+#. module: jvv_custom
+#: model:ir.model,name:jvv_custom.model_mrp_production_workcenter_line
+msgid "Work Order"
+msgstr "Work Order"
+
+#. module: jvv_custom
+#: view:mrp.production.workcenter.line:jvv_custom.mrp_production_workcenter_line_search_view_inh_jvv_custom
+msgid "Work order"
+msgstr "Work order"
+
+#. module: jvv_custom
+#: selection:product.template,generate_serial_numbers:0
+msgid "Yes"
+msgstr "Yes"
+
+#. module: jvv_custom
+#: view:wiz.forecast.line2.to.sale.order:jvv_custom.wiz_forecast_line2_to_sale_order_form_view
+msgid "You are going to a sale order line whith selected forecast lines"
+msgstr "You are going to a sale order line whith selected forecast lines"
+
+#. module: jvv_custom
+#: view:wiz.create.procurement.forecast.line:jvv_custom.wiz_create_procurement_forecast_line_form_view
+msgid "You are going to create procurements"
+msgstr "You are going to create procurements"
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/purchase_order.py:133
+#, python-format
+msgid "You are trying to unlink the purchase order %s from the manufacturing order %s."
+msgstr "You are trying to unlink the purchase order %s from the manufacturing order %s."
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/project_task.py:72
+#, python-format
+msgid "You cannot delete the task stage %s, what you can do is deactivate it."
+msgstr "You cannot delete the task stage %s, what you can do is deactivate it."
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/procurement_sale_forecast_line.py:143
+#, python-format
+msgid "You cannot delete this forecast line because it is associated with the sales order: %s, that is not in draft status."
+msgstr "You cannot delete this forecast line because it is associated with the sales order: %s, that is not in draft status."
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_routing.py:41
+#, python-format
+msgid "You cannot delete this material's list, because it is already associated with a production order, what you can do is deactivate it."
+msgstr "You cannot delete this material's list, because it is already associated with a production order, what you can do is deactivate it."
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_routing.py:25
+#, python-format
+msgid "You cannot delete this production route, because it is already associated with a production order, what you can do is deactivate it."
+msgstr "You cannot delete this production route, because it is already associated with a production order, what you can do is deactivate it."
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/procurement_sale_forecast_line.py:99
+#, python-format
+msgid "You must enter Requested quantity."
+msgstr "You must enter Requested quantity."
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/mrp_production.py:466
+#, python-format
+msgid "You must enter the scheduled date."
+msgstr "You must enter the scheduled date."
+
+#. module: jvv_custom
+#: view:stock.picking:jvv_custom.view_picking_form_inh_jvv
+msgid "['|', ('id', '=', parent.location_id), ('location_id', '=', parent.location_id)]"
+msgstr "['|', ('id', '=', parent.location_id), ('location_id', '=', parent.location_id)]"
+
+#. module: jvv_custom
+#: view:account.invoice:jvv_custom.invoice_supplier_form_inh_jvv
+#: view:purchase.order:jvv_custom.purchase_order_form_view_inh_jvv
+msgid "[('supplier','=',True),('parent_id','=',False)]"
+msgstr "[('supplier','=',True),('parent_id','=',False)]"
+
+#. module: jvv_custom
+#: view:mrp.routing.workcenter:jvv_custom.mrp_routing_workcenter_tree_view_inh_jvv_custom
+msgid "float_time"
+msgstr "float_time"
+
+#. module: jvv_custom
+#: view:stock.move:jvv_custom.view_move_picking_tree_inh_jvv
+msgid "grey:scrapped == True and bar_code_status == 'no';green:bar_code_status == 'completed';black:bar_code_status == 'nocompleted'"
+msgstr "grey:scrapped == True and bar_code_status == 'no';green:bar_code_status == 'completed';black:bar_code_status == 'nocompleted'"
+
+#. module: jvv_custom
+#: view:stock.picking:jvv_custom.view_picking_form_inh_jvv2
+msgid "jvv_action_cancel"
+msgstr "jvv_action_cancel"
+
+#. module: jvv_custom
+#: view:update.bom.route:jvv_custom.update_bom_route_form_view
+#: view:wiz.cancel.stock.picking:jvv_custom.wiz_cancel_stock_picking_form_view
+#: view:wiz.change.product.category:jvv_custom.wiz_change_product_category_form_view
+#: view:wiz.create.procurement.forecast.line:jvv_custom.wiz_create_procurement_forecast_line_form_view
+#: view:wiz.forecast.line2.to.sale.order:jvv_custom.wiz_forecast_line2_to_sale_order_form_view
+msgid "or"
+msgstr "or"
+
+#. module: jvv_custom
+#: view:mrp.production:jvv_custom.mrp_production_form_view2_inh_inh_jvv_custom
+msgid "red:scrapped==True or state == 'cancel';blue:state == 'draft';black:state in ('confirmed','ready','in_production');"
+msgstr "red:scrapped==True or state == 'cancel';blue:state == 'draft';black:state in ('confirmed','ready','in_production');"
+
+#. module: jvv_custom
+#: view:stock.inventory:jvv_custom.view_inventory_form_inh_jvv
+msgid "stock.group_stock_manager,stock.group_stock_user"
+msgstr "stock.group_stock_manager,stock.group_stock_user"
+
+#. module: jvv_custom
+#: view:stock.picking:jvv_custom.view_picking_internal_search_inh_jvv
+msgid "{'group_by':'min_date_without_hour:day'}"
+msgstr "{'group_by':'min_date_without_hour:day'}"
+
+#. module: jvv_custom
+#: view:wiz.cancel.stock.picking:jvv_custom.wiz_cancel_stock_picking_form_view
+msgid "¿Quiere realmente cancelar el albarán?"
+msgstr "¿Quiere realmente cancelar el albarán?"
+
+#. module: jvv_custom
+#: field:product.product,last_ldm_total_cost:0
+msgid "Last Manufacturing LdM Total Cost"
+msgstr ""
+
+#. module: jvv_custom
+#: field:mrp.production,ldm_total_cost:0
+msgid "LdM Total Cost"
+msgstr ""
+
+#. module: jvv_custom
+#: view:res.partner:jvv_custom.view_partner_form_inherit_inh_jvv
+#: field:res.partner,non_conformities:0
+#: field:res.users,non_conformities:0
+msgid "Non Conformities"
+msgstr ""
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/procurement_sale_forecast.py:38
+#: selection:procurement.sale.forecast,state:0
+#, python-format
+msgid "Draft"
+msgstr ""
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/procurement_sale_forecast.py:39
+#: selection:procurement.sale.forecast,state:0
+#, python-format
+msgid "Pending"
+msgstr ""
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/procurement_sale_forecast.py:40
+#: selection:procurement.sale.forecast,state:0
+#, python-format
+msgid "Partial"
+msgstr ""
+
+#. module: jvv_custom
+#: code:addons/jvv_custom/models/procurement_sale_forecast.py:41
+#: selection:procurement.sale.forecast,state:0
+#, python-format
+msgid "Finalized"
+msgstr ""
+
+#. module: jvv_custom
+#: view:procurement.sale.forecast:jvv_custom.procurement_sale_forecast_search_view_inh_jvv
+#: field:procurement.sale.forecast,state:0
+msgid "State"
+msgstr ""
+
+#. module: jvv_custom
+#: model:ir.actions.act_window,name:jvv_custom.action_sale_order_line_kpi_newmenu
+#: model:ir.ui.menu,name:jvv_custom.sale_order_line_kpi_newmenu_menu_view
+#: view:sale.order.line:jvv_custom.sale_order_line_kpi_jvv_tree_view
+msgid "Sale Order Lines (KPIs)"
+msgstr ""
+
+#. module: jvv_custom
+#: view:website:mrp_repair_partner_lot.report_mrp_repair_partner_lot_printing
+msgid "Serial Number"
+msgstr ""
+

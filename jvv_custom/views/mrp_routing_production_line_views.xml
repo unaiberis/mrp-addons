@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="mrp_routing_production_line_tree_view" model="ir.ui.view">
+            <field name="name">mrp.routing.production.line.tree.view</field>
+            <field name="model">mrp.routing.production.line</field>
+            <field name="arch" type="xml">
+                <tree string="Production lines">
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+        <record id="mrp_routing_production_line_search_view" model="ir.ui.view">
+            <field name="name">mrp.routing.production.line.search.view</field>
+            <field name="model">mrp.routing.production.line</field>
+            <field name="arch" type="xml">
+                <search string="Search production line">
+                    <field name="name" />
+                </search>
+            </field>
+        </record>
+        <record id="mrp_routing_production_line_form_view" model="ir.ui.view">
+            <field name="name">mrp.routing.production.line.form.view</field>
+            <field name="model">mrp.routing.production.line</field>
+            <field name="arch" type="xml">
+                <form string="Production line">
+                    <sheet>
+                        <h1>
+                            <field name="name" required="1" class="oe_inline" />
+                        </h1>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_mrp_routing_production_line_view" model="ir.actions.act_window">
+            <field name="name">Production lines</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mrp.routing.production.line</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="mrp_routing_production_line_option_view" name="Production lines"
+                  action="action_mrp_routing_production_line_view" 
+                  parent="mrp.menu_mrp_bom" sequence="15" 
+                  groups="mrp.group_mrp_manager" />
+    </data>
+</openerp>

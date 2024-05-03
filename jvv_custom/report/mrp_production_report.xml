@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="report_mrporder_inh_jvv_custom" inherit_id="mrp.report_mrporder">
+            <xpath expr="//span[@t-field='o.date_planned']/.." position="before">
+                <div class="col-xs-3"  t-if='o.purchase_subcontratacion_id'>
+                    <strong>Doc.Sub.:</strong><br/>
+                    <span t-field="o.purchase_subcontratacion_id"/>
+                </div>
+            </xpath>     
+            <div t-if="'sale_name' in o._columns.keys()" position="after">
+                <div class="col-xs-3"  t-if='o.project_id'>
+                    <strong>Proyecto:</strong><br/>
+                    <span t-field="o.project_id.name"/>
+                </div>
+			</div>
+            <span t-field="line2.name" position="after">
+                <table class="table table-condensed">
+                    <tr>
+                        <td class="text-center"><strong>Operator</strong></td>
+                        <td class="text-center"><strong>Date</strong></td>
+                        <td class="text-center"><strong>Observations</strong></td>
+                    </tr>
+                </table>
+            </span>
+            <span t-field="line2.sequence" position="after">
+                <br/>
+                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', line2.of_and_sequence, 600, 100)" style="width:300px;height:50px;"/>
+            </span>
+        </template>
+    </data>
+</openerp>

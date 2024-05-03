@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="wiz_change_serial_numbers_form_view" model="ir.ui.view">
+            <field name="name">wiz.change.serial.numbers.form.view</field>
+            <field name="model">wiz.change.serial.numbers</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Aviso">
+					<field name="move_id" />
+                    <group colspan="4">
+                        <p>Va a cambiar los números de serie.</p>
+                    </group>
+                    <group colspan="4">
+						<field name="old_serial_numbers" readonly="1" colspan="4"/>
+                    </group>
+                    <group colspan="4">
+						<field name="new_serial_numbers" colspan="4"/>
+                    </group>
+                    <footer>
+                        <button name="change_serial_numbers" type="object"
+                            string="Realizar cambio" class="oe_highlight" />
+                        o
+                        <button string="Cancelar" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_change_serial_numbers" model="ir.actions.act_window">
+            <field name="name">Cambiar números de serie</field>
+            <field name="res_model">wiz.change.serial.numbers</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>

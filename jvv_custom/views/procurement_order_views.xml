@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="procurement_tree_view_inh_jvv" model="ir.ui.view">
+        <field name="name">procurement.tree.view.inh.jvv</field>
+        <field name="model">procurement.order</field>
+        <field name="inherit_id" ref="procurement.procurement_tree_view" />
+        <field name="arch" type="xml">
+            <field name="state" position="after">
+               <field name="rule_id"/>
+               <field name="purchase_id"/>
+               <field name="location_id"/>
+               <field name="production_id"/>
+            </field>
+            <field name="product_id" position="after">
+                <field name="product_categ_id" />
+                <field name="product_tmpl_id" />
+                <field name="product_internal_reference" />
+                <field name="product_standard_price" />
+                <field name="product_manual_standard_cost" />
+                <field name="product_state_copy" />
+                <field name="product_manager" />
+            </field>
+        </field>
+    </record>
+
+    <record id="procurement_form_view_inh_jvv" model="ir.ui.view">
+        <field name="name">procurement.form.view.inh.jvv</field>
+        <field name="model">procurement.order</field>
+        <field name="inherit_id" ref="procurement.procurement_form_view" />
+        <field name="arch" type="xml">
+            <field name="product_id" position="after">
+                <field name="product_categ_id" readonly="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_procurement_filter_inh_jvv" model="ir.ui.view">
+        <field name="name">view.procurement.filter.inh.jvv</field>
+        <field name="model">procurement.order</field>
+        <field name="inherit_id" ref="procurement.view_procurement_filter" />
+        <field name="arch" type="xml">
+            <field name="product_id" position="after">
+                <field name="product_categ_id" />
+                <field name="product_tmpl_id" />
+                <field name="product_internal_reference" />
+                <field name="partner_id"/>
+                <field name="product_state_copy" />
+                <field name="product_manager" />
+            </field>
+            <field name="state" position="after">
+               <field name="rule_id"/>
+               <field name="purchase_id"/>
+               <field name="location_id"/>
+               <field name="production_id"/>
+            </field>
+            <field name="date_planned" position="after">
+                <field name="date_planned_without_hour" string="Fecha planificada" />
+                <field name="date_planned_year" string="Año plafinicado" />
+                <field name="date_planned_month" string="Mes planificado" />
+            </field>
+            <field name="date_planned" position="attributes">
+                <attribute name="replace">1</attribute>
+            </field>
+            <filter string="Scheduled Month" position="after">
+				<filter string="Año planificación" domain="[]"
+					context="{'group_by':'date_planned_year'}"/>
+				<filter string="Mes planificación" domain="[]"
+					context="{'group_by':'date_planned_month'}"/>
+				<filter string="Día planificación" domain="[]"
+					context="{'group_by': 'date_planned_without_hour:day'}"/>	
+            </filter>
+            <filter string="Status" position="after">
+                <filter string="Rule" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'rule_id'}"/>
+                <filter string="Location" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'location_id'}"/>
+            </filter>
+            <filter string="Product" position="after">
+                <filter string="Plantilla producto" icon="terp-accessories-archiver"
+                	domain="[]" context="{'group_by':'product_tmpl_id'}"/>
+                <filter string="Product internal category" icon="terp-accessories-archiver"
+                	domain="[]" context="{'group_by':'product_categ_id'}"/>             	
+                <filter string="Estado producto" icon="terp-accessories-archiver"
+                	domain="[]" context="{'group_by':'product_state_copy'}"/>                	
+                <filter string="Responsable producto" icon="terp-accessories-archiver"
+                	domain="[]" context="{'group_by':'product_manager'}"/>                   	             	
+            	<filter string="Empresa" icon="terp-accessories-archiver"
+            		domain="[]" context="{'group_by':'partner_id'}"/>
+            </filter>
+        </field>
+    </record>
+</data>
+</openerp>

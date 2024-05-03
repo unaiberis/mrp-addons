@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="product_template_form_view_procurement_button_inh_jvv" model="ir.ui.view">
+        <field name="name">product.template.form.view.procurement.button.inh.jvv</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="stock.product_template_form_view_procurement_button" />
+        <field name="arch" type="xml">	
+           <button name="action_open_quants" position="after"> 
+               <button class="oe_stat_button"
+                       name="action_open_quants_locked"
+                       icon="fa-building-o"
+                       type="object"  attrs="{'invisible':[('type', '=', 'service')]}" groups="stock.group_locations">
+	               	<div>
+						<field string="Bloqueado" name="qty_locked"  widget="statinfo"/>
+				    </div>
+               </button>
+		   </button>              
+        </field>
+    </record>
+</data>
+</openerp>

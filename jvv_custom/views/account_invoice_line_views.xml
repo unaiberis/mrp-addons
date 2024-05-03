@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+<data>
+    <record id="action_account_invoice_line_customer" model="ir.actions.act_window">
+        <field name="name">Customer invoices lines</field>
+        <field name="res_model">account.invoice.line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field eval="False" name="view_id"/>
+        <field name="domain">[('type','=','out_invoice')]</field>
+        <field name="context">{'default_type':'out_invoice', 'type':'out_invoice'}</field>
+    </record>
+    <menuitem action="action_account_invoice_line_customer"
+                id="menu_action_account_invoice_line_customer"
+                parent="account.menu_finance_receivables"/>
+    <record id="action_account_invoice_line_supplier" model="ir.actions.act_window">
+        <field name="name">Supplier invoices lines</field>
+        <field name="res_model">account.invoice.line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('type','=','in_invoice')]</field>
+        <field name="context">{'default_type': 'in_invoice', 'type': 'in_invoice'}</field>
+    </record>
+    <menuitem action="action_account_invoice_line_supplier"
+                id="menu_action_account_invoice_line_supplier"
+                parent="account.menu_finance_payables"/>
+    <record id="view_invoice_line_tree_inh_jvv" model="ir.ui.view">
+        <field name="name">view.invoice.line.tree.inh.jvv</field>
+        <field name="model">account.invoice.line</field>
+        <field name="inherit_id" ref="account.view_invoice_line_tree" />
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="invoice_id" />
+                <field name="invoice_number" />
+                <field name="partner_id" />
+                <field name="product_id" />
+            </field>
+        </field>
+    </record>
+    <record id="view_account_invoice_line_filter" model="ir.ui.view">
+        <field name="name">view.account.invoice.line.filter</field>
+        <field name="model">account.invoice.line</field>
+        <field name="arch" type="xml">
+            <search string="Search invoice line">
+                <field name="partner_id" />
+                <field name="invoice_id" />
+                <field name="invoice_number" />
+                <field name="product_id" />
+                <group expand="0" string="Group By">
+                    <filter name="group_by_partner_id" string="Partner" context="{'group_by':'partner_id'}"/>
+                    <filter name="group_by_invoice_id" string="Invoice" context="{'group_by':'invoice_id'}"/>
+                    <filter name="group_by_invoice_number" string="Invoice number" context="{'group_by':'invoice_number'}"/>
+                    <filter name="group_by_product_id" string="Product" context="{'group_by':'product_id'}"/>
+                </group>
+           </search>
+        </field>
+    </record>
+</data>
+</openerp>

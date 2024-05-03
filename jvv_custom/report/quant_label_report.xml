@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="quant_label_report_inh_jvv" inherit_id="stock_label_print.quant_label_report">
+            <t t-call="report.layout" position="replace">
+                <div class="page" style="font-size: 20px; line-height: 1.2em; font-family: ubuntu condensed; padding-top: 5px;  margin-right: -10px; margin-left: -10px; margin-bottom: -10px;">
+                  <div class="row" style="margin-bottom: 0px; margin-top: -5px;">
+                    <div class="col-xs-12">
+                        PRODUCT: 
+                    </div>
+                    <div class="col-xs-12">
+                        <strong><span t-field="quant.product_id.default_code"/></strong>
+                        <spam>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;</spam>
+                        <strong>CREATION DATE:</strong>
+                        <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y')"/>
+                    </div>
+                    <div class="col-xs-12">
+                        <span t-field="quant.product_id.name"/>
+                    </div>
+                    <div class="col-xs-12">
+                        <br/>
+                        <strong>LOT:</strong>
+                        <span t-field="quant.lot_id.name" />
+                        <br/>
+                        <br/>
+                    </div>
+                  </div>
+                  <div class="row" style="margin-bottom: 0px; margin-top: 0px;">
+                    <div style="text-align:center" class="col-xs-3">
+                        <strong>MANUFACTURE DATE:</strong>
+                        <p t-field="quant.lot_id.mrp_date" t-field-options="{&quot;format&quot;: &quot;dd/MM/yyyy&quot;}"/>
+                    </div>
+                    <div style="text-align:center" class="col-xs-3">
+                        <strong>EXPIRATION DATE:</strong>
+                        <p t-field="quant.lot_id.life_date" t-field-options="{&quot;format&quot;: &quot;dd/MM/yyyy&quot;}"/>
+                    </div>
+                    <div class="col-xs-6" />
+                  </div>
+                  <div class="row" style="margin-bottom: 0px; margin-top: 0px;">
+                    <div style="text-align:center" class="col-xs-3">
+                        <strong>ALERT DATE:</strong>
+                        <p t-field="quant.lot_id.alert_date" t-field-options="{&quot;format&quot;: &quot;dd/MM/yyyy&quot;}"/>
+                    </div>
+                    <div class="col-xs-9" />
+                  </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</openerp>
