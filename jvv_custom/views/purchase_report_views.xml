@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
 <data>
     <record id="view_purchase_order_search_inh_jvv_custom" model="ir.ui.view">
@@ -10,7 +10,11 @@
                 <field name="supplier_product_code" />
             </field>
             <filter name="group_partner_id" position="after">
-                <filter string="Supplier product code" name="customer-product-code" context="{'group_by':'supplier_product_code'}"/>
+                <filter
+            string="Supplier product code"
+            name="customer-product-code"
+            context="{'group_by':'supplier_product_code'}"
+          />
             </filter>
         </field>
     </record>

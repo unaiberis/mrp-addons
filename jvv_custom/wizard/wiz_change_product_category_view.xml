@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
         <record id="wiz_change_product_category_form_view" model="ir.ui.view">
@@ -12,20 +12,26 @@
                         <group colspan="2" />
                     </group>
                     <footer>
-                        <button name="change_category" type="object"
-                            string="Cambiar categoría" class="oe_highlight" />
+                        <button
+              name="change_category"
+              type="object"
+              string="Cambiar categoría"
+              class="oe_highlight"
+            />
                         or
-                        <button string="Cancelar" class="oe_link" special="cancel"/>
+                        <button string="Cancelar" class="oe_link" special="cancel" />
                     </footer>
                 </form>
             </field>
         </record>
-        <act_window name="Cambiar categoría a produtos"
-                    key2="client_action_multi"
-                    res_model="wiz.change.product.category"
-                    src_model="product.product"
-                    view_mode="form"
-                    target="new"
-                    id="action_wiz_change_product_category"/>
+        <act_window
+      name="Cambiar categoría a produtos"
+      key2="client_action_multi"
+      res_model="wiz.change.product.category"
+      src_model="product.product"
+      view_mode="form"
+      target="new"
+      id="action_wiz_change_product_category"
+    />
     </data>
 </openerp>

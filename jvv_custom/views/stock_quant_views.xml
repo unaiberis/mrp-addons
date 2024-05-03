@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
 <data>
     <record id="quant_search_view_inh_jvv" model="ir.ui.view">
@@ -10,10 +10,30 @@
 				<field name="life_date_without_hour" />
 		    </field>
 		    <filter string="Company" position="after">
-				<filter string="Expiry Date" icon="terp-go-home" domain="[]" context="{'group_by' : 'life_date_without_hour'}"/>
-                <filter string="Expiry Year" icon="terp-go-home" domain="[]" context="{'group_by' : 'life_date_without_hour:year'}"/>
-                <filter string="Expiry Month" icon="terp-go-home" domain="[]" context="{'group_by' : 'life_date_without_hour:month'}"/>
-                <filter string="Expiry Week" icon="terp-go-home" domain="[]" context="{'group_by' : 'life_date_without_hour:week'}"/>
+				<filter
+            string="Expiry Date"
+            icon="terp-go-home"
+            domain="[]"
+            context="{'group_by' : 'life_date_without_hour'}"
+          />
+                <filter
+            string="Expiry Year"
+            icon="terp-go-home"
+            domain="[]"
+            context="{'group_by' : 'life_date_without_hour:year'}"
+          />
+                <filter
+            string="Expiry Month"
+            icon="terp-go-home"
+            domain="[]"
+            context="{'group_by' : 'life_date_without_hour:month'}"
+          />
+                <filter
+            string="Expiry Week"
+            icon="terp-go-home"
+            domain="[]"
+            context="{'group_by' : 'life_date_without_hour:week'}"
+          />
 			</filter>
         </field>
     </record>

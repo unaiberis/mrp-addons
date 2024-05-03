@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
 <data>
     <record id="mrp_repair_customer_lot_view_tree_inh_jvv" model="ir.ui.view">
         <field name="name">mrp.repair.customer.lot.view.tree.jvv.custom</field>
         <field name="model">mrp.repair.customer.lot</field>
-        <field name="inherit_id" ref="mrp_repair_partner_lot.mrp_repair_customer_lot_view_tree" />
+        <field
+        name="inherit_id"
+        ref="mrp_repair_partner_lot.mrp_repair_customer_lot_view_tree"
+      />
         <field name="arch" type="xml">
              <field name="lot_id" position="after">
                 <field name="serial_number" />
@@ -14,7 +17,10 @@
     <record id="mrp_repair_customer_lot_view_form_inh_jvv" model="ir.ui.view">
         <field name="name">mrp.repair.customer.lot.view.form.jvv.custom</field>
         <field name="model">mrp.repair.customer.lot</field>
-        <field name="inherit_id" ref="mrp_repair_partner_lot.mrp_repair_customer_lot_view_form" />
+        <field
+        name="inherit_id"
+        ref="mrp_repair_partner_lot.mrp_repair_customer_lot_view_form"
+      />
         <field name="arch" type="xml">
              <field name="lot_id" position="after">
                 <field name="serial_number" />
@@ -24,7 +30,10 @@
     <record id="mrp_repair_customer_lot_view_search_inh_jvv" model="ir.ui.view">
         <field name="name">mrp.repair.customer.lot.view.search.jvv.custom</field>
         <field name="model">mrp.repair.customer.lot</field>
-        <field name="inherit_id" ref="mrp_repair_partner_lot.mrp_repair_customer_lot_view_search" />
+        <field
+        name="inherit_id"
+        ref="mrp_repair_partner_lot.mrp_repair_customer_lot_view_search"
+      />
         <field name="arch" type="xml">
              <field name="lot_id" position="after">
                 <field name="serial_number" />

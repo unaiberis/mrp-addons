@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
         <record id="view_stock_enter_transfer_details_inh_jvv" model="ir.ui.view">
@@ -10,8 +10,8 @@
                     <field name="date_expected" readonly="1" />
                 </field>
                 <field name="quantity" position="after">
-                    <field name="operation_quantity" invisible="1"/>
-                    <field name="operation_picking_id" invisible="1"/>
+                    <field name="operation_quantity" invisible="1" />
+                    <field name="operation_picking_id" invisible="1" />
                 </field>
                 <field name="lot_id" position="before">
                     <field name="manufacturer_id" />

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
         <record id="wiz_forecast_line2_to_sale_order_form_view" model="ir.ui.view">
@@ -10,17 +10,24 @@
                     You are going to a sale order line whith selected forecast lines
                     <group>
                         <group>
-                            <field name="sale_order_id" required="1"
-                                domain="[('state','=', 'draft')]"/>
+                            <field
+                name="sale_order_id"
+                required="1"
+                domain="[('state','=', 'draft')]"
+              />
                         </group>
-                        <group/>
+                        <group />
                     </group>
-                    
+
                     <footer>
-                        <button name="create_sale_order_line" type="object"
-                            string="Create sale order line" class="oe_highlight" />
+                        <button
+              name="create_sale_order_line"
+              type="object"
+              string="Create sale order line"
+              class="oe_highlight"
+            />
                         or
-                        <button string="Cancelar" class="oe_link" special="cancel"/>
+                        <button string="Cancelar" class="oe_link" special="cancel" />
                     </footer>
                 </form>
             </field>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
 <data>
     <record id="mrp_production_form_view3_inh_inh_jvv_custom" model="ir.ui.view">
@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
 			 <field name="restrict_lot_id" position="before">
                  <field name="qty_locked" readonly="1" />
-                 <field name="lot_locked_ids" readonly="1" widget="many2many_tags"/>				 
+                 <field name="lot_locked_ids" readonly="1" widget="many2many_tags" />
 			 </field>
 	    </field>
     </record>
@@ -19,7 +19,7 @@
         <field name="inherit_id" ref="mrp.mrp_production_form_view" />
         <field name="arch" type="xml">
             <field name="bom_id" position="after">
-                <field name="version" readonly="1"/>
+                <field name="version" readonly="1" />
             </field>
             <xpath expr="//field[@name='location_src_id']/.." position="after">
                     <group>
@@ -35,70 +35,118 @@
                 <field name="supplier_customer_material" />
             </field>
             <tree string="Consumed Products" position="attributes">
-                <attribute name="colors">red:scrapped==True or state == 'cancel';blue:state == 'draft';black:state in ('confirmed','ready','in_production');</attribute>
+                <attribute
+            name="colors"
+          >red:scrapped==True or state == 'cancel';blue:state == 'draft';black:state in ('confirmed','ready','in_production');</attribute>
             </tree>
-            <xpath expr="//form[@string='Production Work Centers']//field[@name='workcenter_id']" position="after">
+            <xpath
+          expr="//form[@string='Production Work Centers']//field[@name='workcenter_id']"
+          position="after"
+        >
                  <field name="user_id" />
             </xpath>
-            <xpath expr="//tree[@string='Production Work Centers']//field[@name='sequence']" position="after">
+            <xpath
+          expr="//tree[@string='Production Work Centers']//field[@name='sequence']"
+          position="after"
+        >
                  <field name="user_id" />
             </xpath>
             <field name="routing_id" position="after">
-                <field name="production_line_id" readonly="1"/>
+                <field name="production_line_id" readonly="1" />
             </field>
-            <xpath expr="//field[@name='move_created_ids2']//field[@name='restrict_lot_id']" position="after">
+            <xpath
+          expr="//field[@name='move_created_ids2']//field[@name='restrict_lot_id']"
+          position="after"
+        >
                 <field name="serial_numbers" />
             </xpath>
             <notebook position="before">
                 <group name="computed_times" col="6" colspan="4">
                     <separator string="Times" colspan="6" />
-                    <field name="load_time_line" widget="float_time" readonly="1"/>
+                    <field name="load_time_line" widget="float_time" readonly="1" />
                     <field name="load_time_variable" widget="float_time" />
                     <field name="total_line_hours" widget="float_time" />
-                    <field name="load_time_warehouse" widget="float_time" readonly="1"/>
+                    <field
+              name="load_time_warehouse"
+              widget="float_time"
+              readonly="1"
+            />
                     <field name="load_time_variable_warehouse" widget="float_time" />
                     <field name="total_warehouse_time" widget="float_time" />
                 </group>
             </notebook>
-            <xpath expr="//field[@name='move_created_ids']//field[@name='product_uom_qty']" position="before">
+            <xpath
+          expr="//field[@name='move_created_ids']//field[@name='product_uom_qty']"
+          position="before"
+        >
                  <field name="serial_numbers" />
-            </xpath>         
-            <xpath expr="//field[@name='move_created_ids']//field[@name='state']" position="before">
+            </xpath>
+            <xpath
+          expr="//field[@name='move_created_ids']//field[@name='state']"
+          position="before"
+        >
                  <field name="serial_numbers" />
-                 <button name="%(jvv_custom.action_change_serial_numbers)d"
-                     string="Cambiar números de serie" type="action" icon="gtk-apply"/>
-            </xpath>                  
-            <xpath expr="//field[@name='move_lines2']/tree/field[@name='product_uom_qty']" position="before">
+                 <button
+            name="%(jvv_custom.action_change_serial_numbers)d"
+            string="Cambiar números de serie"
+            type="action"
+            icon="gtk-apply"
+          />
+            </xpath>
+            <xpath
+          expr="//field[@name='move_lines2']/tree/field[@name='product_uom_qty']"
+          position="before"
+        >
                  <field name="qty_locked" readonly="1" />
-                 <field name="lot_locked_ids" readonly="1" widget="many2many_tags"/>
+                 <field name="lot_locked_ids" readonly="1" widget="many2many_tags" />
                  <field name="selected_lots" />
-            </xpath>    
-            <xpath expr="//field[@name='move_created_ids2']/tree/field[@name='state']" position="before">
-                 <button name="%(jvv_custom.action_change_serial_numbers)d"
-                     string="Cambiar números de serie" type="action" icon="gtk-apply"/>
-            </xpath>  
-            <xpath expr="//field[@name='move_lines']//field[@name='state']" position="before">
-                <field name="qty_available" readonly="1"/>
+            </xpath>
+            <xpath
+          expr="//field[@name='move_created_ids2']/tree/field[@name='state']"
+          position="before"
+        >
+                 <button
+            name="%(jvv_custom.action_change_serial_numbers)d"
+            string="Cambiar números de serie"
+            type="action"
+            icon="gtk-apply"
+          />
+            </xpath>
+            <xpath
+          expr="//field[@name='move_lines']//field[@name='state']"
+          position="before"
+        >
+                <field name="qty_available" readonly="1" />
                 <field name="immediately_usable_qty" readonly="1" />
-                <field name="qty_available_not_res" readonly="1"/>
+                <field name="qty_available_not_res" readonly="1" />
                 <field name="assemtronic_product" />
             </xpath>
             <xpath expr="//field[@name='name']/.." position="after">
                 <group>
                 <field name="mrp_production_warn" colspan="6" invisible="1" />
-                    <separator string="Warning !!!!!" colspan="4"
-                        attrs="{'invisible': [('mrp_production_warn', '!=', 'warning')]}" />
-                    <field name="mrp_production_warn_msg" colspan="4" readonly="1" nolabel="1"
-                        attrs="{'invisible': [('mrp_production_warn', '!=', 'warning')]}"/>
+                    <separator
+              string="Warning !!!!!"
+              colspan="4"
+              attrs="{'invisible': [('mrp_production_warn', '!=', 'warning')]}"
+            />
+                    <field
+              name="mrp_production_warn_msg"
+              colspan="4"
+              readonly="1"
+              nolabel="1"
+              attrs="{'invisible': [('mrp_production_warn', '!=', 'warning')]}"
+            />
                 </group>
             </xpath>
             <field name="product_id" position="after">
                 <field name="product_categ_id" readonly="1" />
             </field>
             <field name="bom_id" position="before">
-                <field name="permission_to_block_manufacture" invisible="1"/>
-                <field name="manufacturing_blocked"
-                    attrs="{'readonly':[('permission_to_block_manufacture', '=', False)]}"/>
+                <field name="permission_to_block_manufacture" invisible="1" />
+                <field
+            name="manufacturing_blocked"
+            attrs="{'readonly':[('permission_to_block_manufacture', '=', False)]}"
+          />
             </field>
             <button name="action_assign" position="attributes">
 				<attribute name="name">action_review_serial_numbers</attribute>
@@ -107,7 +155,7 @@
 				<page string="Histórico cambios fecha programada">
 					<field name="historical_scheduled_date_ids" nolabel="1" readonly="1">
 						<tree string="Histórico cambios">
-							<field name="production_id" invisible="1"/>
+							<field name="production_id" invisible="1" />
 							<field name="change_date" />
 							<field name="user_id" />
 							<field name="old_date" />
@@ -122,22 +170,44 @@
     <record id="mrp_production_form_view_inh_inh_jvv_custom" model="ir.ui.view">
         <field name="name">mrp.production.form.view.inh.inh.jvv.custom</field>
         <field name="model">mrp.production</field>
-        <field name="inherit_id" ref="mrp_subcontracting.mrp_production_form_view_inh_subcontracting" />
+        <field
+        name="inherit_id"
+        ref="mrp_subcontracting.mrp_production_form_view_inh_subcontracting"
+      />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='created_purchases']/.." position="before">
-                    <button class="oe_inline oe_stat_button"
-                        type="object" name="buttom_show_related_productions"
-                        icon="fa-list" >
+                    <button
+            class="oe_inline oe_stat_button"
+            type="object"
+            name="buttom_show_related_productions"
+            icon="fa-list"
+          >
                         <field name="productions_count" widget="statinfo" />
                     </button>
-                    <button class="oe_inline oe_stat_button"
-                        type="object" name="buttom_show_mrp_project_tasks"
-                        icon="fa-list" string="Tasks">
-                        <field name="mrp_project_task_count" widget="statinfo" nolabel="1"/>
+                    <button
+            class="oe_inline oe_stat_button"
+            type="object"
+            name="buttom_show_mrp_project_tasks"
+            icon="fa-list"
+            string="Tasks"
+          >
+                        <field
+              name="mrp_project_task_count"
+              widget="statinfo"
+              nolabel="1"
+            />
                     </button>
-                    <button class="oe_inline oe_stat_button" name="action_view_mos"
-                            type="object" icon="fa-list-alt">
-                        <field string="Fabricaciones" name="mo_count" widget="statinfo" />
+                    <button
+            class="oe_inline oe_stat_button"
+            name="action_view_mos"
+            type="object"
+            icon="fa-list-alt"
+          >
+                        <field
+              string="Fabricaciones"
+              name="mo_count"
+              widget="statinfo"
+            />
                     </button>
             </xpath>
         </field>
@@ -146,10 +216,16 @@
     <record id="mrp_production_form_view_real_costs_inh_jvv_custom" model="ir.ui.view">
         <field name="name">.mrp.production.form.view.real.costs.inh.jvv.custom</field>
         <field name="model">mrp.production</field>
-        <field name="inherit_id" ref="mrp_production_real_cost.mrp_production_form_view_real_costs" />
+        <field
+        name="inherit_id"
+        ref="mrp_production_real_cost.mrp_production_form_view_real_costs"
+      />
         <field name="arch" type="xml">
             <field name="unit_real_cost" position="after">
-                <field name="ldm_total_cost" attrs="{'invisible': [('state', '!=', 'done')]}"/>
+                <field
+            name="ldm_total_cost"
+            attrs="{'invisible': [('state', '!=', 'done')]}"
+          />
             </field>
         </field>
     </record>
@@ -157,7 +233,10 @@
     <record id="mrp_production_search_view_inh_jvv_custom" model="ir.ui.view">
         <field name="name">mrp.production.search.view.inh.inh.jvv.custom</field>
         <field name="model">mrp.production</field>
-        <field name="inherit_id" ref="mrp_production_sale_info.mrp_production_sale_info_search_view" />
+        <field
+        name="inherit_id"
+        ref="mrp_production_sale_info.mrp_production_sale_info_search_view"
+      />
         <field name="arch" type="xml">
             <field name="sale_order" position="after">
                 <field name="manual_requested_date" />
@@ -187,75 +266,146 @@
                 <field name="mo_skewback_date" />
             </field>
             <filter string="Product" position="after">
-                <filter string="Bloqueada" icon="terp-accessories-archiver"
-                        domain="[]" context="{'group_by':'manufacturing_blocked'}"/>
-                <filter string="Categoría producto" icon="terp-accessories-archiver"
-                        domain="[]" context="{'group_by':'product_categ_id'}"/>
-                <filter string="Código producto empresa" icon="terp-accessories-archiver"
-                        domain="[]" context="{'group_by':'product_code'}"/>
-                <filter string="Supplier/Customer material" icon="terp-accessories-archiver"
-                        domain="[]" context="{'group_by':'supplier_customer_material'}"/>
-                <filter string="MO Skewback date" icon="terp-accessories-archiver"
-                        domain="[]" context="{'group_by':'mo_skewback_date'}"/>
+                <filter
+            string="Bloqueada"
+            icon="terp-accessories-archiver"
+            domain="[]"
+            context="{'group_by':'manufacturing_blocked'}"
+          />
+                <filter
+            string="Categoría producto"
+            icon="terp-accessories-archiver"
+            domain="[]"
+            context="{'group_by':'product_categ_id'}"
+          />
+                <filter
+            string="Código producto empresa"
+            icon="terp-accessories-archiver"
+            domain="[]"
+            context="{'group_by':'product_code'}"
+          />
+                <filter
+            string="Supplier/Customer material"
+            icon="terp-accessories-archiver"
+            domain="[]"
+            context="{'group_by':'supplier_customer_material'}"
+          />
+                <filter
+            string="MO Skewback date"
+            icon="terp-accessories-archiver"
+            domain="[]"
+            context="{'group_by':'mo_skewback_date'}"
+          />
             </filter>
             <field name="routing_id" position="after">
                 <field name="production_line_id" />
             </field>
             <filter string="Routing" position="after">
-                <filter string="Production line" icon="terp-stock_align_left_24"
-                        domain="[]" context="{'group_by':'production_line_id'}"/>
+                <filter
+            string="Production line"
+            icon="terp-stock_align_left_24"
+            domain="[]"
+            context="{'group_by':'production_line_id'}"
+          />
             </filter>
             <filter string="Scheduled Month" position="after">
-                <filter string="Scheduled Week" domain="[]"
-                        context="{'group_by': 'date_planned:week'}" />
-                <filter string="Scheduled session day of the week" domain="[]" context="{'group_by': 'day_of_week'}"/>
+                <filter
+            string="Scheduled Week"
+            domain="[]"
+            context="{'group_by': 'date_planned:week'}"
+          />
+                <filter
+            string="Scheduled session day of the week"
+            domain="[]"
+            context="{'group_by': 'day_of_week'}"
+          />
             </filter>
             <filter string="Scheduled Month" position="before">
-                <filter string="Fecha planificada" domain="[]"
-                        context="{'group_by': 'date_planned_without_hour'}" />
-                <filter string="Planned year" domain="[]"
-                        context="{'group_by': 'date_planned_year'}" />
+                <filter
+            string="Fecha planificada"
+            domain="[]"
+            context="{'group_by': 'date_planned_without_hour'}"
+          />
+                <filter
+            string="Planned year"
+            domain="[]"
+            context="{'group_by': 'date_planned_year'}"
+          />
             </filter>
             <filter string="Status" position="after">
-                <filter string="Committed date" icon="terp-stock_effects-object-colorize" domain="[]"
-                        context="{'group_by':'sale_line_committed_date'}"/>
-                <filter string="Origen" domain="[]"
-                        context="{'group_by':'origin'}"/>
+                <filter
+            string="Committed date"
+            icon="terp-stock_effects-object-colorize"
+            domain="[]"
+            context="{'group_by':'sale_line_committed_date'}"
+          />
+                <filter string="Origen" domain="[]" context="{'group_by':'origin'}" />
             </filter>
             <filter name="inprogress" position="after">
-                <separator/>
-                <filter string="With supplier/Customer material"
-                        domain="[('supplier_customer_material','=', True)]"/>
-                <filter string="Without supplier/Customer material"
-                        domain="[('supplier_customer_material','=', )]"/>
-                <filter string="Scheduled current week"
-                        domain="[('date_planned','&lt;=', (context_today() + relativedelta(weeks=0, weekday=6)).strftime('%%Y-%%m-%%d')),
-                                 ('date_planned','&gt;',(context_today() - relativedelta(weeks=1, weekday=6)).strftime('%%Y-%%m-%%d'))]"/>
-                <filter string="Scheduled next week"
-                        domain="[('date_planned','&gt;',(context_today()+relativedelta(weeks=0, weekday=6)).strftime('%%Y-%%m-%%d')),
-                                 ('date_planned','&lt;=',(context_today()+relativedelta(weeks=1, weekday=6)).strftime('%%Y-%%m-%%d'))]" />
-                <filter string="Scheduled current month"
-                        domain="[('date_planned','&lt;',(context_today()+relativedelta(months=1)).strftime('%%Y-%%m-01')),
-                                 ('date_planned','&gt;=',time.strftime('%%Y-%%m-01'))]" />
-                <filter string="Scheduled next month"
-                        domain="[('date_planned','&gt;=',(context_today()+relativedelta(months=1)).strftime('%%Y-%%m-01')),
-                                 ('date_planned','&lt;',(context_today()+relativedelta(months=2)).strftime('%%Y-%%m-01'))]" />
-                <filter string="With committed date" domain="[('sale_line_committed_date','=', True)]" />
-                <filter string="Without committed date" domain="[('sale_line_committed_date','=', False)]" />
+                <separator />
+                <filter
+            string="With supplier/Customer material"
+            domain="[('supplier_customer_material','=', True)]"
+          />
+                <filter
+            string="Without supplier/Customer material"
+            domain="[('supplier_customer_material','=', )]"
+          />
+                <filter
+            string="Scheduled current week"
+            domain="[('date_planned','&lt;=', (context_today() + relativedelta(weeks=0, weekday=6)).strftime('%%Y-%%m-%%d')),
+                                 ('date_planned','&gt;',(context_today() - relativedelta(weeks=1, weekday=6)).strftime('%%Y-%%m-%%d'))]"
+          />
+                <filter
+            string="Scheduled next week"
+            domain="[('date_planned','&gt;',(context_today()+relativedelta(weeks=0, weekday=6)).strftime('%%Y-%%m-%%d')),
+                                 ('date_planned','&lt;=',(context_today()+relativedelta(weeks=1, weekday=6)).strftime('%%Y-%%m-%%d'))]"
+          />
+                <filter
+            string="Scheduled current month"
+            domain="[('date_planned','&lt;',(context_today()+relativedelta(months=1)).strftime('%%Y-%%m-01')),
+                                 ('date_planned','&gt;=',time.strftime('%%Y-%%m-01'))]"
+          />
+                <filter
+            string="Scheduled next month"
+            domain="[('date_planned','&gt;=',(context_today()+relativedelta(months=1)).strftime('%%Y-%%m-01')),
+                                 ('date_planned','&lt;',(context_today()+relativedelta(months=2)).strftime('%%Y-%%m-01'))]"
+          />
+                <filter
+            string="With committed date"
+            domain="[('sale_line_committed_date','=', True)]"
+          />
+                <filter
+            string="Without committed date"
+            domain="[('sale_line_committed_date','=', False)]"
+          />
             </filter>
             <filter name="pending" position="before">
-                <filter icon="terp-gtk-media-pause" string="Bloqueada" name="locked" domain="[('manufacturing_blocked','=',True)]" />
-                <filter icon="terp-gtk-media-pause" string="NO Bloqueada" name="nolocked" domain="[('manufacturing_blocked','=',False)]" />
+                <filter
+            icon="terp-gtk-media-pause"
+            string="Bloqueada"
+            name="locked"
+            domain="[('manufacturing_blocked','=',True)]"
+          />
+                <filter
+            icon="terp-gtk-media-pause"
+            string="NO Bloqueada"
+            name="nolocked"
+            domain="[('manufacturing_blocked','=',False)]"
+          />
             </filter>
         </field>
     </record>
-    
+
     <record id="mrp_production_sale_info_tree_view_inh_jvv_custom" model="ir.ui.view">
         <field name="name">mrp.production.sale.info.tree.view.inh.jvv.custom</field>
         <field name="model">mrp.production</field>
-        <field name="inherit_id" ref="mrp_production_sale_info.mrp_production_sale_info_tree_view" />
+        <field
+        name="inherit_id"
+        ref="mrp_production_sale_info.mrp_production_sale_info_tree_view"
+      />
         <field name="arch" type="xml">
-            <field name="sale_order" position="replace"/>
+            <field name="sale_order" position="replace" />
         </field>
     </record>
 
@@ -263,32 +413,43 @@
         <field name="name">mrp.production.tree.view2.inh.jvv.custom</field>
         <field name="model">mrp.production</field>
         <field name="inherit_id" ref="mrp_sale_info.mrp_production_tree_view" />
-        <field eval="20" name="priority"/>
+        <field eval="20" name="priority" />
         <field name="arch" type="xml">
-            <field name="sale_line_id" position="replace"/>
-            <field name="commitment_date" position="replace"/>
+            <field name="sale_line_id" position="replace" />
+            <field name="commitment_date" position="replace" />
             <field name="date_planned" position="replace" />
-            <field name="partner_id" position="replace"/>
+            <field name="partner_id" position="replace" />
         </field>
     </record>
 
     <record id="view_mrp_chek_printed_tree_inh_jvv_custom" model="ir.ui.view">
         <field name="name">view.mrp.chek.printed.tree.inh.inh.jvv.custom</field>
         <field name="model">mrp.production</field>
-        <field name="inherit_id" ref="mrp_chek_printed.view_mrp_chek_printed_tree_inherit" />
-        <field eval="20" name="priority"/>
+        <field
+        name="inherit_id"
+        ref="mrp_chek_printed.view_mrp_chek_printed_tree_inherit"
+      />
+        <field eval="20" name="priority" />
         <field name="arch" type="xml">
             <field name="printed" position="replace" />
         </field>
     </record>
 
-    <record id="mrp_production_tree_view_qtyproduceinfo_inh_jvv_custom" model="ir.ui.view">
-        <field name="name">mrp.production.tree.view.qtyproduceinfo.inh.jvv.custom</field>
+    <record
+      id="mrp_production_tree_view_qtyproduceinfo_inh_jvv_custom"
+      model="ir.ui.view"
+    >
+        <field
+        name="name"
+      >mrp.production.tree.view.qtyproduceinfo.inh.jvv.custom</field>
         <field name="model">mrp.production</field>
-        <field name="inherit_id" ref="mrp_production_qty_to_produce_info.mrp_production_tree_view_inh_qtyproduceinfo" />
-        <field eval="20" name="priority"/>
+        <field
+        name="inherit_id"
+        ref="mrp_production_qty_to_produce_info.mrp_production_tree_view_inh_qtyproduceinfo"
+      />
+        <field eval="20" name="priority" />
         <field name="arch" type="xml">
-           <field name="quantity_produced" position="replace"/>
+           <field name="quantity_produced" position="replace" />
            <field name="pending_quantity_to_produce" position="replace" />
         </field>
     </record>
@@ -297,21 +458,21 @@
         <field name="name">mrp.production.tree.view.inh.jvv.custom</field>
         <field name="model">mrp.production</field>
         <field name="inherit_id" ref="mrp.mrp_production_tree_view" />
-        <field eval="50" name="priority"/>
+        <field eval="50" name="priority" />
         <field name="arch" type="xml">
-            <field name="origin" position="replace"/>
-            <field name="product_id" position="replace"/>
+            <field name="origin" position="replace" />
+            <field name="product_id" position="replace" />
             <field name="product_qty" position="replace" />
             <field name="state" position="replace" />
             <field name="name" position="after">
                 <field name="origin" />
                 <field name="sale_line_id" />
-                <field name="product_id" string="Product variant"/>
+                <field name="product_id" string="Product variant" />
                 <field name="product_categ_id" />
                 <field name="count_mrp_productions" />
                 <field name="version" />
                 <field name="ldm_num_lines" />
-                <field name="product_code"/>
+                <field name="product_code" />
                 <field name="supplier_customer_material" />
                 <field name="printed" />
                 <field name="parent_commitment_date" />
@@ -322,38 +483,74 @@
                 <field name="sale_line_confirmed_date" />
                 <field name="sale_line_committed_date" />
                 <field name="product_qty" />
-                <field name="quantity_produced" string="Quantity produced"/>
-                <field name="pending_quantity_to_produce" string="Pending quantity to produce"/>
+                <field name="quantity_produced" string="Quantity produced" />
+                <field
+            name="pending_quantity_to_produce"
+            string="Pending quantity to produce"
+          />
                 <field name="state" />
                 <field name="day_of_week" invisible="1" />
             </field>
             <field name="routing_id" position="after">
                 <field name="production_line_id" />
                 <field name="load_time_line" sum="Total time" widget="float_time" />
-                <field name="load_time_variable" sum="Total time2" widget="float_time" />
+                <field
+            name="load_time_variable"
+            sum="Total time2"
+            widget="float_time"
+          />
                 <field name="total_line_hours" sum="Total time3" widget="float_time" />
-                    <field name="load_time_warehouse" sum="Total time4" widget="float_time" readonly="1"/>
-                    <field name="load_time_variable_warehouse" sum="Total time5" widget="float_time" />
-                    <field name="total_warehouse_time" sum="Total time6" widget="float_time" />
+                    <field
+            name="load_time_warehouse"
+            sum="Total time4"
+            widget="float_time"
+            readonly="1"
+          />
+                    <field
+            name="load_time_variable_warehouse"
+            sum="Total time5"
+            widget="float_time"
+          />
+                    <field
+            name="total_warehouse_time"
+            sum="Total time6"
+            widget="float_time"
+          />
             </field>
         </field>
     </record>
-    <record id="mrp_production_form_view_relatedattachment_inh_jvv_custom" model="ir.ui.view">
-        <field name="name">mrp.production.form.view.relatedattachment.inh.jvv.custom</field>
+    <record
+      id="mrp_production_form_view_relatedattachment_inh_jvv_custom"
+      model="ir.ui.view"
+    >
+        <field
+        name="name"
+      >mrp.production.form.view.relatedattachment.inh.jvv.custom</field>
         <field name="model">mrp.production</field>
-        <field name="inherit_id" ref="mrp_show_related_attachment.mrp_production_form_view_inh_relatedattachment" />
-        <field eval="20" name="priority"/>
+        <field
+        name="inherit_id"
+        ref="mrp_show_related_attachment.mrp_production_form_view_inh_relatedattachment"
+      />
+        <field eval="20" name="priority" />
         <field name="arch" type="xml">
            <field name="product_attachments" position="replace">
                 <field name="product_attachments_jvv" nolabel="1" />
            </field>
         </field>
     </record>
-    <record id="mrp_production_form_view_relatedattachment_inh_inh_jvv_custom" model="ir.ui.view">
-        <field name="name">mrp.production.form.view.relatedattachment.inh.inh.jvv.custom</field>
+    <record
+      id="mrp_production_form_view_relatedattachment_inh_inh_jvv_custom"
+      model="ir.ui.view"
+    >
+        <field
+        name="name"
+      >mrp.production.form.view.relatedattachment.inh.inh.jvv.custom</field>
         <field name="model">mrp.production</field>
-        <field name="inherit_id" ref="mrp_show_related_attachment.mrp_production_form_view_inh_inh_relatedattachment" />
-        <field eval="20" name="priority"/>
+        <field
+        name="inherit_id"
+        ref="mrp_show_related_attachment.mrp_production_form_view_inh_inh_relatedattachment"
+      />
+        <field eval="20" name="priority" />
         <field name="arch" type="xml">
            <field name="workcenter_attachments" position="replace">
                 <field name="workcenter_attachments_jvv" nolabel="1" />
@@ -365,7 +562,7 @@
         <field name="name">mrp.production.project.form.view.inh.jvv.custom</field>
         <field name="model">mrp.production</field>
         <field name="inherit_id" ref="mrp_project.mrp_production_project_form_view" />
-        <field eval="20" name="priority"/>
+        <field eval="20" name="priority" />
         <field name="arch" type="xml">
            <field name="project_id" position="after">
                 <field name="mo_skewback_date" />
@@ -378,7 +575,9 @@
         <field name="type">ir.actions.server</field>
         <field name="state">code</field>
         <field name="model_id" ref="mrp.model_mrp_production" />
-        <field name="code">self.block_mrp_production(cr, uid, context.get('active_ids', []), context)</field>
+        <field
+        name="code"
+      >self.block_mrp_production(cr, uid, context.get('active_ids', []), context)</field>
     </record>
 
     <record id="action_block_mrp_production_value" model="ir.values">
@@ -386,8 +585,10 @@
         <field name="key">action</field>
         <field name="key2">client_action_multi</field>
         <field name="model">mrp.production</field>
-        <field name="value"
-               eval="'ir.actions.server,%d' % ref('jvv_custom.action_block_mrp_production')" />
+        <field
+        name="value"
+        eval="'ir.actions.server,%d' % ref('jvv_custom.action_block_mrp_production')"
+      />
     </record>
 
     <record id="action_unblock_mrp_production" model="ir.actions.server">
@@ -395,7 +596,9 @@
         <field name="type">ir.actions.server</field>
         <field name="state">code</field>
         <field name="model_id" ref="mrp.model_mrp_production" />
-        <field name="code">self.unblock_mrp_production(cr, uid, context.get('active_ids', []), context)</field>
+        <field
+        name="code"
+      >self.unblock_mrp_production(cr, uid, context.get('active_ids', []), context)</field>
     </record>
 
     <record id="action_unblock_mrp_production_value" model="ir.values">
@@ -403,8 +606,10 @@
         <field name="key">action</field>
         <field name="key2">client_action_multi</field>
         <field name="model">mrp.production</field>
-        <field name="value"
-               eval="'ir.actions.server,%d' % ref('jvv_custom.action_unblock_mrp_production')" />
+        <field
+        name="value"
+        eval="'ir.actions.server,%d' % ref('jvv_custom.action_unblock_mrp_production')"
+      />
     </record>
 
 </data>

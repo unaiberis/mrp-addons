@@ -1,20 +1,20 @@
-# -*- coding: utf-8 -*-
 # Copyright 2019 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
-from openerp.osv import fields, osv
 from openerp import tools
+from openerp.osv import fields, osv
 
 
 class PurchaseReport(osv.osv):
-    _inherit = 'purchase.report'
+    _inherit = "purchase.report"
 
     _columns = {
-        'supplier_product_code': fields.char(string='Supplier product code'),
+        "supplier_product_code": fields.char(string="Supplier product code"),
     }
 
     def init(self, cr):
-        tools.sql.drop_view_if_exists(cr, 'purchase_report')
-        cr.execute("""
+        tools.sql.drop_view_if_exists(cr, "purchase_report")
+        cr.execute(
+            """
             create or replace view purchase_report as (
                 WITH currency_rate (currency_id, rate, date_start, date_end) AS (
                     SELECT r.currency_id, r.rate, r.name AS date_start,
@@ -88,4 +88,5 @@ class PurchaseReport(osv.osv):
                     u2.factor,
                     l.supplier_product_code
             )
-        """)
+        """
+        )

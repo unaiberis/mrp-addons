@@ -1,66 +1,76 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
-        <template id="report_crmclaim_document_inh_jvv_custom" inherit_id="crm_claim_report.report_crmclaim_document">
+        <template
+      id="report_crmclaim_document_inh_jvv_custom"
+      inherit_id="crm_claim_report.report_crmclaim_document"
+    >
             <h2 position="after">
-                <img t-if="o.photo" t-att-src="'data:image/png;base64,%s' % o.photo" style="max-height: 45px;"/>
-                <br/>
+                <img
+          t-if="o.photo"
+          t-att-src="'data:image/png;base64,%s' % o.photo"
+          style="max-height: 45px;"
+        />
+                <br />
             </h2>
             <xpath expr="//strong[text()='Resolution actions:']" position="replace" />
             <xpath expr="//span[@t-field='o.resolution']/.." position="replace" />
             <span t-field="o.partner_id" position="after">
-                <br/>
-                <strong>Sales team: </strong><span t-field="o.section_id"/><br/>
-                <strong>CRM claim tag: </strong><span t-field="o.crm_claim_tag_id"/><br/>
-                <strong>Deadline: </strong><span t-field="o.date_deadline"/><br/>
-                <strong>Amount to return: </strong><span t-field="o.amount_to_return"/><br/>
-                <strong>Price: </strong><span t-field="o.price"/>
+                <br />
+                <strong>Sales team: </strong><span t-field="o.section_id" /><br />
+                <strong>CRM claim tag: </strong><span t-field="o.crm_claim_tag_id" /><br
+        />
+                <strong>Deadline: </strong><span t-field="o.date_deadline" /><br />
+                <strong>Amount to return: </strong><span
+          t-field="o.amount_to_return"
+        /><br />
+                <strong>Price: </strong><span t-field="o.price" />
             </span>
             <t t-if="o.claim_type == 'Supplier'" position="before">
                 <t t-if="o.pickings">
-                    <strong>Related stock pickings</strong><br/>
+                    <strong>Related stock pickings</strong><br />
                     <div class="col-xs-12" style="border: 1px solid black">
                         <table class="table table-condensed">
                             <tr t-foreach="o.pickings" t-as="picking">
-                                <td><span t-field="picking.name"/></td>
+                                <td><span t-field="picking.name" /></td>
                             </tr>
                         </table>
                     </div>
                 </t>
                 <t t-if="o.repairs">
-                    <strong>Related repairs</strong><br/>
+                    <strong>Related repairs</strong><br />
                     <div class="col-xs-12" style="border: 1px solid black">
                         <table class="table table-condensed">
                             <tr t-foreach="o.repairs" t-as="repair">
-                                <td><span t-field="repair.name"/></td>
+                                <td><span t-field="repair.name" /></td>
                             </tr>
                         </table>
                     </div>
                 </t>
             </t>
             <xpath expr="//span[@t-field='o.cause']/.." position="after">
-                <br/><br/>
-                <strong>Nonconformity decision:</strong><br/>
+                <br /><br />
+                <strong>Nonconformity decision:</strong><br />
                 <div class="col-xs-12" style="border: 1px solid black">
-                    <span t-field="o.ncdecision_desc"/>
+                    <span t-field="o.ncdecision_desc" />
                 </div>
-                <br/><br/>
-                <strong>Resolution actions:</strong><br/>
+                <br /><br />
+                <strong>Resolution actions:</strong><br />
                 <div class="col-xs-12" style="border: 1px solid black">
-                    <span t-field="o.decision_desc"/>
+                    <span t-field="o.decision_desc" />
                 </div>
-                <br/><br/>
-                <strong>Creation date:</strong><br/>
+                <br /><br />
+                <strong>Creation date:</strong><br />
                 <div class="col-xs-12" style="border: 1px solid black">
-                    <span t-field="o.create_date"/>
+                    <span t-field="o.create_date" />
                 </div>
-                <br/><br/>
-                <strong>Date:</strong><br/>
+                <br /><br />
+                <strong>Date:</strong><br />
                 <div class="col-xs-12" style="border: 1px solid black">
-                    <span t-field="o.date"/>
+                    <span t-field="o.date" />
                 </div>
             </xpath>
-            
+
         </template>
     </data>
 </openerp>

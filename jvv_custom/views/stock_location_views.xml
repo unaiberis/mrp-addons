@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
 <data>
     <record id="view_location_search_view_inh_jvv" model="ir.ui.view">
@@ -7,9 +7,12 @@
         <field name="inherit_id" ref="stock.view_location_search" />
         <field name="arch" type="xml">
             <filter name="in_location" position="before">
-                <filter icon="terp-go-home" name="location_for_final_mrp"
-                    string="Location for MRP finished products"
-                    domain="[('final_mrp_location', '=', True)]" />
+                <filter
+            icon="terp-go-home"
+            name="location_for_final_mrp"
+            string="Location for MRP finished products"
+            domain="[('final_mrp_location', '=', True)]"
+          />
             </filter>
         </field>
     </record>

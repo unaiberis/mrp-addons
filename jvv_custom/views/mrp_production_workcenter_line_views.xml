@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
 <data>
     <record id="mrp_production_workcenter_line_tree_inh_jvv_custom" model="ir.ui.view">
         <field name="name">mrp.production.workcenter.line.tree.inh.jvv.custom</field>
         <field name="model">mrp.production.workcenter.line</field>
-        <field name="inherit_id" ref="mrp_operations.mrp_production_workcenter_tree_view_inherit" />
+        <field
+        name="inherit_id"
+        ref="mrp_operations.mrp_production_workcenter_tree_view_inherit"
+      />
         <field name="arch" type="xml">
             <field name="production_id" position="before">
                 <field name="user_id" />
@@ -13,19 +16,27 @@
             	<field name="origin" />
             </field>
             <field name="hour" position="after">
-                <field name="boot_time" widget="float_time"/>
-                <field name="stopping_time" widget="float_time"/>
-                <field name="total_phase_time" widget="float_time"/>
+                <field name="boot_time" widget="float_time" />
+                <field name="stopping_time" widget="float_time" />
+                <field name="total_phase_time" widget="float_time" />
             </field>
             <field name="hour" position="before">
-                <field name="delay" widget="float_time"/>
+                <field name="delay" widget="float_time" />
             </field>
         </field>
     </record>
-    <record id="mrp_production_workcenter_line_search_view_inh_jvv_custom" model="ir.ui.view">
-        <field name="name">mrp.production.workcenter.line.search.view.inh.jvv.custom</field>
+    <record
+      id="mrp_production_workcenter_line_search_view_inh_jvv_custom"
+      model="ir.ui.view"
+    >
+        <field
+        name="name"
+      >mrp.production.workcenter.line.search.view.inh.jvv.custom</field>
         <field name="model">mrp.production.workcenter.line</field>
-        <field name="inherit_id" ref="mrp_operations.view_mrp_production_workcenter_form_view_filter" />
+        <field
+        name="inherit_id"
+        ref="mrp_operations.view_mrp_production_workcenter_form_view_filter"
+      />
         <field name="arch" type="xml">
             <field name="date_planned" position="after">
                 <field name="date_planned_without_hour" />
@@ -41,29 +52,63 @@
                 <field name="user_id" />
             </field>
             <filter string="Work Center" position="before">
-                <filter string="User" icon="terp-go-home" domain="[]" context="{'group_by':'user_id'}"/>
-                <filter string="Work order" icon="terp-go-home" domain="[]" context="{'group_by':'name'}"/>
+                <filter
+            string="User"
+            icon="terp-go-home"
+            domain="[]"
+            context="{'group_by':'user_id'}"
+          />
+                <filter
+            string="Work order"
+            icon="terp-go-home"
+            domain="[]"
+            context="{'group_by':'name'}"
+          />
             </filter>
             <filter string="Scheduled Month" position="before">
-                <filter string="Scheduled date" icon="terp-go-home" domain="[]" context="{'group_by':'date_planned_without_hour'}"/>
-                <filter string="Scheduled year" domain="[]" context="{'group_by': 'date_planned_year'}"/>
+                <filter
+            string="Scheduled date"
+            icon="terp-go-home"
+            domain="[]"
+            context="{'group_by':'date_planned_without_hour'}"
+          />
+                <filter
+            string="Scheduled year"
+            domain="[]"
+            context="{'group_by': 'date_planned_year'}"
+          />
             </filter>
             <filter string="Scheduled Month" position="after">
-                <filter string="Scheduled week" domain="[]" context="{'group_by': 'date_planned:week'}"/>
-                <filter string="Scheduled session day of the week" domain="[]" context="{'group_by': 'day'}"/>
+                <filter
+            string="Scheduled week"
+            domain="[]"
+            context="{'group_by': 'date_planned:week'}"
+          />
+                <filter
+            string="Scheduled session day of the week"
+            domain="[]"
+            context="{'group_by': 'day'}"
+          />
             </filter>
             <field name="production_id" position="after">
-            	<field name="origin"/>
+            	<field name="origin" />
         	</field>
         	<filter string="Production" position="after">
-        		<filter string="Origen producción" domain="[]" context="{'group_by':'origin'}"/>
+        		<filter
+            string="Origen producción"
+            domain="[]"
+            context="{'group_by':'origin'}"
+          />
         	</filter>
         </field>
     </record>
     <record id="mrp_production_workcenter_tree_view_inh_jvv_custom" model="ir.ui.view">
         <field name="name">mrp.production.workcenter.tree.view.inh.jvv.custom</field>
         <field name="model">mrp.production.workcenter.line</field>
-        <field name="inherit_id" ref="mrp_subcontracting.mrp_production_workcenter_tree_view_inh_subcontracting" />
+        <field
+        name="inherit_id"
+        ref="mrp_subcontracting.mrp_production_workcenter_tree_view_inh_subcontracting"
+      />
         <field name="arch" type="xml">
             <field name="in_picking_state" position="after">
                 <field name="day" />
@@ -73,10 +118,18 @@
             </field>
         </field>
     </record>
-    <record id="mrp_production_workcenter_line_form_view_inh_jvv_custom" model="ir.ui.view">
-        <field name="name">mrp.production.workcenter.line.form.view.inh.jvv.custom</field>
+    <record
+      id="mrp_production_workcenter_line_form_view_inh_jvv_custom"
+      model="ir.ui.view"
+    >
+        <field
+        name="name"
+      >mrp.production.workcenter.line.form.view.inh.jvv.custom</field>
         <field name="model">mrp.production.workcenter.line</field>
-        <field name="inherit_id" ref="mrp_operations.mrp_production_workcenter_form_view_inherit" />
+        <field
+        name="inherit_id"
+        ref="mrp_operations.mrp_production_workcenter_form_view_inherit"
+      />
         <field name="arch" type="xml">
             <field name="production_id" position="after">
                 <field name="user_id" />
@@ -86,11 +139,14 @@
     <record id="workcenter_line_future_calendar_inh_jvv_custom" model="ir.ui.view">
         <field name="name">workcenter.line.future.calendar.inh.jvv.custom</field>
         <field name="model">mrp.production.workcenter.line</field>
-        <field name="inherit_id" ref="mrp_operations_extension.workcenter_line_future_calendar" />
+        <field
+        name="inherit_id"
+        ref="mrp_operations_extension.workcenter_line_future_calendar"
+      />
         <field name="arch" type="xml">
             <field name="product" position="after">
                 <field name="name" />
-                <field name="hour" widget="float_time"/>
+                <field name="hour" widget="float_time" />
             </field>
         </field>
     </record>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
 <data>
     <record id="mrp_bom_tree_view_inh_jvv_custom" model="ir.ui.view">
@@ -20,8 +20,11 @@
             <field name="type" position="after">
                 <field name="num_lines" />
             </field>
-            <xpath expr="//field[@name='bom_line_ids']/tree/field[@name='product_id']" position="before">
-                <field name="my_counter" invisible="1"/>
+            <xpath
+          expr="//field[@name='bom_line_ids']/tree/field[@name='product_id']"
+          position="before"
+        >
+                <field name="my_counter" invisible="1" />
             </xpath>
         </field>
     </record>

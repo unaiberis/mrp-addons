@@ -1,10 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
 <data>
-    <record id="procurement_sale_forecast_line_tree_editable_view_inh_jvv" model="ir.ui.view">
-        <field name="name">procurement.sale.forecast.line.tree.editable_view.inh.jvv</field>
+    <record
+      id="procurement_sale_forecast_line_tree_editable_view_inh_jvv"
+      model="ir.ui.view"
+    >
+        <field
+        name="name"
+      >procurement.sale.forecast.line.tree.editable_view.inh.jvv</field>
         <field name="model">procurement.sale.forecast.line</field>
-        <field name="inherit_id" ref="procurement_sale_forecast.procurement_sale_forecast_line_tree_editable_view" />
+        <field
+        name="inherit_id"
+        ref="procurement_sale_forecast.procurement_sale_forecast_line_tree_editable_view"
+      />
         <field name="arch" type="xml">
             <field name="product_id" position="attributes">
                 <attribute name="attrs">{}</attribute>
@@ -18,10 +26,18 @@
         </field>
     </record>
 
-    <record id="procurement_sale_forecast_line_tree_editable_view_inh_jvv2" model="ir.ui.view">
-        <field name="name">procurement.sale.forecast.line.tree.editable_view.inh.jvv2</field>
+    <record
+      id="procurement_sale_forecast_line_tree_editable_view_inh_jvv2"
+      model="ir.ui.view"
+    >
+        <field
+        name="name"
+      >procurement.sale.forecast.line.tree.editable_view.inh.jvv2</field>
         <field name="model">procurement.sale.forecast.line</field>
-        <field name="inherit_id" ref="jvv_procurement_sale_forecast.procurement_sale_forecast_line_tree_editable_view_inh_jvv" />
+        <field
+        name="inherit_id"
+        ref="jvv_procurement_sale_forecast.procurement_sale_forecast_line_tree_editable_view_inh_jvv"
+      />
         <field name="arch" type="xml">
             <field name="sale_order_id" position="after">
                 <field name="procurement_state" />
@@ -32,13 +48,16 @@
     <record id="procurement_sale_forecast_line_tree_view_inh_jvv" model="ir.ui.view">
         <field name="name">procurement.sale.forecast.line.tree.view.inh.jvv</field>
         <field name="model">procurement.sale.forecast.line</field>
-        <field name="inherit_id" ref="procurement_sale_forecast.procurement_sale_forecast_line_tree_view" />
+        <field
+        name="inherit_id"
+        ref="procurement_sale_forecast.procurement_sale_forecast_line_tree_view"
+      />
         <field name="arch" type="xml">
             <field name="product_id" position="after">
                 <field name="product_code" />
             </field>
             <field name="forecast_id" position="after">
-                <field name="procurement_state"/>
+                <field name="procurement_state" />
             </field>
         </field>
     </record>
@@ -46,19 +65,28 @@
     <record id="procurement_sale_forecast_line_search_view_inh_jvv" model="ir.ui.view">
         <field name="name">procurement.sale.forecast.line.search.view.inh.jvv</field>
         <field name="model">procurement.sale.forecast.line</field>
-        <field name="inherit_id" ref="procurement_sale_forecast.procurement_sale_forecast_line_search_view" />
+        <field
+        name="inherit_id"
+        ref="procurement_sale_forecast.procurement_sale_forecast_line_search_view"
+      />
         <field name="arch" type="xml">
             <field name="product_id" position="after">
                 <field name="product_code" />
             </field>
             <filter string="Product" position="after">
-                <filter string="Código producto para empresa" context="{'group_by':'product_code'}"/>
+                <filter
+            string="Código producto para empresa"
+            context="{'group_by':'product_code'}"
+          />
             </filter>
             <field name="forecast_id" position="after">
-                <field name="procurement_state"/>
+                <field name="procurement_state" />
             </field>
             <filter string="Forecast" position="after">
-                <filter string="Estado abastecimiento" context="{'group_by':'procurement_state'}"/>
+                <filter
+            string="Estado abastecimiento"
+            context="{'group_by':'procurement_state'}"
+          />
             </filter>
         </field>
     </record>

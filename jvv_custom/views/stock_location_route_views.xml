@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
 <data>
     <record id="stock_location_route_form_view_inh_jvv" model="ir.ui.view">
@@ -27,10 +27,18 @@
         <field name="arch" type="xml">
                 <search string="Search route">
                     <field name="name" />
-                    <separator/>
-                    <filter string="Assemtronic product" name="assemtronic-product-domain" domain="[('assemtronic_product','=',True)]"/>
+                    <separator />
+                    <filter
+            string="Assemtronic product"
+            name="assemtronic-product-domain"
+            domain="[('assemtronic_product','=',True)]"
+          />
                     <group expand="0" string="Group By">
-                        <filter string="Assemtronic product" domain="[]" context="{'group_by':'assemtronic_product'}"/>
+                        <filter
+              string="Assemtronic product"
+              domain="[]"
+              context="{'group_by':'assemtronic_product'}"
+            />
                     </group>
                </search>
         </field>

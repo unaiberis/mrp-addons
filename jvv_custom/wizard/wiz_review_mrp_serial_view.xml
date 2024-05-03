@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
         <record id="wiz_review_mrp_serial_form_view" model="ir.ui.view">
@@ -7,15 +7,23 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Aviso">
-					<field name="production_id" invisible="1"/>
+					<field name="production_id" invisible="1" />
                     <group colspan="4">
                         <p>Revisar secuencia Nº serie antes de fabricar</p>
                     </group>
                     <footer>
-                        <button name="check_mrp_availability" type="object"
-                            string="Continuar comprobar disponibilidad" class="oe_highlight" />
+                        <button
+              name="check_mrp_availability"
+              type="object"
+              string="Continuar comprobar disponibilidad"
+              class="oe_highlight"
+            />
                         o
-                        <button string="Revisar número de serie" class="oe_link" special="cancel"/>
+                        <button
+              string="Revisar número de serie"
+              class="oe_link"
+              special="cancel"
+            />
                     </footer>
                 </form>
             </field>

@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
 <data>
     <record id="view_order_line_tree_sale_forecast2_inh_jvv_custom" model="ir.ui.view">
         <field name="name">view.order.line.tree.sale.forecast2.inh.jvv.custom</field>
         <field name="model">sale.order.line</field>
-        <field name="inherit_id" ref="jvv_procurement_sale_forecast.view_order_line_tree_sale_forecast_inh_jvv" />
+        <field
+        name="inherit_id"
+        ref="jvv_procurement_sale_forecast.view_order_line_tree_sale_forecast_inh_jvv"
+      />
         <field name="arch" type="xml">
              <field name="forecast_id" position="after">
                 <field name="from_forecast_id" />
@@ -15,7 +18,10 @@
     <record id="view_order_line_form2_sale_forecast2_inh_jvv_custom" model="ir.ui.view">
         <field name="name">view.order.line.form2.sale_forecast2.inh.jvv.custom</field>
         <field name="model">sale.order.line</field>
-        <field name="inherit_id" ref="jvv_procurement_sale_forecast.view_order_line_form2_sale_forecast_inh_jvv" />
+        <field
+        name="inherit_id"
+        ref="jvv_procurement_sale_forecast.view_order_line_form2_sale_forecast_inh_jvv"
+      />
         <field name="arch" type="xml">
              <field name="forecast_id" position="after">
                 <field name="from_forecast_id" />
@@ -23,16 +29,29 @@
         </field>
     </record>
 
-    <record id="view_sales_order_line_filter_sale_forecast2_inh_jvv_custom" model="ir.ui.view">
-        <field name="name">view.sales.order.line.filter.sale.forecast2.inh.jvv.custom</field>
+    <record
+      id="view_sales_order_line_filter_sale_forecast2_inh_jvv_custom"
+      model="ir.ui.view"
+    >
+        <field
+        name="name"
+      >view.sales.order.line.filter.sale.forecast2.inh.jvv.custom</field>
         <field name="model">sale.order.line</field>
-        <field name="inherit_id" ref="jvv_procurement_sale_forecast.view_sales_order_line_filter_sale_forecast_inh_jvv" />
+        <field
+        name="inherit_id"
+        ref="jvv_procurement_sale_forecast.view_sales_order_line_filter_sale_forecast_inh_jvv"
+      />
         <field name="arch" type="xml">
              <field name="forecast_id" position="after">
                 <field name="from_forecast_id" />
             </field>
             <filter string="Forecast" position="after">
-                <filter string="Created from sale forecast" icon="terp-gtk-jump-to-rtl" domain="[]" context="{'group_by':'from_forecast_id'}"/>
+                <filter
+            string="Created from sale forecast"
+            icon="terp-gtk-jump-to-rtl"
+            domain="[]"
+            context="{'group_by':'from_forecast_id'}"
+          />
             </filter>
         </field>
     </record>
@@ -51,7 +70,10 @@
     <record id="sale_order_line_ext_tree_view_inh_jvv_custom" model="ir.ui.view">
         <field name="name">sale.order.line.ext.tree.view.inh.jvv.custom</field>
         <field name="model">sale.order.line</field>
-        <field name="inherit_id" ref="sale_order_line_dates.sale_order_line_ext_tree_view" />
+        <field
+        name="inherit_id"
+        ref="sale_order_line_dates.sale_order_line_ext_tree_view"
+      />
         <field name="arch" type="xml">
             <field name="requested_date" position="after">
                 <field name="committed_date" />
@@ -68,28 +90,49 @@
         <field name="inherit_id" ref="sale.view_sales_order_line_filter" />
         <field name="arch" type="xml">
             <filter string="My Sales Order Lines" position="after">
-                <separator/>
-                <filter string="With committed date" domain="[('committed_date', '=', True)]" name="with_committe_date"/>
-                <filter string="Without committed date" domain="[('committed_date', '=', False)]" name="without_committe_date"/>
+                <separator />
+                <filter
+            string="With committed date"
+            domain="[('committed_date', '=', True)]"
+            name="with_committe_date"
+          />
+                <filter
+            string="Without committed date"
+            domain="[('committed_date', '=', False)]"
+            name="without_committe_date"
+          />
                 <field name="client_order_ref" />
                 <field name="customer_product_code" />
                 <field name="mrp_production_id" />
             </filter>
             <filter string="Status" position="after">
-                 <filter string="Committed date" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'committed_date'}"/>
+                 <filter
+            string="Committed date"
+            icon="terp-stock_effects-object-colorize"
+            domain="[]"
+            context="{'group_by':'committed_date'}"
+          />
             </filter>
         </field>
     </record>
     <record id="view_sale_order_line_search_view_inh_jvv_custom" model="ir.ui.view">
         <field name="name">view.sale.order.line.search.view.inh.jvv.custom</field>
         <field name="model">sale.order.line</field>
-        <field name="inherit_id" ref="sale_order_line_view.view_sale_order_line_search_view" />
+        <field
+        name="inherit_id"
+        ref="sale_order_line_view.view_sale_order_line_search_view"
+      />
         <field name="arch" type="xml">
             <field name="order_partner_id" position="after">
                 <field name="out_picking_date_done" />
             </field>
             <filter string="Customer" position="after">
-                <filter string="Transfer date out picking" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'out_picking_date_done'}"/>
+                <filter
+            string="Transfer date out picking"
+            icon="terp-stock_effects-object-colorize"
+            domain="[]"
+            context="{'group_by':'out_picking_date_done'}"
+          />
             </filter>
         </field>
     </record>
@@ -102,10 +145,10 @@
                 <field name="committed_date" />
             </xpath>
             <field name="name" position="after">
-                <separator string="Notes" colspan="4"/>
-                <field name="notes" nolabel="1" colspan="4"/>
-                <separator string="Notes 2" colspan="4"/>
-                <field name="notes2" nolabel="1" colspan="4"/>
+                <separator string="Notes" colspan="4" />
+                <field name="notes" nolabel="1" colspan="4" />
+                <separator string="Notes 2" colspan="4" />
+                <field name="notes2" nolabel="1" colspan="4" />
             </field>
         </field>
     </record>
@@ -122,24 +165,28 @@
                 <field name="partner_id" />
                 <field name="product_id" />
                 <field name="name" />
-                <field name="product_uom_qty" string="Qty"/>
-                <field name="product_uom" string="Unit of Measure" groups="product.group_uom"/>
-                <field name="price_unit"/>
+                <field name="product_uom_qty" string="Qty" />
+                <field
+            name="product_uom"
+            string="Unit of Measure"
+            groups="product.group_uom"
+          />
+                <field name="price_unit" />
                 <field name="date_order_without_hour" />
                 <field name="closing_date_without_hour" />
                 <field name="order_production_days" />
-		        <field name="confirmed_date_without_hour"/>
+		        <field name="confirmed_date_without_hour" />
 		        <field name="days_of_delay" />
-                <field name="date_planned"/>
-                <field name="reconfirmed_date"/>
-                <field name="count_reconfirmed_date" readon="1"/>
-                <field name="date_transfer"/>
-                <field name="requested_date"/>
-                <field name="committed_date"/>
-                <field name="out_picking_date_done"/>
-                <field name="mrp_production_id"/>
-                <field name="invoiced"/>
-                <field name="delay"/>
+                <field name="date_planned" />
+                <field name="reconfirmed_date" />
+                <field name="count_reconfirmed_date" readon="1" />
+                <field name="date_transfer" />
+                <field name="requested_date" />
+                <field name="committed_date" />
+                <field name="out_picking_date_done" />
+                <field name="mrp_production_id" />
+                <field name="invoiced" />
+                <field name="delay" />
                 <field name="state" />
             </tree>
         </field>
@@ -150,12 +197,16 @@
         <field name="res_model">sale.order.line</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="jvv_custom.sale_order_line_kpi_jvv_tree_view"/>
+        <field name="view_id" ref="jvv_custom.sale_order_line_kpi_jvv_tree_view" />
     </record>
 
-    <menuitem id="sale_order_line_kpi_newmenu_menu_view" name="Sale Order Lines (KPIs)"
-        parent="base.menu_sales" action="action_sale_order_line_kpi_newmenu" />
+    <menuitem
+      id="sale_order_line_kpi_newmenu_menu_view"
+      name="Sale Order Lines (KPIs)"
+      parent="base.menu_sales"
+      action="action_sale_order_line_kpi_newmenu"
+    />
 
-  
+
 </data>
 </openerp>

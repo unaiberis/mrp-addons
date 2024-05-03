@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
 <data>
     <record id="procurement_plan_form_view_inh_jvv" model="ir.ui.view">
         <field name="name">procurement.plan.form.view.inh.jvv</field>
         <field name="model">procurement.plan</field>
-        <field name="inherit_id" ref="procurement_plan_mrp.procurement_plan_form_view_inh_mrpprocurementplan" />
+        <field
+        name="inherit_id"
+        ref="procurement_plan_mrp.procurement_plan_form_view_inh_mrpprocurementplan"
+      />
         <field name="arch" type="xml">
             <field name="sale_line_id" position="after">
-               <field name="client_order_ref"/>
-               <field name="customer_product_code"/>
+               <field name="client_order_ref" />
+               <field name="customer_product_code" />
             </field>
         </field>
     </record>
@@ -16,11 +19,14 @@
     <record id="procurement_plan_tree_view_inh_jvv" model="ir.ui.view">
         <field name="name">procurement.plan.tree.view.inh.jvv</field>
         <field name="model">procurement.plan</field>
-        <field name="inherit_id" ref="procurement_plan_mrp.procurement_plan_tree_view_inh_mrpprocurementplan" />
+        <field
+        name="inherit_id"
+        ref="procurement_plan_mrp.procurement_plan_tree_view_inh_mrpprocurementplan"
+      />
         <field name="arch" type="xml">
             <field name="customer_id" position="after">
-               <field name="client_order_ref"/>
-               <field name="customer_product_code"/>
+               <field name="client_order_ref" />
+               <field name="customer_product_code" />
             </field>
         </field>
     </record>
@@ -28,11 +34,14 @@
     <record id="procurement_plan_search_view_inh_jvv" model="ir.ui.view">
         <field name="name">procurement.plan.search.view.inh.jvv</field>
         <field name="model">procurement.plan</field>
-        <field name="inherit_id" ref="procurement_plan_mrp.procurement_plan_search_view_inh_mrpprocurementplan" />
+        <field
+        name="inherit_id"
+        ref="procurement_plan_mrp.procurement_plan_search_view_inh_mrpprocurementplan"
+      />
         <field name="arch" type="xml">
             <field name="customer_id" position="after">
-               <field name="client_order_ref"/>
-               <field name="customer_product_code"/>
+               <field name="client_order_ref" />
+               <field name="customer_product_code" />
             </field>
         </field>
     </record>

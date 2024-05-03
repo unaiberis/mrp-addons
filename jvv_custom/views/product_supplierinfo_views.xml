@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
 <data>
     <record id="product_supplierinfo_search_view_inh_jvv" model="ir.ui.view">
         <field name="name">product.supplierinfo.search.view.inh.jvv</field>
         <field name="model">product.supplierinfo</field>
-        <field name="inherit_id" ref="product_supplierinfo_for_customer.product_supplierinfo_search_view" />
+        <field
+        name="inherit_id"
+        ref="product_supplierinfo_for_customer.product_supplierinfo_search_view"
+      />
         <field name="arch" type="xml">
             <filter string="Supplier" position="attributes">
                 <attribute name="invisible">1</attribute>
@@ -21,11 +24,15 @@
                 <field name="expiration_date" />
                 <field name="offer_number" />
                 <field name="product_tmpl_id" />
-                <field name="prefix_code" readonly="1"/>
-                <field name="property_product_pricelist"
-                    attrs="{'invisible': [('type', '!=', 'customer')]}"/>
-                <field name="property_product_pricelist_purchase"
-                    attrs="{'invisible': [('type', '!=', 'supplier')]}"/>
+                <field name="prefix_code" readonly="1" />
+                <field
+            name="property_product_pricelist"
+            attrs="{'invisible': [('type', '!=', 'customer')]}"
+          />
+                <field
+            name="property_product_pricelist_purchase"
+            attrs="{'invisible': [('type', '!=', 'supplier')]}"
+          />
             </field>
         </field>
     </record>
@@ -36,7 +43,7 @@
         <field name="arch" type="xml">
             <field name="name" position="before">
                 <field name="sequence" widget="handle" />
-                <field name="my_sequence" readonly="1"/>
+                <field name="my_sequence" readonly="1" />
             </field>
             <field name="name" position="after">
                 <field name="date_validity" />
@@ -56,7 +63,7 @@
             <field name="model">product.supplierinfo</field>
             <field name="arch" type="xml">
                 <search string="Supplierinfo search">
-                    <field name="name" string="Empresa"/>
+                    <field name="name" string="Empresa" />
                     <field name="product_tmpl_id" />
                     <field name="product_name" />
                     <field name="product_code" />
@@ -64,16 +71,29 @@
                     <field name="date_validity" />
                     <field name="expiration_date" />
                     <field name="offer_number" />
-                    <filter string="Supplier" domain="[('type','=','supplier')]"
-                            name="is_supplier_filter" />
+                    <filter
+            string="Supplier"
+            domain="[('type','=','supplier')]"
+            name="is_supplier_filter"
+          />
                     <group expand="0" string="Group By">
-                        <filter string="Partner" icon="terp-partner"
-                                domain="[]" context="{'group_by':'name'}" />
-                        <filter string="Product Template" domain="[]"
-                                context="{'group_by':'product_tmpl_id'}" />
+                        <filter
+              string="Partner"
+              icon="terp-partner"
+              domain="[]"
+              context="{'group_by':'name'}"
+            />
+                        <filter
+              string="Product Template"
+              domain="[]"
+              context="{'group_by':'product_tmpl_id'}"
+            />
                         <separator />
-                        <filter string="Type" domain="[]"
-                                context="{'group_by':'type'}" />
+                        <filter
+              string="Type"
+              domain="[]"
+              context="{'group_by':'type'}"
+            />
                     </group>
                 </search>
             </field>
@@ -85,8 +105,14 @@
             <field name="res_model">product.supplierinfo</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref="product_supplierinfo_supplier_search_view" />
-            <field name="view_id" ref="product_supplierinfo_for_customer.product_supplierinfo_extended_tree_view"/>
+            <field
+        name="search_view_id"
+        ref="product_supplierinfo_supplier_search_view"
+      />
+            <field
+        name="view_id"
+        ref="product_supplierinfo_for_customer.product_supplierinfo_extended_tree_view"
+      />
             <field name="context">{
                     'search_default_is_supplier_filter': 1,
                     'default_type': 'supplier',
@@ -95,8 +121,12 @@
             </field>
             <field name="help">Click to define a new product.supplierinfo.</field>
         </record>
-        <menuitem id="product_supplierinfo_purchase_menu" name="Information about a product (supplier)"
-                  action="product_supplierinfo_supplier_action" 
-                  parent="purchase.menu_procurement_management_product" sequence="30"/>
+        <menuitem
+      id="product_supplierinfo_purchase_menu"
+      name="Information about a product (supplier)"
+      action="product_supplierinfo_supplier_action"
+      parent="purchase.menu_procurement_management_product"
+      sequence="30"
+    />
 </data>
 </openerp>

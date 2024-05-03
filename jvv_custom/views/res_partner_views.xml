@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
 <data>
     <record id="res_partner_view_buttons_inh_jvv" model="ir.ui.view">
@@ -6,10 +6,14 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="sale.res_partner_view_buttons" />
         <field name="arch" type="xml">
-            <xpath expr="//button[1]" position="after" >
-                <button class="oe_inline oe_stat_button" string="Asociated products"
-                    name="button_customer_product_template" type="object"
-                    icon="terp-stock_format-scientific">
+            <xpath expr="//button[1]" position="after">
+                <button
+            class="oe_inline oe_stat_button"
+            string="Asociated products"
+            name="button_customer_product_template"
+            type="object"
+            icon="terp-stock_format-scientific"
+          >
                         <field name="count_customer_products" nolabel="1" />
                 </button>
             </xpath>
@@ -31,17 +35,23 @@
 
     <record id="base.action_partner_form" model="ir.actions.act_window">
         <field name="domain">[]</field>
-        <field name="context">{"search_default_customer":1, "search_default_type_company": 1}</field>
+        <field
+        name="context"
+      >{"search_default_customer":1, "search_default_type_company": 1}</field>
     </record>
 
     <record id="base.action_partner_customer_form" model="ir.actions.act_window">
         <field name="domain">[]</field>
-        <field name="context">{"search_default_customer":1, "search_default_type_company": 1}</field>
+        <field
+        name="context"
+      >{"search_default_customer":1, "search_default_type_company": 1}</field>
     </record>
 
     <record id="base.action_partner_supplier_form" model="ir.actions.act_window">
         <field name="domain">[]</field>
-        <field name="context">{"search_default_supplier":1, "search_default_type_company": 1}</field>
+        <field
+        name="context"
+      >{"search_default_supplier":1, "search_default_type_company": 1}</field>
     </record>
 </data>
 </openerp>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
         <record id="mrp_routing_production_line_tree_view" model="ir.ui.view">
@@ -32,16 +32,23 @@
                 </form>
             </field>
         </record>
-        <record id="action_mrp_routing_production_line_view" model="ir.actions.act_window">
+        <record
+      id="action_mrp_routing_production_line_view"
+      model="ir.actions.act_window"
+    >
             <field name="name">Production lines</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">mrp.routing.production.line</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
-        <menuitem id="mrp_routing_production_line_option_view" name="Production lines"
-                  action="action_mrp_routing_production_line_view" 
-                  parent="mrp.menu_mrp_bom" sequence="15" 
-                  groups="mrp.group_mrp_manager" />
+        <menuitem
+      id="mrp_routing_production_line_option_view"
+      name="Production lines"
+      action="action_mrp_routing_production_line_view"
+      parent="mrp.menu_mrp_bom"
+      sequence="15"
+      groups="mrp.group_mrp_manager"
+    />
     </data>
 </openerp>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
         <record id="update_bom_route_form_view" model="ir.ui.view">
@@ -7,13 +7,16 @@
             <field name="type">form</field>
             <field name="arch" type="xml">
                 <form string="Update BoM Route">
-                    <separator
-                        string="Update BoM route for select BoMs?" colspan="4" />
+                    <separator string="Update BoM route for select BoMs?" colspan="4" />
                     <footer>
-                        <button name="update_bom_route" type="object"
-                            string="Accept" class="oe_highlight" />
+                        <button
+              name="update_bom_route"
+              type="object"
+              string="Accept"
+              class="oe_highlight"
+            />
                         or
-                        <button string="Cancel" class="oe_link" special="cancel"/>
+                        <button string="Cancel" class="oe_link" special="cancel" />
                     </footer>
                 </form>
             </field>
@@ -22,22 +25,24 @@
             <field name="name">update.bom.route.form.view</field>
             <field name="model">update.bom.route</field>
             <field name="type">form</field>
-            <field name="priority" eval="40"/>
+            <field name="priority" eval="40" />
             <field name="arch" type="xml">
                 <form string="Update BoM Route">
-                    <field name="message" nolabel="1" readonly="1"/>
+                    <field name="message" nolabel="1" readonly="1" />
                     <footer>
-                        <button string="Accept" class="oe_link" special="cancel"/>
+                        <button string="Accept" class="oe_link" special="cancel" />
                     </footer>
                 </form>
             </field>
         </record>
-        <act_window name="Update BoM Route"
-                    key2="client_action_multi"
-                    res_model="update.bom.route"
-                    src_model="mrp.bom"
-                    view_mode="form"
-                    target="new"
-                    id="action_update_bom_route"/>
+        <act_window
+      name="Update BoM Route"
+      key2="client_action_multi"
+      res_model="update.bom.route"
+      src_model="mrp.bom"
+      view_mode="form"
+      target="new"
+      id="action_update_bom_route"
+    />
     </data>
 </openerp>

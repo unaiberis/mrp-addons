@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
 <data>
     <record id="mrp_routing_tree_view_inh_jvv_custom" model="ir.ui.view">
@@ -9,9 +9,21 @@
              <field name="location_id" position="after">
                 <field name="production_line_id" />
                 <field name="load_time_line" sum="Total time" widget="float_time" />
-                <field name="load_time_variable" sum="Total time variable" widget="float_time" />
-                <field name="load_time_warehouse" sum="Total time warehouse" widget="float_time" />
-                <field name="load_time_variable_warehouse" sum="Total time variable warehouse" widget="float_time" />
+                <field
+            name="load_time_variable"
+            sum="Total time variable"
+            widget="float_time"
+          />
+                <field
+            name="load_time_warehouse"
+            sum="Total time warehouse"
+            widget="float_time"
+          />
+                <field
+            name="load_time_variable_warehouse"
+            sum="Total time variable warehouse"
+            widget="float_time"
+          />
              </field>
         </field>
     </record>
@@ -40,7 +52,12 @@
                   <field name="production_line_id" />
               </field>
               <filter string="Production Location" position="after">
-                  <filter string="Production line" icon="terp-accessories-archiver" domain="[]" context="{'group_by':'production_line_id'}"/>
+                  <filter
+            string="Production line"
+            icon="terp-accessories-archiver"
+            domain="[]"
+            context="{'group_by':'production_line_id'}"
+          />
               </filter>
         </field>
     </record>

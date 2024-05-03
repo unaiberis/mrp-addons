@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 Alfredo de la Fuente - AvanzOSC
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
@@ -9,7 +8,7 @@
     "category": "Custom Module",
     "license": "AGPL-3",
     "author": "AvanzOSC",
-    "website": "http://www.avanzosc.es",
+    "website": "https://github.com/avanzosc/mrp-addons",
     "contributors": [
         "Ana Juaristi <anajuaristi@avanzosc.es>",
         "Alfredo de la Fuente <alfredodelafuente@avanzosc.es>",
@@ -89,7 +88,7 @@
         "product_code",
         "hr_timesheet_invoice",
         "stock_lock_lot",
-        "procurement_plan_mrp"
+        "procurement_plan_mrp",
     ],
     "data": [
         "security/ir.model.access.csv",
@@ -152,7 +151,7 @@
         "wizard/wiz_cancel_stock_picking_view.xml",
         "wizard/wiz_forecast_line2_to_sale_order_view.xml",
         "wizard/stock_transfer_split_multi_view.xml",
-        "wizard/wiz_review_mrp_serial_view.xml",  
+        "wizard/wiz_review_mrp_serial_view.xml",
     ],
     "installable": True,
 }

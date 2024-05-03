@@ -1,10 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
         <record id="stock_transfer_split_multi_extend_form_inh_jvv" model="ir.ui.view">
             <field name="name">stock.transfer.split.multi.extend.form.inh.jvv</field>
             <field name="model">stock.transfer.split.multi</field>
-            <field name="inherit_id" ref="stock_transfer_split_multi_extend.stock_transfer_split_multi_extend_form" />
+            <field
+        name="inherit_id"
+        ref="stock_transfer_split_multi_extend.stock_transfer_split_multi_extend_form"
+      />
             <field name="arch" type="xml">
                 <field name="bin" position="before">
                     <field name="manufacturer_id" />
