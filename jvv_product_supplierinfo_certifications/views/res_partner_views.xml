@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
     <data>
         <record id="view_partner_form_inh_certification" model="ir.ui.view">
@@ -7,8 +7,10 @@
             <field name="inherit_id" ref="base.view_partner_form" />
             <field name="arch" type="xml">
                 <field name="website" position="after">
-                    <field name="certification_id"
-                    	attrs="{'invisible': [('supplier', '=', False)]}"/>
+                    <field
+            name="certification_id"
+            attrs="{'invisible': [('supplier', '=', False)]}"
+          />
                 </field>
             </field>
         </record>
@@ -22,7 +24,7 @@
                     <field name="certification_id" />
                 </field>
                 <filter string="Country" position="after">
-					<filter string="Calificación proveedor" context="{'group_by': 'certification_id'}"/>
+					<filter string="Calificación proveedor" context="{'group_by': 'certification_id'}" />
 				</filter>
             </field>
         </record>
@@ -33,7 +35,7 @@
             <field name="inherit_id" ref="base.view_partner_tree" />
             <field name="arch" type="xml">
                 <field name="display_name" position="after">
-                    <field name="certification_id"/>
+                    <field name="certification_id" />
                 </field>
             </field>
         </record>
