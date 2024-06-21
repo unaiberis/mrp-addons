@@ -10,7 +10,7 @@ class MrpBomImport(models.Model):
     _inherit = "mrp.bom.import"
 
     def _get_line_values(self, row_values):
-        values = super(MrpBomImport, self)._get_line_values(row_values)
+        values = super()._get_line_values(row_values)
         if values:
             values.update(
                 {
@@ -30,7 +30,7 @@ class MrpBomLineImport(models.Model):
 
     def generate_bom_line_values(self):
         self.ensure_one()
-        values = super(MrpBomLineImport, self).generate_bom_line_values()
+        values = super().generate_bom_line_values()
         values.update(
             {
                 "long_cut": self.long_cut,

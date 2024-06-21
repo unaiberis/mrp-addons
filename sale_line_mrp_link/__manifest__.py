@@ -6,12 +6,8 @@
     "category": "Sales Management",
     "license": "AGPL-3",
     "author": "AvanzOSC",
-    "website": "http://www.avanzosc.es",
-    "depends": [
-        "sale_order_line_menu",
-        "sale_mrp",
-        "stock"
-    ],
+    "website": "https://github.com/avanzosc/mrp-addons",
+    "depends": ["sale_order_line_menu", "sale_mrp", "stock"],
     "data": [
         "views/mrp_production_views.xml",
         "views/sale_order_line_views.xml",

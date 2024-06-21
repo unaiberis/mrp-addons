@@ -2,16 +2,14 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 {
     "name": "MRP BOM Line Note",
-    'version': '14.0.1.0.0',
+    "version": "14.0.1.0.0",
     "author": "Avanzosc",
     "website": "http://www.avanzosc.es",
     "category": "Product",
-    "depends": [
-        "mrp"
-    ],
+    "depends": ["mrp"],
     "data": [
         "views/mrp_bom_views.xml",
     ],
     "license": "AGPL-3",
-    'installable': True,
+    "installable": True,
 }

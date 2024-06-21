@@ -7,18 +7,14 @@ from odoo.exceptions import ValidationError
 class MrpWorkcenterProductivity(models.Model):
     _inherit = "mrp.workcenter.productivity"
 
-    initial_plate = fields.Integer(
-        string="Initial Plate")
-    final_plate = fields.Integer(
-        string="Final Plate")
+    initial_plate = fields.Integer(string="Initial Plate")
+    final_plate = fields.Integer(string="Final Plate")
     manufactured_plate = fields.Integer(
-        string="Manufactured Plate",
-        compute="_compute_manufactured_plate",
-        store=True)
+        string="Manufactured Plate", compute="_compute_manufactured_plate", store=True
+    )
     speed_average = fields.Float(
-        string="Speed Average",
-        compute="_compute_speed_average",
-        store=True)
+        string="Speed Average", compute="_compute_speed_average", store=True
+    )
 
     @api.depends("initial_plate", "final_plate")
     def _compute_manufactured_plate(self):
@@ -37,4 +33,5 @@ class MrpWorkcenterProductivity(models.Model):
         for line in self:
             if line.manufactured_plate < 0:
                 raise ValidationError(
-                        _("Error: Manufactured plates should be positive."))
+                    _("Error: Manufactured plates should be positive.")
+                )

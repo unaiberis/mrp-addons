@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
     <record model="ir.ui.view" id="wiz_split_serials_form">
         <field name="name">wiz.split.serials.form</field>
@@ -10,7 +10,7 @@
                         <p>
                             These MOs have a product to produce with tracking "By unique serial number", and with a quantity to produce greater than 1.
                         </p>
-                        <br/>
+                        <br />
                         <p>
                             You want to split these MOs into single unit MOs?.
                         </p>
@@ -25,10 +25,14 @@
                         </field>
                     </group>
                     <footer>
-                        <button name="action_split_productions" type="object"
-                            string="Split" class="oe_highlight" />
+                        <button
+              name="action_split_productions"
+              type="object"
+              string="Split"
+              class="oe_highlight"
+            />
                         or
-                        <button string="Cancel" class="oe_link" special="cancel"/>
+                        <button string="Cancel" class="oe_link" special="cancel" />
                     </footer>
                 </sheet>
             </form>

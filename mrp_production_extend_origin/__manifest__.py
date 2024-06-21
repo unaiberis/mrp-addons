@@ -11,7 +11,6 @@
         "sale",
         "mrp",
     ],
-    "data": [
-    ],
+    "data": [],
     "installable": True,
 }

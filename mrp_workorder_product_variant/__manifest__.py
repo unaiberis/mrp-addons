@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 {
     "name": "MRP Workorder Product Variant",
-    'version': '14.0.1.0.0',
+    "version": "14.0.1.0.0",
     "author": "Avanzosc",
     "category": "Manufacturing",
     "website": "http://www.avanzosc.es",
@@ -13,5 +13,5 @@
         "views/mrp_routing_workcenter_view.xml",
     ],
     "license": "AGPL-3",
-    'installable': True,
+    "installable": True,
 }

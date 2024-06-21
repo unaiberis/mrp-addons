@@ -7,12 +7,10 @@ class MrpWorkorder(models.Model):
     _inherit = "mrp.workorder"
 
     plates_manufactured = fields.Integer(
-        string="Plates Manufactured",
-        compute="_compute_plates_manufactured",
-        store=True)
+        string="Plates Manufactured", compute="_compute_plates_manufactured", store=True
+    )
 
     @api.depends("time_ids", "time_ids.manufactured_plate")
     def _compute_plates_manufactured(self):
         for line in self:
-            line.plates_manufactured = sum(
-                line.time_ids.mapped("manufactured_plate"))
+            line.plates_manufactured = sum(line.time_ids.mapped("manufactured_plate"))

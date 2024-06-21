@@ -7,10 +7,7 @@
     "license": "AGPL-3",
     "author": "AvanzOSC",
     "website": "https://github.com/avanzosc/mrp-addons",
-    "depends": [
-        "mrp",
-        "stock"
-    ],
+    "depends": ["mrp", "stock"],
     "data": [
         "security/ir.model.access.csv",
         "wizard/wiz_split_serials_views.xml",

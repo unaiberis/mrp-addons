@@ -10,7 +10,6 @@
     "depends": [
         "mrp",
     ],
-    "data": [
-    ],
+    "data": [],
     "installable": True,
 }
